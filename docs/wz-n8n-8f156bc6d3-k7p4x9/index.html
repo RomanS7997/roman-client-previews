@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp to Zoho n8n Migration Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <aside class="rail" aria-label="Migration navigation">
+        <div class="brand">
+          <span class="brand-mark">n8n</span>
+          <div>
+            <h1>FlowDesk</h1>
+            <p>WhatsApp to Zoho migration</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-item active" type="button" data-view="overview">Overview</button>
+          <button class="nav-item" type="button" data-view="mapping">Field Map</button>
+          <button class="nav-item" type="button" data-view="tests">Test Log</button>
+        </nav>
+
+        <section class="stage-list" aria-label="Delivery stages">
+          <h2>Stages</h2>
+          <div class="stage done">
+            <span>1</span>
+            <p>Audit existing Zapier flow</p>
+          </div>
+          <div class="stage active">
+            <span>2</span>
+            <p>Rebuild in n8n</p>
+          </div>
+          <div class="stage">
+            <span>3</span>
+            <p>Zoho test sync</p>
+          </div>
+          <div class="stage">
+            <span>4</span>
+            <p>Sign-off and handoff</p>
+          </div>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Client-specific workflow demo</p>
+            <h2>WhatsApp Lead Intake -> n8n Validation -> Zoho CRM</h2>
+          </div>
+          <div class="health">
+            <span class="dot"></span>
+            Test mode
+          </div>
+        </header>
+
+        <section class="metrics" aria-label="Workflow metrics">
+          <article>
+            <span>Test leads</span>
+            <strong id="metricLeads">24</strong>
+            <small>sample payloads</small>
+          </article>
+          <article>
+            <span>Valid contacts</span>
+            <strong id="metricValid">21</strong>
+            <small>ready for Zoho</small>
+          </article>
+          <article>
+            <span>Needs review</span>
+            <strong id="metricReview">3</strong>
+            <small>missing fields</small>
+          </article>
+          <article>
+            <span>Sync status</span>
+            <strong id="metricStatus">Passing</strong>
+            <small>last stage test</small>
+          </article>
+        </section>
+
+        <section class="view active" data-panel="overview">
+          <section class="flow-band" aria-label="Automation flow">
+            <div class="flow-node whatsapp">
+              <span class="node-icon">WA</span>
+              <div>
+                <strong>WhatsApp</strong>
+                <p>Inbound lead messages</p>
+              </div>
+            </div>
+            <div class="flow-step">Validate</div>
+            <div class="flow-node n8n">
+              <span class="node-icon">n8n</span>
+              <div>
+                <strong>n8n</strong>
+                <p>Normalize and route data</p>
+              </div>
+            </div>
+            <div class="flow-step">Sync</div>
+            <div class="flow-node zoho">
+              <span class="node-icon">Z</span>
+              <div>
+                <strong>Zoho CRM</strong>
+                <p>Contact, deal, task</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="grid two-columns">
+            <div class="panel intake-panel">
+              <div class="panel-header">
+                <div>
+                  <h3>WhatsApp Intake Queue</h3>
+                  <p>Sample messages before CRM sync.</p>
+                </div>
+                <button id="runValidation" type="button">Run Test</button>
+              </div>
+              <div id="leadList" class="lead-list"></div>
+            </div>
+
+            <div class="panel detail-panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Selected Lead</h3>
+                  <p>Validation and Zoho payload preview.</p>
+                </div>
+              </div>
+              <div id="leadDetail" class="lead-detail"></div>
+            </div>
+          </section>
+        </section>
+
+        <section class="view" data-panel="mapping">
+          <section class="panel mapping-panel">
+            <div class="panel-header">
+              <div>
+                <h3>n8n Field Mapping</h3>
+                <p>WhatsApp payload fields mapped to Zoho CRM.</p>
+              </div>
+            </div>
+            <div class="mapping-table" id="mappingTable"></div>
+          </section>
+        </section>
+
+        <section class="view" data-panel="tests">
+          <section class="grid two-columns">
+            <div class="panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Stage Sign-off</h3>
+                  <p>Each delivery stage has a working test before moving on.</p>
+                </div>
+              </div>
+              <div class="signoff-list" id="signoffList"></div>
+            </div>
+
+            <div class="panel log-panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Automation Test Log</h3>
+                  <p>Recent validation and sync events.</p>
+                </div>
+              </div>
+              <div class="test-log" id="testLog"></div>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

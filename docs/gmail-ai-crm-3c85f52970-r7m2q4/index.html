@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gmail AI CRM Review Workflow Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <aside class="rail" aria-label="Workflow navigation">
+        <div class="brand">
+          <span class="brand-mark">AI</span>
+          <div>
+            <h1>LeadOps</h1>
+            <p>Gmail to CRM workflow</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-item active" type="button" data-view="overview">Overview</button>
+          <button class="nav-item" type="button" data-view="rules">AI Rules</button>
+          <button class="nav-item" type="button" data-view="handoff">Handoff</button>
+        </nav>
+
+        <section class="flow-steps" aria-label="Workflow stages">
+          <div class="step done">
+            <span>1</span>
+            <p>Gmail intake</p>
+          </div>
+          <div class="step active">
+            <span>2</span>
+            <p>AI classification</p>
+          </div>
+          <div class="step done">
+            <span>3</span>
+            <p>Sheets and CRM sync</p>
+          </div>
+          <div class="step review">
+            <span>4</span>
+            <p>Human review</p>
+          </div>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Neutral workflow preview</p>
+            <h2>Gmail leads classified by AI, routed to Sheets and CRM, then reviewed before handoff</h2>
+          </div>
+          <div class="health">
+            <span class="dot"></span>
+            Test mode
+          </div>
+        </header>
+
+        <section class="metrics" aria-label="Workflow metrics">
+          <article>
+            <span>Emails parsed</span>
+            <strong id="metricParsed">128</strong>
+            <small>sample batch</small>
+          </article>
+          <article>
+            <span>Auto-routed</span>
+            <strong id="metricRouted">84%</strong>
+            <small>high confidence</small>
+          </article>
+          <article>
+            <span>Needs review</span>
+            <strong id="metricReview">7</strong>
+            <small>missing context</small>
+          </article>
+          <article>
+            <span>Sync health</span>
+            <strong id="metricHealth">Passing</strong>
+            <small>last run</small>
+          </article>
+        </section>
+
+        <section class="view active" data-panel="overview">
+          <section class="flow-band" aria-label="Automation flow">
+            <div class="flow-node gmail">
+              <span class="node-icon">G</span>
+              <div>
+                <strong>Gmail</strong>
+                <p>Inbound messages</p>
+              </div>
+            </div>
+            <div class="flow-step">Classify</div>
+            <div class="flow-node ai">
+              <span class="node-icon">AI</span>
+              <div>
+                <strong>Classifier</strong>
+                <p>Intent, priority, confidence</p>
+              </div>
+            </div>
+            <div class="flow-step">Sync</div>
+            <div class="flow-node crm">
+              <span class="node-icon">CRM</span>
+              <div>
+                <strong>Sheets + CRM</strong>
+                <p>Structured lead record</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="grid two-columns">
+            <div class="panel queue-panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Lead Queue</h3>
+                  <p>Parsed emails with suggested route and confidence.</p>
+                </div>
+                <div class="toolbar">
+                  <select id="routeFilter" aria-label="Filter route">
+                    <option value="all">All routes</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Support">Support</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Review">Review</option>
+                  </select>
+                  <button id="runWorkflow" type="button">Run test</button>
+                </div>
+              </div>
+              <div id="leadList" class="lead-list"></div>
+            </div>
+
+            <div class="panel detail-panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Selected Record</h3>
+                  <p>Generated payload before final sync.</p>
+                </div>
+              </div>
+              <div id="recordDetail" class="record-detail"></div>
+            </div>
+          </section>
+        </section>
+
+        <section class="view" data-panel="rules">
+          <section class="grid two-columns">
+            <div class="panel">
+              <div class="panel-header">
+                <div>
+                  <h3>AI Routing Rules</h3>
+                  <p>Decision rules used by the classifier.</p>
+                </div>
+              </div>
+              <div id="rulesList" class="rules-list"></div>
+            </div>
+
+            <div class="panel log-panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Run Log</h3>
+                  <p>Validation events from the sample workflow.</p>
+                </div>
+              </div>
+              <div id="runLog" class="run-log"></div>
+            </div>
+          </section>
+        </section>
+
+        <section class="view" data-panel="handoff">
+          <section class="grid two-columns">
+            <div class="panel mapping-panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Sheets and CRM Mapping</h3>
+                  <p>Fields prepared for handoff and implementation.</p>
+                </div>
+              </div>
+              <div id="mappingTable" class="mapping-table"></div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Review Queue</h3>
+                  <p>Records held for manual approval.</p>
+                </div>
+              </div>
+              <div id="reviewQueue" class="review-queue"></div>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

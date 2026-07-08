@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>SMM Panel — Operations Dashboard (Preview)</title>
+<style>
+  :root{
+    --bg:#0b1220; --panel:#111a2b; --panel2:#0f1728; --line:#1f2b40;
+    --text:#e6edf6; --muted:#8ea0b7; --accent:#3b82f6; --green:#22c55e;
+    --amber:#f59e0b; --red:#ef4444; --chip:#1b2740;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 "Segoe UI",system-ui,Arial,sans-serif}
+  .wrap{max-width:1120px;margin:0 auto;padding:22px}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#3b82f6,#22c55e);display:flex;align-items:center;justify-content:center;font-size:20px}
+  h1{font-size:19px;margin:0}
+  .sub{color:var(--muted);font-size:12px}
+  .pill{background:var(--chip);border:1px solid var(--line);color:var(--muted);padding:5px 11px;border-radius:999px;font-size:12px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .card .k{color:var(--muted);font-size:12px}
+  .card .v{font-size:22px;font-weight:700;margin-top:4px}
+  .card .d{font-size:11px;margin-top:2px}
+  .up{color:var(--green)} .down{color:var(--red)}
+  .cols{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.cols{grid-template-columns:1fr}}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .box h2{font-size:14px;margin:0;padding:13px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  .box .body{padding:14px 16px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{color:var(--muted);text-align:left;font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line)}
+  td{padding:9px 10px;border-bottom:1px solid var(--panel2)}
+  tr:last-child td{border-bottom:none}
+  .chip{font-size:11px;padding:3px 9px;border-radius:999px;font-weight:600;white-space:nowrap}
+  .c-ok{background:rgba(34,197,94,.15);color:#7ff0a8}
+  .c-proc{background:rgba(59,130,246,.15);color:#93c5fd}
+  .c-pend{background:rgba(245,158,11,.15);color:#fcd34d}
+  .c-pause{background:rgba(148,163,184,.15);color:#cbd5e1}
+  label{display:block;color:var(--muted);font-size:12px;margin:10px 0 4px}
+  select,input{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:9px;padding:9px 10px;font-size:13px}
+  .charge{display:flex;justify-content:space-between;align-items:center;margin-top:12px;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+  .btn{width:100%;margin-top:12px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:11px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .prov{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--panel2)}
+  .prov:last-child{border-bottom:none}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px}
+  .banner{background:#132038;border:1px solid var(--line);color:var(--muted);text-align:center;font-size:12px;padding:8px;border-radius:10px;margin-bottom:16px}
+  .mono{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="banner">Preview · sample data only — no real orders are placed. Built as a client demo.</div>
+
+  <div class="top">
+    <div class="brand">
+      <div class="logo">⚡</div>
+      <div><h1>SMM Panel — Operations Dashboard</h1><div class="sub">Reseller order &amp; service management · demo</div></div>
+    </div>
+    <div class="pill">● Live preview</div>
+  </div>
+
+  <div class="grid">
+    <div class="card"><div class="k">Orders today</div><div class="v mono" id="ordersToday">1,284</div><div class="d up">▲ 8.4% vs yesterday</div></div>
+    <div class="card"><div class="k">Revenue today</div><div class="v mono">₹42,600</div><div class="d up">▲ 5.1%</div></div>
+    <div class="card"><div class="k">Active services</div><div class="v mono">86</div><div class="d" style="color:var(--muted)">4 providers</div></div>
+    <div class="card"><div class="k">Pending</div><div class="v mono" id="pending">12</div><div class="d down">3 need review</div></div>
+  </div>
+
+  <div class="cols">
+    <div class="box">
+      <h2>Services <span class="sub">5 of 86 shown</span></h2>
+      <div class="body" style="padding:0">
+        <table>
+          <thead><tr><th>Service</th><th>Category</th><th>Rate / 1k</th><th>Provider</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Instagram Followers</td><td>Instagram</td><td class="mono">₹45</td><td>Provider A</td><td><span class="chip c-ok">Active</span></td></tr>
+            <tr><td>Instagram Likes</td><td>Instagram</td><td class="mono">₹18</td><td>Provider B</td><td><span class="chip c-ok">Active</span></td></tr>
+            <tr><td>YouTube Views</td><td>YouTube</td><td class="mono">₹120</td><td>Provider A</td><td><span class="chip c-ok">Active</span></td></tr>
+            <tr><td>TikTok Followers</td><td>TikTok</td><td class="mono">₹90</td><td>Provider C</td><td><span class="chip c-pause">Paused</span></td></tr>
+            <tr><td>Telegram Members</td><td>Telegram</td><td class="mono">₹150</td><td>Provider B</td><td><span class="chip c-ok">Active</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>Place order <span class="sub">sample</span></h2>
+      <div class="body">
+        <label>Service</label>
+        <select id="svc">
+          <option data-rate="45">Instagram Followers — ₹45/1k</option>
+          <option data-rate="18">Instagram Likes — ₹18/1k</option>
+          <option data-rate="120">YouTube Views — ₹120/1k</option>
+          <option data-rate="150">Telegram Members — ₹150/1k</option>
+        </select>
+        <label>Target link / username</label>
+        <input id="target" placeholder="https://instagram.com/yourbrand" value="https://instagram.com/demo.brand" />
+        <label>Quantity</label>
+        <input id="qty" type="number" value="1000" min="100" step="100" />
+        <div class="charge"><span class="sub">Charge</span><strong class="mono" id="charge">₹45.00</strong></div>
+        <button class="btn" id="place">Place sample order</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols" style="margin-top:16px">
+    <div class="box">
+      <h2>Recent orders <span class="sub" id="ordCount">4 shown</span></h2>
+      <div class="body" style="padding:0">
+        <table id="orders">
+          <thead><tr><th>ID</th><th>Service</th><th>Target</th><th>Qty</th><th>Cost</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">#90418</td><td>Instagram Followers</td><td>@demo.brand</td><td class="mono">2,000</td><td class="mono">₹90.00</td><td><span class="chip c-ok">Completed</span></td></tr>
+            <tr><td class="mono">#90417</td><td>YouTube Views</td><td>watch?v=…</td><td class="mono">5,000</td><td class="mono">₹600.00</td><td><span class="chip c-proc">Processing</span></td></tr>
+            <tr><td class="mono">#90416</td><td>Telegram Members</td><td>t.me/demo</td><td class="mono">1,000</td><td class="mono">₹150.00</td><td><span class="chip c-pend">Pending</span></td></tr>
+            <tr><td class="mono">#90415</td><td>Instagram Likes</td><td>@demo.brand</td><td class="mono">3,000</td><td class="mono">₹54.00</td><td><span class="chip c-ok">Completed</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>Providers &amp; balance</h2>
+      <div class="body">
+        <div class="prov"><span><span class="dot" style="background:var(--green)"></span>Provider A</span><span class="mono">₹18,400</span></div>
+        <div class="prov"><span><span class="dot" style="background:var(--green)"></span>Provider B</span><span class="mono">₹9,120</span></div>
+        <div class="prov"><span><span class="dot" style="background:var(--red)"></span>Provider C <span class="sub">low balance</span></span><span class="mono">₹0</span></div>
+        <div class="prov"><span><span class="dot" style="background:var(--amber)"></span>Provider D <span class="sub">syncing</span></span><span class="mono">₹2,760</span></div>
+        <p class="sub" style="margin:12px 0 0">Auto-routing sends each order to the cheapest in-stock provider, with a fallback if one fails.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="sub" style="text-align:center;margin-top:20px">SMM Panel operations preview · adapts to your exact services, providers and pricing after scope. Roman S.</p>
+</div>
+
+<script>
+  var nextId = 90419;
+  function fmt(n){ return n.toLocaleString('en-IN'); }
+  function money(n){ return '₹' + n.toFixed(2); }
+  var svc = document.getElementById('svc'), qty = document.getElementById('qty'),
+      chargeEl = document.getElementById('charge');
+  function calc(){
+    var rate = parseFloat(svc.selectedOptions[0].dataset.rate);
+    var q = parseInt(qty.value || '0', 10);
+    chargeEl.textContent = money(rate * q / 1000);
+    return { rate:rate, q:q };
+  }
+  svc.addEventListener('change', calc); qty.addEventListener('input', calc);
+
+  document.getElementById('place').addEventListener('click', function(){
+    var c = calc(); if(!c.q || c.q < 100) return;
+    var name = svc.selectedOptions[0].text.split(' — ')[0];
+    var target = (document.getElementById('target').value || '@demo.brand').replace(/^https?:\/\/[^\/]+\//,'').slice(0,18) || '@demo.brand';
+    var id = nextId++;
+    var tb = document.querySelector('#orders tbody');
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td class="mono">#'+id+'</td><td>'+name+'</td><td>'+target+'</td><td class="mono">'+fmt(c.q)+
+      '</td><td class="mono">'+money(c.rate*c.q/1000)+'</td><td><span class="chip c-proc">Processing</span></td>';
+    tb.insertBefore(tr, tb.firstChild);
+    document.getElementById('ordersToday').textContent = fmt(1284 + (nextId-90419));
+    setTimeout(function(){ tr.querySelector('.chip').outerHTML = '<span class="chip c-ok">Completed</span>'; }, 2200);
+  });
+</script>
+</body>
+</html>
