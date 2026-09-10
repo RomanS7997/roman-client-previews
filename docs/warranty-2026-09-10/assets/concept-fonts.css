@@ -26,10 +26,3 @@
   font-display: swap;
   src: url(./concept-font-4.ttf) format('truetype');
 }
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(./concept-font-5.ttf) format('truetype');
-}

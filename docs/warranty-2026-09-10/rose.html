@@ -1,56 +1,90 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f8f8f4">
-  <title>Гарантия на 12 месяцев</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f5f4f1">
+  <title>Гарантия на покупку</title>
   <meta name="description" content="Подтвердите покупку и оформите гарантию на заводской брак в Telegram.">
-  <link rel="stylesheet" href="landing.css"><link rel="stylesheet" href="content.css?v=2"><link rel="stylesheet" href="concepts.css?v=2">
-  <script src="landing.js?v=2" defer></script>
+  <link rel="preload" as="image" href="assets/care-editorial.webp" media="(max-width: 759px)">
+  <link rel="preload" as="image" href="assets/care-editorial-wide.webp" media="(min-width: 760px)">
+  <link rel="stylesheet" href="landing-v3.css?v=3">
+  <script src="landing.js?v=3" defer></script>
 </head>
-<body data-theme="editorial">
-  <div class="site photo-page">
-    <main id="top">
-      <section class="photo-hero" aria-labelledby="headline">
-        <picture class="photo-backdrop"><source media="(min-width:760px)" srcset="assets/care-editorial-wide.webp"><img src="assets/care-editorial.webp" alt="Распакованная покупка: телефон, коробка и вкладыш" width="1086" height="1448" fetchpriority="high"></picture>
-        <header class="photo-header"><a class="wordmark" href="#top">После покупки.</a><a href="#help">Помощь<img src="assets/arrow-right.svg" alt=""></a></header>
-        <div class="hero-copy"><p class="eyebrow">Забота о ваших вещах</p><h1 id="headline">Гарантия<br>на вашу<br>покупку.</h1><p class="hero-subtitle">12 месяцев на заводской брак.<br>Подтвердите покупку в Telegram.</p><a class="activate" href="https://t.me/giftsactivate_bot?start=landing" target="_blank" rel="noopener noreferrer"><span>Активировать гарантию</span><img src="assets/arrow-right.svg" width="24" height="24" alt=""></a><p class="destination">Откроется Telegram</p></div>
-      </section>
-      <nav class="photo-navigation" aria-label="Разделы страницы"><a href="#howto"><span>Как наклеить</span><img src="assets/play.svg" alt=""></a><a href="#activation-steps"><span>Как оформить</span><img src="assets/arrow-down.svg" alt=""></a><a href="#faq"><span>Вопросы</span><img src="assets/plus.svg" alt=""></a></nav>
-      <section class="reading" id="activation-steps">
-        <p class="section-label">01 / Оформление</p><h2>Три шага.<br>И покупка под гарантией.</h2>
-        <ol class="steps"><li><h3>Откройте Telegram</h3><p>Перейдите в бот и выберите маркетплейс: Wildberries, Ozon или Яндекс Маркет.</p></li><li><h3>Подтвердите покупку</h3><p>Бот подскажет, какие данные нужны: фото экрана с отзывом или номер заказа.</p></li><li><h3>Получите подтверждение</h3><p>После проверки срок гарантии появится в разделе «Мои покупки».</p></li></ol>
-      </section>
-      <section class="reading" id="howto">
-        <p class="section-label">02 / В помощь вам</p><h2>Наклеить аккуратно.<br>Без догадок.</h2>
-        <div class="lesson-list">
-          <a class="lesson" href="https://giftsactivate.ru/assets/video/howto_auto_install.mp4" data-lesson="Стекло с автоустановкой"><img class="lesson-thumb" src="https://giftsactivate.ru/assets/video/howto_auto_install.jpg" width="62" height="82" alt="Установка стекла с рамкой" loading="lazy"><span><strong>Стекло с автоустановкой</strong><small>Рамка-аппликатор · 1:20</small></span><img class="play-icon" src="assets/play.svg" alt="Смотреть видео"></a>
-          <a class="lesson" href="https://giftsactivate.ru/assets/video/howto_phone_film.mp4" data-lesson="Плёнка на телефон"><img class="lesson-thumb" src="https://giftsactivate.ru/assets/video/howto_phone_film.jpg" width="62" height="82" alt="Поклейка плёнки на телефон" loading="lazy"><span><strong>Плёнка на телефон</strong><small>Гидрогелевая плёнка · 0:20</small></span><img class="play-icon" src="assets/play.svg" alt="Смотреть видео"></a>
-          <a class="lesson" href="https://giftsactivate.ru/assets/video/howto_tablet_glass.mp4" data-lesson="Стекло на iPad"><img class="lesson-thumb" src="https://giftsactivate.ru/assets/video/howto_tablet_glass.jpg" width="62" height="82" alt="Поклейка стекла на iPad" loading="lazy"><span><strong>Стекло на iPad</strong><small>Для большого экрана · 0:57</small></span><img class="play-icon" src="assets/play.svg" alt="Смотреть видео"></a>
-        </div>
-      </section>
-      <section class="reading" id="help"><p class="section-label">Не оставайтесь с вопросом</p><h2>Мы рядом.<br>И после покупки.</h2><p class="support-note">Поможем разобраться с товаром, гарантией или оформлением. В меню бота выберите «Техподдержка» и опишите свой вопрос.</p><a class="support-link" href="https://t.me/giftsactivate_bot" target="_blank" rel="noopener noreferrer">Открыть чат с ботом<img src="assets/arrow-right.svg" alt=""></a></section>
-      <section class="reading faq" id="faq"><p class="section-label">Перед активацией</p><h2>Коротко о главном</h2>
+<body data-theme="coral">
+  <main id="top">
+    <section class="hero hero--coral" aria-labelledby="headline">
+      <picture class="hero__media">
+        <source media="(min-width: 760px)" srcset="assets/care-editorial-wide.webp">
+        <img src="assets/care-editorial.webp" width="1086" height="1448" alt="Распакованная покупка: телефон и коробка на светлом столе" fetchpriority="high">
+      </picture>
+      <header class="hero__header">
+        <a class="brand" href="#top">После покупки.</a>
+        <a href="#help">Помощь <img src="assets/arrow-right.svg" alt=""></a>
+      </header>
+      <div class="hero__copy">
+        <p class="hero__eyebrow">Расширенная гарантия</p>
+        <h1 id="headline">Гарантия<br>на покупку.</h1>
+        <div class="hero__term" aria-label="12 месяцев гарантии"><strong>12</strong><span>месяцев<br>гарантии</span></div>
+        <p class="hero__lead">Подтвердите покупку в Telegram. После проверки она появится в разделе «Мои покупки».</p>
+        <a class="cta" href="https://t.me/giftsactivate_bot?start=landing" target="_blank" rel="noopener noreferrer"><span>Активировать гарантию</span><img src="assets/arrow-right.svg" width="22" height="22" alt=""></a>
+        <p class="hero__destination">Откроется Telegram</p>
+      </div>
+    </section>
+
+    <nav class="jump-nav" aria-label="Разделы страницы">
+      <a href="#activation"><span>Как оформить</span><img src="assets/arrow-down.svg" alt=""></a>
+      <a href="#howto"><span>Инструкции</span><img src="assets/play.svg" alt=""></a>
+      <a href="#faq"><span>Условия</span><img src="assets/plus.svg" alt=""></a>
+    </nav>
+
+    <section class="section" id="activation"><div class="section__inner">
+      <p class="section__index">01 / Оформление</p>
+      <h2>Три понятных шага.<br>Всё внутри Telegram.</h2>
+      <ol class="process">
+        <li><h3>Выберите площадку</h3><p>Откройте бот и укажите, где купили товар: Wildberries, Ozon или Яндекс Маркет.</p></li>
+        <li><h3>Подтвердите покупку</h3><p>Следуйте подсказкам бота и отправьте данные, которые нужны именно для вашей площадки.</p></li>
+        <li><h3>Следите за сроком</h3><p>После проверки покупка и дата окончания гарантии появятся в разделе «Мои покупки».</p></li>
+      </ol>
+    </div></section>
+
+    <section class="section lessons" id="howto"><div class="section__inner">
+      <p class="section__index">02 / Видеоинструкции</p>
+      <h2>Поможем установить<br>с первого раза.</h2>
+      <div class="lesson-track">
+        <a class="lesson" href="https://giftsactivate.ru/assets/video/howto_auto_install.mp4" data-lesson="Стекло с автоустановкой"><span class="lesson__media"><img class="lesson-thumb" src="https://giftsactivate.ru/assets/video/howto_auto_install.jpg" width="640" height="800" alt="Установка стекла с рамкой" loading="lazy"><span class="lesson__play"><img src="assets/play.svg" alt=""></span></span><strong>Стекло с автоустановкой</strong><small>Рамка-аппликатор · 1:20</small></a>
+        <a class="lesson" href="https://giftsactivate.ru/assets/video/howto_phone_film.mp4" data-lesson="Плёнка на телефон"><span class="lesson__media"><img class="lesson-thumb" src="https://giftsactivate.ru/assets/video/howto_phone_film.jpg" width="640" height="800" alt="Поклейка плёнки на телефон" loading="lazy"><span class="lesson__play"><img src="assets/play.svg" alt=""></span></span><strong>Плёнка на телефон</strong><small>Гидрогелевая плёнка · 0:20</small></a>
+        <a class="lesson" href="https://giftsactivate.ru/assets/video/howto_tablet_glass.mp4" data-lesson="Стекло на iPad"><span class="lesson__media"><img class="lesson-thumb" src="https://giftsactivate.ru/assets/video/howto_tablet_glass.jpg" width="640" height="800" alt="Поклейка стекла на iPad" loading="lazy"><span class="lesson__play"><img src="assets/play.svg" alt=""></span></span><strong>Стекло на iPad</strong><small>Для большого экрана · 0:57</small></a>
+      </div>
+    </div></section>
+
+    <section class="section support" id="help"><div class="section__inner">
+      <p class="section__index">03 / Поддержка</p>
+      <h2>Мы рядом.<br>И после покупки.</h2>
+      <p>Если возник вопрос о товаре, гарантии или оформлении, откройте «Техподдержку» в меню бота и опишите ситуацию.</p>
+      <a class="support__link" href="https://t.me/giftsactivate_bot" target="_blank" rel="noopener noreferrer">Открыть чат с ботом <img src="assets/arrow-right.svg" alt=""></a>
+    </div></section>
+
+    <section class="section faq" id="faq"><div class="section__inner">
+      <p class="section__index">04 / Важное</p>
+      <h2>Перед<br>активацией.</h2>
+      <div class="faq-list">
         <details><summary>Что покрывает гарантия?<img src="assets/plus.svg" alt=""></summary><p>Заводской брак. Механические повреждения, в том числе трещины и сколы после удара или падения, не покрываются. Порядок обращения по вашей покупке уточните в <a href="#help">техподдержке</a>.</p></details>
         <details><summary>Какие покупки можно подтвердить?<img src="assets/plus.svg" alt=""></summary><p>Покупки наших товаров на Wildberries, Ozon и Яндекс Маркете, в упаковке которых есть вкладыш с приглашением в программу. Выберите свою площадку в боте.</p></details>
-        <details><summary>Что понадобится для оформления?<img src="assets/plus.svg" alt=""></summary><p>Telegram и информация о покупке. Бот покажет инструкцию для вашей площадки и запросит фото экрана с отзывом или номер заказа. Подтверждение придёт после проверки, не сразу после нажатия кнопки.</p></details>
+        <details><summary>Что понадобится для оформления?<img src="assets/plus.svg" alt=""></summary><p>Telegram и информация о покупке. Бот покажет инструкцию для вашей площадки и запросит фото экрана или номер заказа. Подтверждение придёт после проверки.</p></details>
         <details><summary>Где посмотреть срок гарантии?<img src="assets/plus.svg" alt=""></summary><p>В разделе «Мои покупки» в боте. Там сохраняются подтверждённые покупки и дата окончания гарантии для каждой из них.</p></details>
-        <details><summary>Как получить билет в розыгрыш?<img src="assets/plus.svg" alt=""></summary><p>После подтверждения покупки бот выдаст билет. Дополнительные покупки и их активация дают дополнительные билеты. Условия розыгрышей и результаты смотрите в боте.</p></details>
-      </section>
-      <div class="closing"><p>Всё для вашей покупки в одном месте.</p><a class="activate" href="https://t.me/giftsactivate_bot?start=landing" target="_blank" rel="noopener noreferrer"><span>Активировать гарантию</span><img src="assets/arrow-right.svg" width="24" height="24" alt=""></a></div>
-    </main>
-    <footer class="footer"><a href="#faq">О гарантии</a><span class="divider" aria-hidden="true"></span><button class="text-link" id="documents-open" aria-haspopup="dialog">Документы</button></footer>
-  </div>
-  <dialog id="documents" aria-labelledby="documents-title">
-    <div class="document-heading"><h2 id="documents-title">Документы</h2><button class="close" id="documents-close" aria-label="Закрыть документы" title="Закрыть"><img src="assets/close.svg" alt="" width="20" height="20"></button></div>
-    <nav class="document-list" aria-label="Документы программы">
-      <a href="https://giftsactivate.ru/terms.html" target="_blank" rel="noopener noreferrer">Правила розыгрыша</a>
-      <a href="https://giftsactivate.ru/privacy.html" target="_blank" rel="noopener noreferrer">Политика обработки персональных данных</a>
-      <a href="https://giftsactivate.ru/pd-consent.html" target="_blank" rel="noopener noreferrer">Согласие на обработку данных</a>
-      <a href="https://giftsactivate.ru/marketing-consent.html" target="_blank" rel="noopener noreferrer">Согласие на рассылку</a>
-    </nav>
-  </dialog>
-  <dialog class="media-dialog" id="lesson-dialog" aria-labelledby="lesson-title"><div class="document-heading"><h2 id="lesson-title">Видеоинструкция</h2><button class="close" data-close-dialog aria-label="Закрыть видео" title="Закрыть"><img src="assets/close.svg" width="20" height="20" alt=""></button></div><video controls playsinline preload="none" aria-label="Видеоинструкция по поклейке"></video><p class="video-error" hidden>Видео не загрузилось. Попробуйте открыть его отдельно.</p><p class="video-fallback"><a id="lesson-external" href="https://giftsactivate.ru/" target="_blank" rel="noopener noreferrer">Открыть видео отдельно</a></p></dialog>
-  <noscript><p><a href="https://giftsactivate.ru/privacy.html">Политика обработки персональных данных</a></p></noscript>
+        <details><summary>Как получить билет в розыгрыш?<img src="assets/plus.svg" alt=""></summary><p>После подтверждения покупки бот выдаст билет. Дополнительные подтверждённые покупки дают дополнительные билеты. Условия и результаты доступны в боте.</p></details>
+      </div>
+    </div></section>
+
+    <section class="closing"><p>Покупка сделана.<br>Позаботьтесь о ней дальше.</p><a class="cta" href="https://t.me/giftsactivate_bot?start=landing" target="_blank" rel="noopener noreferrer"><span>Активировать гарантию</span><img src="assets/arrow-right.svg" alt=""></a></section>
+  </main>
+
+  <footer class="footer"><a href="#faq">О гарантии</a><span class="footer__divider" aria-hidden="true"></span><button class="text-link" id="documents-open" aria-haspopup="dialog">Документы</button></footer>
+
+  <dialog id="documents" aria-labelledby="documents-title"><div class="dialog__heading"><h2 id="documents-title">Документы</h2><button class="dialog__close" id="documents-close" aria-label="Закрыть документы" title="Закрыть"><img src="assets/close.svg" alt=""></button></div><nav class="document-list" aria-label="Документы программы"><a href="https://giftsactivate.ru/terms.html" target="_blank" rel="noopener noreferrer">Правила розыгрыша</a><a href="https://giftsactivate.ru/privacy.html" target="_blank" rel="noopener noreferrer">Политика обработки персональных данных</a><a href="https://giftsactivate.ru/pd-consent.html" target="_blank" rel="noopener noreferrer">Согласие на обработку данных</a><a href="https://giftsactivate.ru/marketing-consent.html" target="_blank" rel="noopener noreferrer">Согласие на рассылку</a></nav></dialog>
+
+  <dialog class="media-dialog" id="lesson-dialog" aria-labelledby="lesson-title"><div class="dialog__heading"><h2 id="lesson-title">Видеоинструкция</h2><button class="dialog__close" data-close-dialog aria-label="Закрыть видео" title="Закрыть"><img src="assets/close.svg" alt=""></button></div><video controls playsinline preload="none" aria-label="Видеоинструкция по поклейке"></video><p class="video-error" hidden>Видео не загрузилось. Попробуйте открыть его отдельно.</p><p class="video-fallback"><a id="lesson-external" href="https://giftsactivate.ru/" target="_blank" rel="noopener noreferrer">Открыть видео отдельно</a></p></dialog>
 </body>
 </html>
