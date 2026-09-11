@@ -259,7 +259,11 @@ a {
   line-height: 1.58;
 }
 
-.section-heading--light .section-label,
+.section-heading--light .section-label {
+  color: var(--ink);
+  text-shadow: 0 1px 10px rgb(255 255 255 / 0.8);
+}
+
 .section-heading--light > p:last-child {
   color: #ffffff;
   text-shadow: 0 2px 14px rgb(32 15 126 / 0.55);
@@ -462,8 +466,8 @@ a {
 .closing__inner > p {
   max-width: 430px;
   margin: 0;
-  color: #ffffff;
-  text-shadow: 0 2px 16px rgb(28 13 99 / 0.32);
+  color: var(--ink);
+  text-shadow: 0 1px 12px rgb(255 255 255 / 0.78);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.42;
@@ -703,7 +707,7 @@ dialog::backdrop {
   }
 
   .section-heading--light .section-label {
-    color: #2b1685;
+    color: var(--ink);
     text-shadow: none;
   }
 

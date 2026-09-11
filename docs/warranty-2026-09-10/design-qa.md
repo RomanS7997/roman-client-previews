@@ -77,6 +77,14 @@ Fixes:
 - Kept the video copy white over the dark mobile crop and changed only its text color to dark ink at the desktop crop, where the artwork is pale.
 - Preserved the darker secondary hero and benefit text on white areas.
 
+### Iteration 5
+
+- P1: the small “Видеоинструкции” label and the closing statement still used white text where the artwork becomes nearly white in the mobile crop.
+
+Fixes:
+
+- Changed those two text elements to black without changing the background, layout, or surrounding video copy.
+
 ## Primary interaction checks
 
 - Telegram CTA destination resolves with HTTP 200.
