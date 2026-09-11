@@ -478,8 +478,8 @@ a {
   grid-auto-columns: minmax(242px, 78vw);
   grid-auto-flow: column;
   gap: 12px;
-  margin: 36px -20px 0;
-  padding: 0 20px 12px;
+  margin: 36px 0 0;
+  padding: 0 0 12px;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
@@ -938,12 +938,6 @@ dialog::backdrop {
     font-size: 31px;
   }
 
-  .lesson-track {
-    margin-right: -16px;
-    margin-left: -16px;
-    padding-right: 16px;
-    padding-left: 16px;
-  }
 }
 
 @media (max-height: 640px) and (max-width: 759px) {
