@@ -299,10 +299,6 @@ a {
   background: var(--surface);
 }
 
-.quick-nav--single {
-  grid-template-columns: 1fr;
-}
-
 .quick-nav a {
   display: flex;
   min-width: 0;

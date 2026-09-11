@@ -9,7 +9,7 @@
   <meta name="description" content="Подтвердите свою покупку в Telegram и получите расширенную гарантию на товар.">
   <link rel="preload" as="image" href="assets/hero-brand-mobile.webp" media="(max-width: 759px)">
   <link rel="preload" as="image" href="assets/hero-brand-wide.webp" media="(min-width: 760px)">
-  <link rel="stylesheet" href="brand.css?v=5">
+  <link rel="stylesheet" href="brand.css?v=6">
   <script src="landing.js?v=3" defer></script>
 </head>
 <body>
@@ -38,9 +38,28 @@
       </section>
     </div>
 
-    <nav class="quick-nav quick-nav--single" aria-label="Разделы страницы">
-      <a href="#faq"><span>Условия гарантии</span><img src="assets/plus.svg" width="17" height="17" alt=""></a>
-    </nav>
+    <section class="section lessons" id="howto">
+      <div class="section__inner">
+        <div class="section-heading section-heading--row">
+          <div><p class="section-label">Видеоинструкции</p><h2>Как установить аккуратно.<br>С первого раза.</h2></div>
+          <p class="section-intro">Короткие ролики покажут весь процесс на экране телефона.</p>
+        </div>
+        <div class="lesson-track">
+          <a class="lesson" href="https://giftsactivate.ru/assets/video/howto_auto_install.mp4" data-lesson="Стекло с автоустановкой">
+            <span class="lesson__media"><img class="lesson-thumb" src="https://giftsactivate.ru/assets/video/howto_auto_install.jpg" width="640" height="800" alt="Установка стекла с рамкой" loading="lazy"><span class="lesson__play"><img src="assets/play.svg" width="20" height="20" alt=""></span></span>
+            <span class="lesson__copy"><strong>Стекло с автоустановкой</strong><small>Рамка-аппликатор · 1:20</small></span>
+          </a>
+          <a class="lesson" href="https://giftsactivate.ru/assets/video/howto_phone_film.mp4" data-lesson="Плёнка на телефон">
+            <span class="lesson__media"><img class="lesson-thumb" src="https://giftsactivate.ru/assets/video/howto_phone_film.jpg" width="640" height="800" alt="Поклейка плёнки на телефон" loading="lazy"><span class="lesson__play"><img src="assets/play.svg" width="20" height="20" alt=""></span></span>
+            <span class="lesson__copy"><strong>Плёнка на телефон</strong><small>Гидрогелевая плёнка · 0:20</small></span>
+          </a>
+          <a class="lesson" href="https://giftsactivate.ru/assets/video/howto_tablet_glass.mp4" data-lesson="Стекло на iPad">
+            <span class="lesson__media"><img class="lesson-thumb" src="https://giftsactivate.ru/assets/video/howto_tablet_glass.jpg" width="640" height="800" alt="Поклейка стекла на iPad" loading="lazy"><span class="lesson__play"><img src="assets/play.svg" width="20" height="20" alt=""></span></span>
+            <span class="lesson__copy"><strong>Стекло на iPad</strong><small>Для большого экрана · 0:57</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <section class="section faq" id="faq">
       <div class="section__inner faq__layout">
@@ -77,6 +96,8 @@
     <div class="dialog__heading"><h2 id="documents-title">Документы</h2><button class="dialog__close" id="documents-close" aria-label="Закрыть документы" title="Закрыть"><img src="assets/close.svg" width="19" height="19" alt=""></button></div>
     <nav class="document-list" aria-label="Документы программы"><a href="https://giftsactivate.ru/terms.html" target="_blank" rel="noopener noreferrer">Правила розыгрыша</a><a href="https://giftsactivate.ru/privacy.html" target="_blank" rel="noopener noreferrer">Политика обработки персональных данных</a><a href="https://giftsactivate.ru/pd-consent.html" target="_blank" rel="noopener noreferrer">Согласие на обработку данных</a><a href="https://giftsactivate.ru/marketing-consent.html" target="_blank" rel="noopener noreferrer">Согласие на рассылку</a></nav>
   </dialog>
+
+  <dialog class="media-dialog" id="lesson-dialog" aria-labelledby="lesson-title"><div class="dialog__heading"><h2 id="lesson-title">Видеоинструкция</h2><button class="dialog__close" data-close-dialog aria-label="Закрыть видео" title="Закрыть"><img src="assets/close.svg" width="19" height="19" alt=""></button></div><video controls playsinline preload="none" aria-label="Видеоинструкция по поклейке"></video><p class="video-error" hidden>Видео не загрузилось. Попробуйте открыть его отдельно.</p><p class="video-fallback"><a id="lesson-external" href="https://giftsactivate.ru/" target="_blank" rel="noopener noreferrer">Открыть видео отдельно</a></p></dialog>
 
 </body>
 </html>
