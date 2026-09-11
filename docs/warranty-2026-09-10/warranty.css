@@ -466,8 +466,8 @@ a {
 .closing__inner > p {
   max-width: 430px;
   margin: 0;
-  color: var(--ink);
-  text-shadow: 0 1px 12px rgb(255 255 255 / 0.78);
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgb(28 13 99 / 0.42);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.42;

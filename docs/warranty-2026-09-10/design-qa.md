@@ -85,6 +85,10 @@ Fixes:
 
 - Changed those two text elements to black without changing the background, layout, or surrounding video copy.
 
+### Iteration 6
+
+- Restored the closing statement to white as requested; the “Видеоинструкции” label remains black on its pale background.
+
 ## Primary interaction checks
 
 - Telegram CTA destination resolves with HTTP 200.
