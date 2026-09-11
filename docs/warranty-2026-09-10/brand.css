@@ -773,6 +773,15 @@ html[data-cta="split"] .hero .primary-button__icon {
 }
 
 @media (max-width: 759px) {
+  .hero {
+    min-height: 0;
+    padding-bottom: 9px;
+  }
+
+  .hero__facts {
+    margin: 62px 9px 0;
+  }
+
   .hero .primary-button {
     position: relative;
     z-index: 2;
@@ -1004,7 +1013,7 @@ dialog::backdrop {
 
 @media (max-height: 640px) and (max-width: 759px) {
   .hero {
-    min-height: 650px;
+    min-height: 0;
   }
 
   .hero__copy {
@@ -1048,6 +1057,10 @@ dialog::backdrop {
 
   .hero__fact-copy small {
     font-size: 10px;
+  }
+
+  .hero__facts {
+    margin-top: 42px;
   }
 }
 
