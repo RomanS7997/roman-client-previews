@@ -1,0 +1,1197 @@
+@import url("./assets/concept-fonts.css");
+
+:root {
+  color-scheme: light;
+  --ink: #17131d;
+  --muted: #6f6878;
+  --paper: #ffffff;
+  --surface: #f7f6fb;
+  --line: #e8e3ef;
+  --violet: #5637f5;
+  --violet-deep: #2f198f;
+  --coral: #ff6d55;
+  --lilac: #bf67d7;
+  --page: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Onest, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid #ff8a6e;
+  outline-offset: 4px;
+}
+
+.hero-shell,
+.hero,
+.benefits,
+.section,
+.closing {
+  position: relative;
+}
+
+.hero,
+.benefits,
+.section,
+.closing {
+  isolation: isolate;
+}
+
+.hero {
+  min-height: 650px;
+  overflow: hidden;
+}
+
+.hero__inner,
+.benefits__inner,
+.section__inner,
+.closing__inner {
+  width: min(100%, var(--page));
+  margin: 0 auto;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  min-height: inherit;
+}
+
+.hero__copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  max-width: 390px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: max(56px, env(safe-area-inset-top)) 20px 56px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 45px;
+  font-weight: 720;
+  line-height: 1.01;
+  text-wrap: balance;
+}
+
+.hero__lead {
+  max-width: 360px;
+  margin: 22px 0 0;
+  color: #56505e;
+  font-size: 15px;
+  line-height: 1.58;
+}
+
+.cta {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 8px 18px 8px 9px;
+  border: 1px solid rgb(255 255 255 / 0.5);
+  border-radius: 13px;
+  background: linear-gradient(112deg, #ff7357 0%, #b54fd3 52%, #5435f5 100%);
+  box-shadow: 0 16px 30px rgb(76 48 219 / 0.2);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 720;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.cta:hover {
+  box-shadow: 0 19px 38px rgb(76 48 219 / 0.28);
+  transform: translateY(-2px);
+}
+
+.cta__icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 0.32);
+  border-radius: 9px;
+  background: rgb(255 255 255 / 0.15);
+}
+
+.cta__icon img {
+  width: 21px;
+  height: 21px;
+  filter: invert(1);
+}
+
+.hero__symbol {
+  display: none;
+}
+
+.benefits {
+  background: #ffffff;
+}
+
+.benefits__inner {
+  padding: 10px 20px 34px;
+}
+
+.benefit {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  min-height: 110px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.benefit:last-child {
+  border-bottom: 0;
+}
+
+.benefit__icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 17px;
+  background: #f0ecff;
+}
+
+.benefit__icon img {
+  width: 25px;
+  height: 25px;
+  filter: invert(25%) sepia(91%) saturate(3892%) hue-rotate(248deg) brightness(91%);
+}
+
+.benefit h2,
+.benefit p {
+  margin: 0;
+}
+
+.benefit h2 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.28;
+}
+
+.benefit p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.section {
+  padding: 70px 20px;
+}
+
+.section-label {
+  margin: 0 0 12px;
+  color: var(--violet-deep);
+  font-size: 11px;
+  font-weight: 760;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  max-width: 640px;
+  margin: 0;
+  font-size: 35px;
+  font-weight: 720;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.section-intro {
+  max-width: 430px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.lesson-track {
+  display: grid;
+  grid-auto-columns: minmax(246px, 78vw);
+  grid-auto-flow: column;
+  gap: 14px;
+  margin: 30px -20px 0;
+  padding: 0 20px 14px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: 20px;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+}
+
+.lesson-track::-webkit-scrollbar {
+  display: none;
+}
+
+.lesson {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgb(55 37 102 / 0.12);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 14px 38px rgb(45 27 148 / 0.08);
+  color: var(--ink);
+  scroll-snap-align: start;
+  text-decoration: none;
+}
+
+.lesson__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  background: #e9e6ef;
+}
+
+.lesson__media > img:first-child {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.lesson__play {
+  position: absolute;
+  right: 13px;
+  bottom: 13px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 9px 22px rgb(28 15 74 / 0.2);
+}
+
+.lesson__play img {
+  width: 20px;
+  height: 20px;
+}
+
+.lesson__copy {
+  display: block;
+  padding: 17px 17px 19px;
+}
+
+.lesson strong,
+.lesson small {
+  display: block;
+}
+
+.lesson strong {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.lesson small {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.faq {
+  background: #ffffff;
+}
+
+.faq-list {
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-list summary {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 17px 0;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 680;
+  line-height: 1.4;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary img {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  transition: transform 150ms ease;
+}
+
+.faq-list details[open] summary img {
+  transform: rotate(45deg);
+}
+
+.faq-list p {
+  max-width: 700px;
+  margin: 0 28px 24px 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.68;
+}
+
+.closing {
+  margin: 0 8px 8px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #f2effd url("assets/hero-flow-wide.webp") center 58% / cover no-repeat;
+}
+
+.closing__inner {
+  padding: 52px 22px 56px;
+}
+
+.closing p {
+  max-width: 430px;
+  margin: 0;
+  color: #514a5c;
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.cta--closing {
+  margin-top: 22px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 20px 16px max(24px, env(safe-area-inset-bottom));
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer a,
+.text-link {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+.footer__divider {
+  width: 1px;
+  height: 16px;
+  background: var(--line);
+}
+
+/* Concept 1: one continuous luminous stream from promise to proof. */
+html[data-concept="flow"] .hero {
+  min-height: 520px;
+  background: #f6f5fb url("assets/hero-flow-mobile.webp") center top / cover no-repeat;
+}
+
+html[data-concept="flow"] .hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.2), transparent 52%, rgb(255 255 255 / 0.12));
+  content: "";
+  pointer-events: none;
+}
+
+html[data-concept="flow"] .hero__copy {
+  padding-top: max(56px, env(safe-area-inset-top));
+  padding-bottom: 30px;
+}
+
+html[data-concept="flow"] .benefits::before {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% - 1px);
+  left: 0;
+  height: 54px;
+  background: #ffffff;
+  clip-path: ellipse(72% 55% at 49% 100%);
+  content: "";
+}
+
+html[data-concept="flow"] .benefits__inner {
+  padding-top: 4px;
+}
+
+html[data-concept="flow"] .lessons {
+  overflow: hidden;
+  background: #eeeaff url("assets/hero-flow-wide.webp") center 72% / cover no-repeat;
+}
+
+html[data-concept="flow"] .lessons::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 42px;
+  background: #ffffff;
+  clip-path: ellipse(72% 65% at 50% 0%);
+  content: "";
+}
+
+/* Concept 2: editorial typography and deliberate diagonal rhythm. */
+html[data-concept="editorial"] .hero {
+  min-height: 580px;
+  background: #f9f8fc;
+}
+
+html[data-concept="editorial"] .hero::before {
+  position: absolute;
+  inset: 0 -22% 0 36%;
+  z-index: 0;
+  background: #f0e8ff url("assets/hero-flow-mobile.webp") 57% center / cover no-repeat;
+  clip-path: polygon(39% 0, 100% 0, 100% 100%, 0 100%);
+  content: "";
+}
+
+html[data-concept="editorial"] .hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(90deg, #f9f8fc 0%, rgb(249 248 252 / 0.98) 37%, rgb(249 248 252 / 0.06) 67%);
+  content: "";
+  pointer-events: none;
+}
+
+html[data-concept="editorial"] .hero__copy {
+  max-width: 355px;
+  padding-top: max(58px, env(safe-area-inset-top));
+  padding-bottom: 30px;
+}
+
+html[data-concept="editorial"] .hero__copy::before {
+  width: 54px;
+  height: 1px;
+  margin-bottom: 23px;
+  background: var(--violet-deep);
+  content: "";
+}
+
+html[data-concept="editorial"] .hero h1 {
+  font-size: 47px;
+  font-weight: 760;
+}
+
+html[data-concept="editorial"] .cta {
+  border-color: transparent;
+  border-radius: 6px;
+  background: var(--violet-deep);
+  box-shadow: 0 16px 34px rgb(47 25 143 / 0.22);
+}
+
+html[data-concept="editorial"] .cta__icon {
+  border-color: transparent;
+  background: transparent;
+}
+
+html[data-concept="editorial"] .benefits {
+  transform: skewY(-2.5deg);
+  transform-origin: 100% 0;
+}
+
+html[data-concept="editorial"] .benefits__inner {
+  padding-top: 50px;
+  padding-bottom: 66px;
+  transform: skewY(2.5deg);
+}
+
+html[data-concept="editorial"] .benefit {
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  min-height: 126px;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+html[data-concept="editorial"] .benefit__icon {
+  display: none;
+}
+
+html[data-concept="editorial"] .benefit h2 {
+  font-size: 22px;
+  line-height: 1.02;
+}
+
+html[data-concept="editorial"] .benefit h2::first-line {
+  color: var(--violet);
+}
+
+html[data-concept="editorial"] .benefit p {
+  position: relative;
+  margin: 0;
+  padding-left: 28px;
+  font-size: 13px;
+}
+
+html[data-concept="editorial"] .benefit p::before {
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 18px;
+  height: 1px;
+  background: var(--violet);
+  content: "";
+}
+
+html[data-concept="editorial"] .lessons {
+  margin-top: -2px;
+  padding-top: 98px;
+  overflow: hidden;
+  background: #e85e73 url("assets/hero-flow-wide.webp") center / cover no-repeat;
+  background-blend-mode: soft-light;
+  color: #ffffff;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+}
+
+html[data-concept="editorial"] .lessons .section-label,
+html[data-concept="editorial"] .lessons .section-intro {
+  color: rgb(255 255 255 / 0.82);
+}
+
+html[data-concept="editorial"] .lesson {
+  border-color: rgb(255 255 255 / 0.28);
+  border-radius: 18px 18px 4px 4px;
+  box-shadow: 0 18px 38px rgb(63 18 99 / 0.19);
+}
+
+html[data-concept="editorial"] .faq .section-label {
+  color: var(--coral);
+}
+
+html[data-concept="editorial"] .closing {
+  border-radius: 5px;
+}
+
+html[data-concept="editorial"] .closing .cta {
+  background: var(--violet-deep);
+}
+
+/* Concept 3: confident campaign blocks, oversized protection symbol. */
+html[data-concept="bold"] body {
+  background: #2e168e;
+}
+
+html[data-concept="bold"] .hero {
+  min-height: 620px;
+  background-color: #32169c;
+  background-image: linear-gradient(132deg, rgb(28 12 103 / 0.92) 3%, rgb(66 26 188 / 0.72) 54%, rgb(91 40 235 / 0.42) 100%), url("assets/hero-flow-mobile.webp");
+  background-position: center, 52% center;
+  background-size: cover;
+  color: #ffffff;
+}
+
+html[data-concept="bold"] .hero::after {
+  position: absolute;
+  right: -8%;
+  bottom: -1px;
+  left: -8%;
+  z-index: 1;
+  height: 72px;
+  background: #fff8f5;
+  clip-path: polygon(0 78%, 100% 0, 100% 100%, 0 100%);
+  content: "";
+}
+
+html[data-concept="bold"] .hero__copy {
+  max-width: 380px;
+  padding-top: max(62px, env(safe-area-inset-top));
+}
+
+html[data-concept="bold"] .hero h1 {
+  max-width: 360px;
+  font-size: 46px;
+}
+
+html[data-concept="bold"] .hero__lead {
+  max-width: 340px;
+  color: rgb(255 255 255 / 0.76);
+}
+
+html[data-concept="bold"] .hero .cta {
+  border-color: rgb(255 255 255 / 0.2);
+  border-radius: 12px;
+  background: #ff6d55;
+  box-shadow: 0 16px 36px rgb(21 8 80 / 0.32);
+}
+
+html[data-concept="bold"] .hero__symbol {
+  position: absolute;
+  right: -14px;
+  bottom: 50px;
+  z-index: 1;
+  display: grid;
+  width: 154px;
+  height: 154px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 0.28);
+  border-radius: 42px;
+  background: rgb(255 255 255 / 0.08);
+  box-shadow: 0 0 55px rgb(255 111 87 / 0.34), inset 0 0 34px rgb(255 255 255 / 0.08);
+  transform: rotate(8deg);
+  backdrop-filter: blur(8px);
+}
+
+html[data-concept="bold"] .hero__symbol img {
+  width: 88px;
+  height: 88px;
+  filter: invert(1);
+  opacity: 0.9;
+  transform: rotate(-8deg);
+}
+
+html[data-concept="bold"] .benefits {
+  background: #fff8f5;
+}
+
+html[data-concept="bold"] .benefits__inner {
+  padding-top: 28px;
+  padding-bottom: 70px;
+}
+
+html[data-concept="bold"] .benefit {
+  grid-template-columns: 68px 4px minmax(0, 1fr);
+  min-height: 126px;
+  gap: 17px;
+  border-bottom: 0;
+}
+
+html[data-concept="bold"] .benefit::before {
+  width: 4px;
+  height: 68px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--coral), #b53ee0);
+  content: "";
+}
+
+html[data-concept="bold"] .benefit__icon {
+  width: 68px;
+  height: 68px;
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: 18px;
+  background: #ffe1dc;
+}
+
+html[data-concept="bold"] .benefit__icon + div {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+html[data-concept="bold"] .benefit:nth-child(2) .benefit__icon,
+html[data-concept="bold"] .benefit:nth-child(3) .benefit__icon {
+  background: #efdcff;
+}
+
+html[data-concept="bold"] .benefit h2 {
+  font-size: 19px;
+}
+
+html[data-concept="bold"] .benefit p {
+  font-size: 14px;
+}
+
+html[data-concept="bold"] .lessons {
+  padding-top: 104px;
+  padding-bottom: 82px;
+  overflow: hidden;
+  background-color: #4b24d5;
+  background-image: linear-gradient(145deg, rgb(255 101 78 / 0.95) 0%, rgb(196 60 188 / 0.75) 38%, rgb(73 37 218 / 0.93) 78%), url("assets/hero-flow-wide.webp");
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+}
+
+html[data-concept="bold"] .lessons .section-label,
+html[data-concept="bold"] .lessons .section-intro {
+  color: rgb(255 255 255 / 0.8);
+}
+
+html[data-concept="bold"] .lesson {
+  border: 1px solid rgb(255 255 255 / 0.24);
+  background: rgb(255 255 255 / 0.94);
+  box-shadow: 0 20px 46px rgb(31 8 107 / 0.28);
+}
+
+html[data-concept="bold"] .faq {
+  background: #ffffff;
+}
+
+html[data-concept="bold"] .closing {
+  background-color: #2d168c;
+  background-image: linear-gradient(120deg, rgb(40 17 135 / 0.9), rgb(94 43 231 / 0.58)), url("assets/hero-flow-wide.webp");
+  color: #ffffff;
+}
+
+html[data-concept="bold"] .closing p {
+  color: rgb(255 255 255 / 0.78);
+}
+
+html[data-concept="bold"] .footer {
+  color: rgb(255 255 255 / 0.76);
+}
+
+html[data-concept="bold"] .footer__divider {
+  background: rgb(255 255 255 / 0.24);
+}
+
+dialog {
+  width: min(440px, calc(100% - 28px));
+  max-height: calc(100dvh - 32px);
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+dialog::backdrop {
+  background: rgb(25 14 57 / 0.66);
+  backdrop-filter: blur(5px);
+}
+
+.dialog__heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 17px;
+}
+
+.dialog__heading h2 {
+  flex: 1;
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.dialog__close {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #f7f7fb;
+}
+
+.dialog__close img {
+  width: 19px;
+  height: 19px;
+}
+
+.document-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.document-list a {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.document-list a:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.media-dialog {
+  width: min(470px, calc(100% - 24px));
+  padding: 16px;
+  overflow: auto;
+}
+
+.media-dialog video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: min(65dvh, 580px);
+  margin: auto;
+  border-radius: 13px;
+  background: #111111;
+  object-fit: contain;
+}
+
+.media-dialog .video-fallback,
+.media-dialog .video-error {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 370px) {
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .hero__copy {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .hero__lead {
+    font-size: 14px;
+  }
+
+  .cta {
+    padding-right: 14px;
+    font-size: 13px;
+  }
+
+  .benefits__inner,
+  .section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .lesson-track {
+    margin-right: -16px;
+    margin-left: -16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    scroll-padding-inline: 16px;
+  }
+
+  html[data-concept="editorial"] .hero h1 {
+    font-size: 41px;
+  }
+
+  html[data-concept="editorial"] .benefit h2 {
+    font-size: 21px;
+  }
+
+  html[data-concept="bold"] .hero h1 {
+    font-size: 40px;
+  }
+
+  html[data-concept="bold"] .hero__symbol {
+    right: -26px;
+    width: 152px;
+    height: 152px;
+  }
+}
+
+@media (min-width: 760px) {
+  .hero-shell {
+    padding: 14px 14px 0;
+  }
+
+  .hero {
+    min-height: 690px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .hero__copy {
+    max-width: 620px;
+    padding: 112px 38px 86px;
+  }
+
+  .hero h1 {
+    max-width: 650px;
+    font-size: 68px;
+  }
+
+  .hero__lead {
+    max-width: 500px;
+    margin-top: 27px;
+    font-size: 17px;
+  }
+
+  .cta {
+    min-height: 58px;
+    margin-top: 30px;
+    padding-right: 22px;
+    font-size: 15px;
+  }
+
+  .benefits__inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    padding: 44px 38px 72px;
+  }
+
+  .benefit {
+    grid-template-columns: 60px minmax(0, 1fr);
+    align-content: center;
+    min-height: 142px;
+    padding: 20px 0;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .benefit:last-child {
+    border-right: 0;
+  }
+
+  .benefit h2 {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 106px 38px;
+  }
+
+  .section-heading--row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 56px;
+  }
+
+  .section-heading h2 {
+    font-size: 53px;
+  }
+
+  .section-intro {
+    margin: 0 0 3px;
+    font-size: 15px;
+  }
+
+  .lesson-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: initial;
+    gap: 17px;
+    margin: 48px 0 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .lesson {
+    border-radius: 22px;
+  }
+
+  .lesson__copy {
+    padding: 19px 20px 22px;
+  }
+
+  .faq__layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+    gap: 90px;
+  }
+
+  .faq-list {
+    margin-top: 0;
+  }
+
+  .closing {
+    margin: 0 14px 14px;
+    border-radius: 30px;
+  }
+
+  .closing__inner {
+    padding: 82px 38px 88px;
+  }
+
+  html[data-concept="flow"] .hero {
+    min-height: 730px;
+    background-image: url("assets/hero-flow-wide.webp");
+  }
+
+  html[data-concept="flow"] .hero__copy {
+    padding-top: 122px;
+  }
+
+  html[data-concept="editorial"] .hero {
+    min-height: 760px;
+  }
+
+  html[data-concept="editorial"] .hero::before {
+    inset: 0 -4% 0 45%;
+    background-image: url("assets/hero-flow-wide.webp");
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  html[data-concept="editorial"] .hero::after {
+    background: linear-gradient(90deg, #f9f8fc 0%, rgb(249 248 252 / 0.96) 42%, transparent 69%);
+  }
+
+  html[data-concept="editorial"] .hero__copy {
+    max-width: 650px;
+    padding-top: 98px;
+  }
+
+  html[data-concept="editorial"] .hero h1 {
+    max-width: 660px;
+    font-size: 70px;
+  }
+
+  html[data-concept="editorial"] .benefits__inner {
+    display: block;
+    max-width: 1040px;
+    padding-top: 72px;
+    padding-bottom: 96px;
+  }
+
+  html[data-concept="editorial"] .benefit {
+    grid-template-columns: minmax(0, 0.56fr) minmax(0, 0.44fr);
+    min-height: 150px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  html[data-concept="editorial"] .benefit h2 {
+    max-width: 460px;
+    font-size: 38px;
+  }
+
+  html[data-concept="editorial"] .benefit p {
+    max-width: 310px;
+    font-size: 15px;
+  }
+
+  html[data-concept="editorial"] .lessons {
+    padding-top: 142px;
+  }
+
+  html[data-concept="editorial"] .lesson {
+    border-radius: 24px 24px 6px 6px;
+  }
+
+  html[data-concept="bold"] .hero {
+    min-height: 760px;
+    background-image: linear-gradient(112deg, rgb(28 12 103 / 0.94) 2%, rgb(65 27 183 / 0.74) 48%, rgb(91 40 235 / 0.32) 100%), url("assets/hero-flow-wide.webp");
+  }
+
+  html[data-concept="bold"] .hero__copy {
+    max-width: 650px;
+    padding-top: 116px;
+  }
+
+  html[data-concept="bold"] .hero h1 {
+    max-width: 650px;
+    font-size: 68px;
+  }
+
+  html[data-concept="bold"] .hero__symbol {
+    right: 7%;
+    bottom: 94px;
+    width: 270px;
+    height: 270px;
+    border-radius: 62px;
+  }
+
+  html[data-concept="bold"] .hero__symbol img {
+    width: 155px;
+    height: 155px;
+  }
+
+  html[data-concept="bold"] .benefits__inner {
+    gap: 32px;
+    padding-top: 76px;
+    padding-bottom: 112px;
+  }
+
+  html[data-concept="bold"] .benefit {
+    grid-template-columns: 68px minmax(0, 1fr);
+    align-content: start;
+    gap: 17px;
+    min-height: 200px;
+    padding: 22px 0;
+    border-right: 0;
+  }
+
+  html[data-concept="bold"] .benefit::before {
+    display: none;
+  }
+
+  html[data-concept="bold"] .benefit__icon {
+    grid-column: 1;
+  }
+
+  html[data-concept="bold"] .benefit__icon + div {
+    grid-column: 2;
+  }
+
+  html[data-concept="bold"] .benefit h2 {
+    font-size: 23px;
+  }
+
+  html[data-concept="bold"] .lessons {
+    padding-top: 145px;
+    padding-bottom: 116px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .cta,
+  .faq-list summary img {
+    transition: none;
+  }
+}
