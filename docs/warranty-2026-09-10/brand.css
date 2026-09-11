@@ -683,7 +683,7 @@ a {
 
 .closing__inner > p:not(.closing__label) {
   max-width: 470px;
-  margin: 19px 0 26px;
+  margin: 0 0 26px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.6;
@@ -809,7 +809,7 @@ a {
   }
 
   .closing__inner > p:not(.closing__label) {
-    margin: 14px 0 22px;
+    margin: 0 0 22px;
   }
 }
 
@@ -1277,7 +1277,7 @@ dialog::backdrop {
   }
 
   .closing__inner > p:not(.closing__label) {
-    margin-top: 22px;
+    margin-top: 0;
     font-size: 15px;
   }
 }
