@@ -96,7 +96,7 @@ a {
 
 .hero__media img {
   object-fit: cover;
-  object-position: center top;
+  object-position: right top;
 }
 
 .hero__header {
