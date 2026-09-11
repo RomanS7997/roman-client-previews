@@ -98,6 +98,15 @@ Fixes:
 - Removed the filter and assigned the three SVG icons the fixed brand violet `#4B27F4`.
 - Added versioned icon URLs so mobile browsers cannot reuse the previously filtered SVG cache.
 
+### Iteration 8
+
+- P2: the mobile background image ended at `80%` of the showcase height, exposing the solid violet fallback midway through the video cards.
+
+Fixes:
+
+- Extended the original generated background image to the full showcase height so the artwork continues behind the complete video section without a horizontal color break.
+- Changed the video heading and description to dark ink because the extended artwork places their mobile crop over a pale area.
+
 ## Primary interaction checks
 
 - Telegram CTA destination resolves with HTTP 200.

@@ -85,7 +85,7 @@ a {
   top: 0;
   left: 0;
   z-index: 0;
-  height: 80%;
+  height: 100%;
   object-fit: fill;
 }
 
@@ -264,12 +264,13 @@ a {
 }
 
 .section-heading--light > p:last-child {
-  color: #ffffff;
-  text-shadow: 0 2px 14px rgb(32 15 126 / 0.55);
+  color: var(--ink);
+  text-shadow: 0 1px 2px rgb(255 255 255 / 0.94), 0 2px 14px rgb(255 255 255 / 0.9);
 }
 
 .section-heading--light h2 {
-  text-shadow: 0 3px 20px rgb(32 15 126 / 0.58);
+  color: var(--ink);
+  text-shadow: 0 2px 16px rgb(255 255 255 / 0.82);
 }
 
 .lesson-track {
