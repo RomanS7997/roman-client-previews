@@ -96,7 +96,7 @@ a {
 
 .hero__media img {
   object-fit: cover;
-  object-position: right top;
+  object-position: center top;
 }
 
 .hero__header {
@@ -207,7 +207,8 @@ a {
   justify-content: space-between;
   gap: 15px;
   padding: 7px 7px 7px 20px;
-  border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / 0.72);
+  border-radius: 18px 999px 999px 18px;
   background: var(--gradient);
   box-shadow: 0 13px 28px rgb(75 53 244 / 0.2);
   color: #ffffff;
@@ -718,8 +719,24 @@ a {
 }
 
 @media (max-width: 759px) {
+  .hero__copy {
+    position: static;
+  }
+
   .hero .primary-button {
-    width: min(100%, 318px);
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    z-index: 2;
+    width: min(calc(100% - 40px), 320px);
+    min-height: 58px;
+    border-radius: 18px 999px 999px 18px;
+    box-shadow: 0 0 0 5px rgb(255 255 255 / 0.68), 0 18px 38px rgb(75 53 244 / 0.25);
+    transform: translateX(-50%);
+  }
+
+  .hero .primary-button:hover {
+    transform: translateX(-50%) translateY(-2px);
   }
 
   .section {
@@ -962,7 +979,7 @@ dialog::backdrop {
     font-size: 12.5px;
   }
 
-  .primary-button {
+  .hero .primary-button {
     min-height: 52px;
     font-size: 13.5px;
   }
