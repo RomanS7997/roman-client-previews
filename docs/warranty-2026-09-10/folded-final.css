@@ -101,7 +101,7 @@ a {
   inset: 0 0 auto;
   height: 165%;
   object-fit: cover;
-  object-position: center top;
+  object-position: calc(100% + 28px) top;
 }
 
 .hero {
@@ -109,14 +109,7 @@ a {
   flex-direction: column;
   align-items: flex-start;
   padding-top: max(29px, calc(env(safe-area-inset-top) + 20px));
-  padding-bottom: 57px;
-}
-
-.hero h1,
-.hero__lead,
-.hero .primary-button {
-  position: relative;
-  z-index: 2;
+  padding-bottom: 18px;
 }
 
 .hero h1 {
@@ -128,7 +121,7 @@ a {
 }
 
 .hero__lead {
-  max-width: 345px;
+  max-width: 255px;
   margin: 15px 0 0;
   color: #49445a;
   font-size: 14px;
@@ -181,19 +174,6 @@ a {
 
 .primary-button:active {
   transform: translateY(0);
-}
-
-.hero__shield {
-  position: absolute;
-  z-index: 1;
-  right: 10px;
-  bottom: -2px;
-  display: block;
-  width: clamp(112px, 35vw, 146px);
-  height: auto;
-  pointer-events: none;
-  filter: drop-shadow(0 16px 20px rgb(54 33 113 / 0.24)) drop-shadow(0 0 7px rgb(255 255 255 / 0.72));
-  user-select: none;
 }
 
 .benefits {
@@ -711,7 +691,6 @@ dialog::backdrop {
 
   .hero {
     padding-top: max(25px, calc(env(safe-area-inset-top) + 18px));
-    padding-bottom: 53px;
   }
 
   .hero h1 {
@@ -719,18 +698,18 @@ dialog::backdrop {
   }
 
   .hero__lead {
+    max-width: 220px;
     font-size: 13px;
+  }
+
+  .flow-background--light {
+    object-position: calc(100% + 38px) top;
   }
 
   .primary-button {
     gap: 8px;
     padding-right: 13px;
     font-size: 13px;
-  }
-
-  .hero__shield {
-    right: 8px;
-    width: 108px;
   }
 
   .benefit {

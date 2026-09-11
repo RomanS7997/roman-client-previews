@@ -15,7 +15,7 @@
 ## Full-view comparison
 
 - The implementation preserves the selected sequence: light hero, three stacked benefits, dark video chapter, light FAQ, and luminous closing CTA.
-- The abstract Folded Light artwork and the isolated glass shield are used as real WebP assets; no CSS gradient or placeholder illustration replaces them.
+- The abstract Folded Light artwork and the integrated luminous-shield artwork are used as real WebP assets; no CSS gradient or placeholder illustration replaces them.
 - The page is implemented as a genuine scrolling mobile layout instead of compressing the full concept into one viewport.
 - Curved full-width section boundaries carry the source's flowing transitions without introducing nested cards or abrupt blue cutoffs.
 - At `390 px`, the video rail shows one `286 px` card and a controlled glimpse of the next slide.
@@ -33,7 +33,7 @@
 - Fonts and typography: local Onest 400/500/600/700 files load. Display text uses realistic mobile sizing, zero letter spacing, and natural Cyrillic wrapping at `320`, `390`, and `430 px`.
 - Spacing and layout rhythm: the hero, CTA, video copy, FAQ, closing copy, and footer share the `20 px` mobile guide. The `320 px` breakpoint changes it to `16 px`. No horizontal page overflow was found.
 - Colors and visual tokens: ink is used only on stable light surfaces and white only on controlled saturated surfaces. The deep plum action color, softened violet field, coral accents, lavender, and warm white create clear separation between background art and controls.
-- Image quality and asset fidelity: the supplied `folded-flow-bg.webp`, generated transparent `hero-glass-shield-cutout.webp`, and all three real video posters are rendered directly. Existing SVG icon assets are used; no emoji or hand-drawn replacements were introduced.
+- Image quality and asset fidelity: the supplied `folded-flow-bg.webp`, `shield-flow-bg.webp`, and all three real video posters are rendered directly. Existing SVG icon assets are used; no emoji or hand-drawn replacements were introduced.
 - Copy and content: approved warranty wording, all three video instructions, five FAQ entries, Telegram destination, and four document links are retained. No `12 месяцев` claim appears.
 
 ## Comparison history
@@ -80,6 +80,18 @@ Fixes:
 - Extracted the existing glass shield into a transparent `760 x 811` WebP asset and positioned it behind the right edge of the hero CTA without covering copy or increasing horizontal width.
 - Softened the saturated dark-section palette toward plum while preserving the original raster artwork and white-text contrast.
 - Rechecked at `320 x 780`, `390 x 844`, and `430 x 932`: no clipped text or controls, `scrollWidth` equals the viewport width, and browser warnings/errors remain empty.
+
+### Iteration 5
+
+- P2: the transparent 3D shield was a separate foreground object, while the selected reference uses a large luminous shield drawn directly into the flowing background.
+
+Fixes:
+
+- Replaced the foreground cutout with the existing `shield-flow-bg.webp` artwork used by the selected reference.
+- Anchored the raster to the upper-right so the complete glowing shield remains visible beside the hero copy while the left side stays quiet enough for reading.
+- Restored the compact hero height and retained the approved solid CTA and unified dark benefit icons.
+- At `320 px`, the lead is constrained to `220 px`; at `390` and `430 px`, it is `255 px`, preventing the copy from crossing the shield's brightest checkmark.
+- Rechecked `320 x 780`, `390 x 844`, and `430 x 932`: the hero background loaded, browser logs remained empty, and `scrollWidth` matched every viewport.
 
 ## Primary interaction checks
 
