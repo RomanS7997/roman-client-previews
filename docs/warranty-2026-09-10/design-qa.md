@@ -1,123 +1,72 @@
-# Design QA: warranty variants 2 and 3
+# Design QA: final mobile warranty landing
 
 ## Evidence
 
-- Source visual truth, Folded Light: `C:\Users\romas\.codex\generated_images\01a09020-d106-7453-8517-519820f346ff\exec-4b782769-e7e4-415f-b185-40d9ba5e8b7e.png`
-- Source visual truth, Prism Shield: `C:\Users\romas\.codex\generated_images\01a09020-d106-7453-8517-519820f346ff\exec-18472e6a-dcd7-4be6-933f-7c0d46c886cd.png`
-- Source dimensions: `853 x 1844 px`; normalized comparison target: `390 x 844 CSS px`.
-- Implementations: `folded.html` and `shield.html`.
-- Implementation screenshot path: Codex in-app browser capture for tab 18 at each route. The browser capture API displayed the screenshots during QA but did not expose a filesystem path.
-- Reproducible local URLs: `http://127.0.0.1:4173/warranty-2026-09-10/folded.html` and `http://127.0.0.1:4173/warranty-2026-09-10/shield.html`.
-- Browser state: public, unauthenticated landing; first viewport and full-page states.
-- Viewport and density: `390 x 844`, `devicePixelRatio: 1`, `innerWidth: 390`, `clientWidth: 390`.
-- Additional responsive checks: `320 x 740`, `430 x 932`, and `1280 x 900`.
+- Source visual truth: `C:\Users\romas\AppData\Local\Temp\codex-clipboard-84e419a8-d05b-4f8b-b72b-f45e664da003.png`.
+- Source dimensions: `581 x 1280 px`.
+- Implementation: `docs/warranty-2026-09-10/folded.html` with `folded-final.css` and `landing.js`.
+- Implementation screenshot evidence: Codex in-app browser captures displayed during QA. The capture API did not expose a filesystem path.
+- Reproducible local URL: `http://127.0.0.1:4173/warranty-2026-09-10/folded.html`.
+- Primary comparison viewport: `390 x 844 CSS px`, `devicePixelRatio: 1`.
+- Rendered document size at the primary viewport: `390 x 1840 CSS px`.
+- Additional responsive captures: `320 x 700` and `430 x 932`.
+- State: public unauthenticated landing, collapsed FAQ, first carousel slide.
 
 ## Full-view comparison
 
-- Both pages preserve the selected three-part composition: compact hero, three stacked benefits, and a gradient-led transition into video instructions.
-- Folded Light uses the selected translucent folded sheet and ribbon movement without adding unrelated objects.
-- Prism Shield keeps the selected refracted shield in the upper-right and carries its light lines through the transition.
-- At `390 x 844`, the next section is clearly visible and the first video card begins at the bottom edge, matching the density and progression of the selected sources.
-- Mobile horizontal overflow is absent: `scrollWidth` equals `clientWidth` at the target viewport.
+- The implementation preserves the selected sequence: light hero, three stacked benefits, dark video chapter, light FAQ, and luminous closing CTA.
+- The abstract Folded Light artwork is used as a real WebP asset in all illustrated regions; no CSS gradient or placeholder illustration replaces it.
+- The page is implemented as a genuine scrolling mobile layout instead of compressing the full concept into one viewport.
+- Curved full-width section boundaries carry the source's flowing transitions without introducing nested cards or abrupt blue cutoffs.
+- At `390 px`, the video rail shows one `286 px` card and a controlled glimpse of the next slide.
 
 ## Focused-region comparison
 
-- Hero and CTA: exact three-line title, exact body copy, compact shield CTA, and a shared `20 px` left coordinate.
-- Benefit rows: title and description remain on the global left guide; icons are consistently placed on the far right; separators do not introduce a wrapper card.
-- Video rail: the first card is readable and the next card peeks into view to communicate horizontal swipe.
-- Video dialog: first MP4 opened, reached `readyState: 4`, and played with controls; close restored the page.
-- FAQ: native details state expanded and exposed the approved marketplace copy.
-- Documents: modal opened and showed all four production document links.
+- Hero: title, lead, and CTA begin at `20 px`; title renders at `41.73 px`, lead at `14 px`, and CTA at `241.45 x 52 px`.
+- Benefits: all three items use the same icon column and text rhythm. A stable light surface prevents the third item from crossing the dark artwork.
+- Video: label and all supporting copy are white on a controlled deep-violet field; real supplied video posters are used.
+- FAQ: five full-width accordion rows use violet plus controls and preserve the approved copy.
+- Closing: white statement and CTA remain on a darkened artwork crop; footer links are readable and aligned to the same `20 px` gutter.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: local Onest weights 400/500/600/700 load correctly; wrapping, line height, optical weight, and zero letter spacing match the selected mobile direction.
-- Spacing and layout rhythm: hero, CTA, benefits, lesson heading, cards, FAQ, closing copy, and footer share the same outer grid. Measured hero, CTA, benefit, lesson, and FAQ left coordinates are all `20 px` on mobile.
-- Colors and visual tokens: the generated peach, coral, lilac, and electric-violet assets are used directly; no generic crypto/dev palette or unrelated decorative elements were introduced.
-- Image quality and asset fidelity: both abstract backgrounds are real generated WebP assets. Video posters come from the three supplied source videos; controls use Lucide-compatible SVG assets.
-- Copy and content: approved warranty wording, three video instructions, five FAQ entries, CTA destination, and legal links are present. Legacy `12 месяцев`, old removed sections, and the obsolete film card are absent.
+- Fonts and typography: local Onest 400/500/600/700 files load. Display text uses realistic mobile sizing, zero letter spacing, and natural Cyrillic wrapping at `320`, `390`, and `430 px`.
+- Spacing and layout rhythm: the hero, CTA, video copy, FAQ, closing copy, and footer share the `20 px` mobile guide. The `320 px` breakpoint changes it to `16 px`. No horizontal page overflow was found.
+- Colors and visual tokens: ink is used only on stable light surfaces and white only on controlled saturated surfaces. Violet, coral, lavender, and warm white stay consistent with the selected visual.
+- Image quality and asset fidelity: the supplied `folded-flow-bg.webp` and all three real video posters are rendered directly. Existing SVG icon assets are used; no emoji or hand-drawn replacements were introduced.
+- Copy and content: approved warranty wording, all three video instructions, five FAQ entries, Telegram destination, and four document links are retained. No `12 месяцев` claim appears.
 
 ## Comparison history
 
 ### Iteration 1
 
-- P1: CTA text and shield were low contrast against a bright crop of the background asset.
-- P2: hero and benefit rows were too tall, leaving too little of the video section in the first mobile viewport.
-- P2: the video label crossed a bright transition and lost contrast.
+- P1: the last benefit crossed a dark part of the artwork and lost contrast.
+- P2: the top of the video section was too pale for white type.
+- P2: the closing copy crossed a bright fold.
 
 Fixes:
 
-- Added a dark multiply blend and solid violet fallback to both asset-backed CTA treatments.
-- Reduced hero height, display type, benefit row height, and transition spacing while retaining readable mobile sizes.
-- Moved the generated-background transition upward and added controlled text contrast to the video heading.
+- Added one full-width stable light benefit surface while retaining the surrounding raster artwork.
+- Reduced the dark artwork opacity over a deep-violet base so the video section remains saturated and readable.
+- Darkened the closing artwork crop while preserving its coral-violet color movement.
 
 ### Iteration 2
 
-- Post-fix captures at `320`, `390`, and `430 px` show readable text, no clipped CTA, no horizontal overflow, consistent left alignment, and a visible next-section cue.
-- No actionable P0, P1, or P2 mismatch remains.
-
-### Iteration 3
-
-- P1: the video heading in Prism Shield crossed a near-white part of the artwork and lost contrast; secondary hero and benefit copy was also too light on pale areas.
-- P2: the Folded Light closing statement crossed bright peach and white folds.
-
-Fixes:
-
-- Added a full-width translucent violet scrim to the video section, preserving the generated artwork while keeping every white heading line readable across bright and dark areas.
-- Strengthened video-heading shadows, darkened secondary copy in both variants, and locally reduced closing-art brightness behind white copy.
-- Rechecked the same responsive widths after the contrast pass; layout geometry and interaction targets are unchanged.
-
-### Iteration 4
-
-- P2: the full-width contrast scrim made the approved background substantially darker and reduced the visibility of its gradient transitions.
-
-Fixes:
-
-- Removed the scrim and restored the original artwork without filters.
-- Kept the video copy white over the dark mobile crop and changed only its text color to dark ink at the desktop crop, where the artwork is pale.
-- Preserved the darker secondary hero and benefit text on white areas.
-
-### Iteration 5
-
-- P1: the small “Видеоинструкции” label and the closing statement still used white text where the artwork becomes nearly white in the mobile crop.
-
-Fixes:
-
-- Changed those two text elements to black without changing the background, layout, or surrounding video copy.
-
-### Iteration 6
-
-- Restored the closing statement to white as requested; the “Видеоинструкции” label remains black on its pale background.
-
-### Iteration 7
-
-- P2: the high-saturation CSS recoloring filter shifted the benefit icons toward neon pink in mobile Safari.
-
-Fixes:
-
-- Removed the filter and assigned the three SVG icons the fixed brand violet `#4B27F4`.
-- Added versioned icon URLs so mobile browsers cannot reuse the previously filtered SVG cache.
-
-### Iteration 8
-
-- P2: the mobile background image ended at `80%` of the showcase height, exposing the solid violet fallback midway through the video cards.
-
-Fixes:
-
-- Extended the original generated background image to the full showcase height so the artwork continues behind the complete video section without a horizontal color break.
-- Changed the video heading and description to dark ink because the extended artwork places their mobile crop over a pale area.
+- Post-fix captures at `320`, `390`, and `430 px` show readable text, no clipped controls, and `scrollWidth` equal to the viewport width.
+- The hero remains three lines, CTA remains compact, and the video rail retains a visible next-slide cue at every tested width.
+- No actionable P0, P1, or P2 visual mismatch remains.
 
 ## Primary interaction checks
 
-- Telegram CTA destination resolves with HTTP 200.
-- All three optimized H.264 MP4 files fully decode without errors.
-- Video modal opens, plays, closes, and retains a direct-file fallback.
-- FAQ expands and collapses.
-- Documents modal opens and all production legal URLs resolve with HTTP 200.
+- Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.
+- FAQ expanded and exposed the approved marketplace copy, then collapsed again.
+- Documents dialog opened with all four production links and restored page scrolling on close.
+- The first supplied MP4 opened in the video dialog with the correct title and source URL.
+- Telegram CTA remains `https://t.me/giftsactivate_bot?start=landing`.
 - Browser console warnings/errors: none.
 
 ## Follow-up polish
 
-- P3: after stakeholder selection, the unused visual variant can be removed from production while remaining available in preview history.
+- P3: an alternate landscape poster frame can be extracted from each MP4 later if the operator wants a different moment from the same videos.
 
 final result: passed

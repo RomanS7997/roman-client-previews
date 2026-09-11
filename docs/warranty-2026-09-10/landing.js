@@ -43,3 +43,42 @@ document.querySelectorAll('[data-lesson]').forEach(link => {
     player.play().catch(() => {});
   });
 });
+
+document.querySelectorAll('[data-carousel]').forEach(track => {
+  const dots = track.closest('section')?.querySelectorAll('[data-carousel-dots] [data-slide]');
+  if (!dots?.length) return;
+
+  let frame = 0;
+  const setActiveDot = index => {
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === index;
+      dot.classList.toggle('is-active', isActive);
+      if (isActive) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+  };
+
+  const updateFromScroll = () => {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => {
+      const slides = [...track.children];
+      const trackLeft = track.getBoundingClientRect().left;
+      const index = slides.reduce((closest, slide, slideIndex) => {
+        const distance = Math.abs(slide.getBoundingClientRect().left - trackLeft);
+        return distance < closest.distance ? {index: slideIndex, distance} : closest;
+      }, {index: 0, distance: Number.POSITIVE_INFINITY}).index;
+      setActiveDot(index);
+    });
+  };
+
+  track.addEventListener('scroll', updateFromScroll, {passive: true});
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      track.children[Number(dot.dataset.slide)]?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start'
+      });
+    });
+  });
+});
