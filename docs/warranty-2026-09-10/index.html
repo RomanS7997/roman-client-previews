@@ -2,21 +2,34 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex,nofollow">
-  <title>Гарантия покупки: варианты дизайна</title>
-  <link rel="stylesheet" href="assets/fonts.css">
+  <meta name="theme-color" content="#f7f5fb">
+  <title>Гарантия на покупку: два варианта</title>
+  <link rel="stylesheet" href="assets/concept-fonts.css">
   <style>
-    *{box-sizing:border-box;letter-spacing:0}body{margin:0;background:#f4f4f2;color:#1c1e1c;font:14px/1.5 Manrope,Arial,sans-serif}header,main,footer{width:min(100%,1120px);margin:auto;padding-inline:20px}header{padding-top:25px;padding-bottom:21px;border-bottom:1px solid #d0d2cf}h1{margin:0;font-size:22px;font-weight:600;line-height:1.2}header p{margin:7px 0 0;color:#696d68;font-size:12px}.variants{display:grid;grid-template-columns:1fr;gap:38px;padding-top:27px;padding-bottom:36px}.variant a{display:block;color:inherit;text-decoration:none}.title{display:flex;align-items:baseline;gap:12px;margin-bottom:11px}.number{color:#777b75;font-size:11px}h2{margin:0;font-size:16px;font-weight:600}.screen{display:block;width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;border:1px solid #d3d5d1;border-radius:4px;background:#fff;transition:box-shadow .16s ease}.variant--featured .screen{border-color:#9f8cfb;box-shadow:0 14px 34px rgb(75 53 244 / .16)}.variant a:hover .screen{box-shadow:0 10px 28px rgb(22 29 24 / .12)}.variant--featured a:hover .screen{box-shadow:0 18px 42px rgb(75 53 244 / .22)}.badge{display:inline-flex;margin-left:auto;padding:4px 9px;border-radius:999px;background:linear-gradient(138deg,#fe7050,#ba5bc7 48%,#4b35f4);color:#fff;font-size:9px;font-weight:700}.open{display:flex;min-height:49px;align-items:center;justify-content:space-between;border-bottom:1px solid #c8cbc6;font-size:12px}.open img{width:19px;height:19px}.variant a:focus-visible{outline:2px solid #525952;outline-offset:5px}footer{padding-top:2px;padding-bottom:30px;color:#747873;font-size:11px}footer p{margin:0}@media(min-width:760px){header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding-top:32px;padding-bottom:26px}header p{margin:0}.variants{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:35px 28px 42px}header,footer{padding-inline:28px}h1{font-size:26px}}@media(prefers-reduced-motion:reduce){.screen{transition:none}}
+    *{box-sizing:border-box;letter-spacing:0}body{margin:0;background:#f7f5fb;color:#151219;font:14px/1.5 Onest,Arial,sans-serif;-webkit-font-smoothing:antialiased}header,main,footer{width:min(100%,960px);margin-inline:auto;padding-inline:20px}header{padding-top:max(34px,calc(env(safe-area-inset-top) + 20px));padding-bottom:25px;border-bottom:1px solid #ddd9e4}h1{max-width:540px;margin:0;font-size:28px;line-height:1.08}header p{margin:9px 0 0;color:#686272}.variants{display:grid;gap:26px;padding-top:26px;padding-bottom:38px}.variant{overflow:hidden;border:1px solid #ddd8e6;border-radius:8px;background:#fff;box-shadow:0 14px 34px rgb(45 25 105/.08)}.variant>a{display:grid;color:inherit;text-decoration:none}.preview{position:relative;height:280px;overflow:hidden;background:#eee}.preview img{display:block;width:100%;height:100%;object-fit:cover}.variant:first-child .preview img{object-position:center 24%}.variant:last-child .preview img{object-position:center 18%}.copy{display:grid;grid-template-columns:minmax(0,1fr) 42px;gap:18px;align-items:center;padding:18px}.copy small,.copy strong{display:block}.copy small{color:#5e5675;font-size:11px;font-weight:700;text-transform:uppercase}.copy strong{margin-top:4px;font-size:19px;line-height:1.25}.open{display:grid;width:42px;height:42px;place-items:center;border-radius:50%;background:#2f1a92}.open img{width:19px;height:19px;filter:brightness(0) invert(1)}a:focus-visible{outline:3px solid #ff765f;outline-offset:4px}footer{padding-top:0;padding-bottom:max(28px,env(safe-area-inset-bottom));color:#716b78;font-size:12px}@media(min-width:720px){header{padding-top:54px;padding-bottom:34px}h1{font-size:38px}.variants{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding-top:34px}.preview{height:440px}.copy{padding:21px}.copy strong{font-size:21px}}
   </style>
 </head>
 <body>
-  <header><div><h1>Гарантия на покупку</h1><p>Три самостоятельных направления</p></div><p>Mobile first · полный лендинг</p></header>
+  <header>
+    <h1>Два направления лендинга гарантии</h1>
+    <p>Одинаковая структура и контент, разная работа с фирменным светом.</p>
+  </header>
   <main class="variants">
-    <article class="variant variant--featured"><a href="brand.html?v=4"><div class="title"><span class="number">01</span><h2>Фирменный</h2><span class="badge">Новый</span></div><img class="screen" src="assets/preview-v6-brand.png" width="390" height="844" alt="Фирменный мобильный лендинг"><span class="open">Открыть страницу<img src="assets/arrow-right.svg" alt=""></span></a></article>
-    <article class="variant"><a href="mono.html?v=3"><div class="title"><span class="number">02</span><h2>Чёрно-белый</h2></div><img class="screen" src="assets/preview-v3-mono.jpg" width="390" height="844" alt="Чёрно-белый мобильный лендинг"><span class="open">Открыть страницу<img src="assets/arrow-right.svg" alt=""></span></a></article>
-    <article class="variant"><a href="rose.html?v=3"><div class="title"><span class="number">03</span><h2>Коралловый</h2></div><img class="screen" src="assets/preview-v3-coral.jpg" width="390" height="844" alt="Коралловый мобильный лендинг"><span class="open">Открыть страницу<img src="assets/arrow-right.svg" alt=""></span></a></article>
+    <article class="variant">
+      <a href="folded.html?v=1">
+        <span class="preview"><img src="assets/folded-flow-bg.webp" width="940" height="1672" alt="Градиентный фон Folded Light"></span>
+        <span class="copy"><span><small>Вариант 2</small><strong>Folded Light</strong></span><span class="open"><img src="assets/arrow-right.svg" alt=""></span></span>
+      </a>
+    </article>
+    <article class="variant">
+      <a href="shield.html?v=1">
+        <span class="preview"><img src="assets/shield-flow-bg.webp" width="941" height="1672" alt="Градиентный фон Prism Shield"></span>
+        <span class="copy"><span><small>Вариант 3</small><strong>Prism Shield</strong></span><span class="open"><img src="assets/arrow-right.svg" alt=""></span></span>
+      </a>
+    </article>
   </main>
-  <footer><p>Предпросмотр. Основной сайт и бот не изменены.</p></footer>
+  <footer>Предпросмотр. Основной сайт и бот не изменены.</footer>
 </body>
 </html>
