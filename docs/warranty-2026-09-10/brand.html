@@ -9,7 +9,7 @@
   <meta name="description" content="Подтвердите покупку и оформите расширенную гарантию в Telegram.">
   <link rel="preload" as="image" href="assets/hero-brand-mobile.webp" media="(max-width: 759px)">
   <link rel="preload" as="image" href="assets/hero-brand-wide.webp" media="(min-width: 760px)">
-  <link rel="stylesheet" href="brand.css?v=3">
+  <link rel="stylesheet" href="brand.css?v=4">
   <script src="landing.js?v=3" defer></script>
 </head>
 <body>
@@ -20,10 +20,6 @@
           <source media="(min-width: 760px)" srcset="assets/hero-brand-wide.webp">
           <img src="assets/hero-brand-mobile.webp" width="941" height="1672" alt="Смартфон, защитное стекло и упаковка на светлом фоне" fetchpriority="high">
         </picture>
-        <header class="hero__header">
-          <a class="wordmark" href="#top">Гарантия покупки</a>
-          <a class="header-link" href="#help">Помощь <img src="assets/arrow-right.svg" width="17" height="17" alt=""></a>
-        </header>
         <div class="hero__copy">
           <p class="eyebrow">Расширенная гарантия</p>
           <h1 id="headline">Гарантия<br>на покупку</h1>
@@ -44,49 +40,9 @@
     </div>
 
     <nav class="quick-nav" aria-label="Разделы страницы">
-      <a href="#activation"><span>Как оформить</span><img src="assets/arrow-down.svg" width="17" height="17" alt=""></a>
-      <a href="#howto"><span>Видео</span><img src="assets/play.svg" width="17" height="17" alt=""></a>
-      <a href="#faq"><span>Условия</span><img src="assets/plus.svg" width="17" height="17" alt=""></a>
+      <a href="#howto"><span>Видеоинструкции</span><img src="assets/play.svg" width="17" height="17" alt=""></a>
+      <a href="#faq"><span>Условия гарантии</span><img src="assets/plus.svg" width="17" height="17" alt=""></a>
     </nav>
-
-    <section class="section activation" id="activation">
-      <div class="section__inner">
-        <div class="section-heading">
-          <p class="section-label">Как это работает</p>
-          <h2>Три шага.<br>Всё внутри Telegram.</h2>
-          <p class="section-intro">Бот покажет только те действия, которые нужны для вашей покупки.</p>
-        </div>
-        <ol class="steps">
-          <li class="step step--light">
-            <span class="step__number">01</span>
-            <div><h3>Выберите площадку</h3><p>Укажите, где купили товар: Wildberries, Ozon или Яндекс Маркет.</p></div>
-          </li>
-          <li class="step step--accent">
-            <span class="step__number">02</span>
-            <div><h3>Подтвердите покупку</h3><p>Отправьте данные по инструкции. Бот передаст покупку на проверку.</p></div>
-          </li>
-          <li class="step step--warm">
-            <span class="step__number">03</span>
-            <div><h3>Получите гарантию</h3><p>Срок и статус сохранятся в разделе «Мои покупки».</p></div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="result-section" aria-labelledby="result-title">
-      <div class="result-panel">
-        <div>
-          <p class="result-panel__label">После проверки</p>
-          <h2 id="result-title">Гарантия активна</h2>
-          <p>Подтверждённая покупка, срок гарантии и билет в розыгрыш остаются в боте.</p>
-        </div>
-        <dl class="result-stats">
-          <div><dt>Срок</dt><dd>12 месяцев</dd></div>
-          <div><dt>Статус</dt><dd>В «Моих покупках»</dd></div>
-          <div><dt>Дополнительно</dt><dd>Билет в розыгрыш</dd></div>
-        </dl>
-      </div>
-    </section>
 
     <section class="section lessons" id="howto">
       <div class="section__inner">
@@ -111,15 +67,6 @@
       </div>
     </section>
 
-    <section class="support" id="help">
-      <div class="support__inner">
-        <p class="support__label">Техподдержка</p>
-        <h2>Вопрос не останется без ответа.</h2>
-        <p>Поможем разобраться с товаром, гарантией или оформлением. Напишите прямо в бот.</p>
-        <a class="support__button" href="https://t.me/giftsactivate_bot" target="_blank" rel="noopener noreferrer"><span>Открыть поддержку</span><span><img src="assets/message-circle.svg" width="20" height="20" alt=""></span></a>
-      </div>
-    </section>
-
     <section class="section faq" id="faq">
       <div class="section__inner faq__layout">
         <div class="section-heading">
@@ -127,7 +74,7 @@
           <h2>Коротко<br>о главном.</h2>
         </div>
         <div class="faq-list">
-          <details><summary>Что покрывает гарантия?<img src="assets/plus.svg" width="19" height="19" alt=""></summary><p>Заводской брак. Механические повреждения, в том числе трещины и сколы после удара или падения, не покрываются. Порядок обращения по вашей покупке уточните в <a href="#help">техподдержке</a>.</p></details>
+          <details><summary>Что покрывает гарантия?<img src="assets/plus.svg" width="19" height="19" alt=""></summary><p>Заводской брак. Механические повреждения, в том числе трещины и сколы после удара или падения, не покрываются. Порядок обращения по вашей покупке уточните в <a href="https://t.me/giftsactivate_bot" target="_blank" rel="noopener noreferrer">техподдержке</a>.</p></details>
           <details><summary>Какие покупки можно подтвердить?<img src="assets/plus.svg" width="19" height="19" alt=""></summary><p>Покупки наших товаров на Wildberries, Ozon и Яндекс Маркете, в упаковке которых есть вкладыш с приглашением в программу. Выберите свою площадку в боте.</p></details>
           <details><summary>Что понадобится для оформления?<img src="assets/plus.svg" width="19" height="19" alt=""></summary><p>Telegram и информация о покупке. Бот покажет инструкцию для вашей площадки и запросит фото экрана или номер заказа. Подтверждение придёт после проверки.</p></details>
           <details><summary>Где посмотреть срок гарантии?<img src="assets/plus.svg" width="19" height="19" alt=""></summary><p>В разделе «Мои покупки» в боте. Там сохраняются подтверждённые покупки и дата окончания гарантии для каждой из них.</p></details>

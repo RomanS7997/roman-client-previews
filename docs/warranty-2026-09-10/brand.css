@@ -61,7 +61,7 @@ a {
 }
 
 .hero-shell {
-  padding: 8px 8px 0;
+  padding: 0;
 }
 
 .hero {
@@ -71,7 +71,7 @@ a {
   min-height: 516px;
   max-height: 830px;
   overflow: hidden;
-  border-radius: 26px;
+  border-radius: 0 0 26px 26px;
   background: #f8f5fa;
 }
 
@@ -137,7 +137,7 @@ a {
   position: relative;
   z-index: 1;
   width: min(100%, 410px);
-  padding: 19px 20px 0;
+  padding: max(18px, env(safe-area-inset-top)) 20px 0;
 }
 
 .eyebrow,
@@ -188,7 +188,7 @@ a {
 
 .hero__lead {
   max-width: 336px;
-  margin: 16px 0 18px;
+  margin: 10px 0 2px;
   color: #4f4957;
   font-size: 14px;
   line-height: 1.55;
@@ -291,7 +291,7 @@ a {
 
 .quick-nav {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 10px 8px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -714,6 +714,10 @@ a {
 }
 
 @media (max-width: 759px) {
+  .hero .primary-button {
+    width: min(100%, 318px);
+  }
+
   .section {
     padding: 46px 20px;
   }
@@ -754,8 +758,8 @@ a {
   }
 
   .lessons {
-    padding-top: 42px;
-    padding-bottom: 40px;
+    padding-top: 32px;
+    padding-bottom: 24px;
   }
 
   .lesson-track {
@@ -771,7 +775,7 @@ a {
   }
 
   .faq {
-    padding-top: 34px;
+    padding-top: 28px;
     padding-bottom: 24px;
   }
 
