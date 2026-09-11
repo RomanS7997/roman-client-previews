@@ -115,7 +115,7 @@ a {
 .hero__lead {
   max-width: 350px;
   margin: 18px 0 0;
-  color: #55516f;
+  color: #403b50;
   font-size: 16px;
   line-height: 1.47;
 }
@@ -205,7 +205,7 @@ a {
 .benefit p {
   max-width: 292px;
   margin-top: 4px;
-  color: #656079;
+  color: #494454;
   font-size: 12px;
   line-height: 1.42;
 }
@@ -229,9 +229,22 @@ a {
 }
 
 .lessons {
+  position: relative;
+  isolation: isolate;
   padding-top: 34px;
   padding-bottom: 62px;
   color: #ffffff;
+}
+
+.lessons::before {
+  position: absolute;
+  inset: 0 auto 0 50%;
+  z-index: -1;
+  width: 100vw;
+  background: rgb(37 17 121 / 0.64);
+  content: "";
+  pointer-events: none;
+  transform: translateX(-50%);
 }
 
 .section-label {
@@ -259,18 +272,14 @@ a {
   line-height: 1.58;
 }
 
-.section-heading--light .section-label {
-  color: #2b1685;
-  text-shadow: none;
-}
-
+.section-heading--light .section-label,
 .section-heading--light > p:last-child {
-  color: rgb(255 255 255 / 0.82);
-  text-shadow: 0 2px 14px rgb(32 15 126 / 0.55);
+  color: #ffffff;
+  text-shadow: 0 2px 5px rgb(31 13 107 / 0.76), 0 8px 24px rgb(31 13 107 / 0.42);
 }
 
 .section-heading--light h2 {
-  text-shadow: 0 3px 20px rgb(32 15 126 / 0.58);
+  text-shadow: 0 2px 6px rgb(31 13 107 / 0.76), 0 10px 30px rgb(31 13 107 / 0.46);
 }
 
 .lesson-track {
@@ -458,6 +467,10 @@ a {
   object-position: center bottom;
 }
 
+.theme-folded .closing__background {
+  filter: brightness(0.72) saturate(1.12);
+}
+
 .closing__inner {
   padding-top: 52px;
   padding-bottom: 58px;
@@ -467,7 +480,7 @@ a {
   max-width: 430px;
   margin: 0;
   color: #ffffff;
-  text-shadow: 0 2px 16px rgb(28 13 99 / 0.32);
+  text-shadow: 0 2px 5px rgb(28 13 99 / 0.78), 0 9px 28px rgb(28 13 99 / 0.5);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.42;

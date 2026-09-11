@@ -56,6 +56,17 @@ Fixes:
 - Post-fix captures at `320`, `390`, and `430 px` show readable text, no clipped CTA, no horizontal overflow, consistent left alignment, and a visible next-section cue.
 - No actionable P0, P1, or P2 mismatch remains.
 
+### Iteration 3
+
+- P1: the video heading in Prism Shield crossed a near-white part of the artwork and lost contrast; secondary hero and benefit copy was also too light on pale areas.
+- P2: the Folded Light closing statement crossed bright peach and white folds.
+
+Fixes:
+
+- Added a full-width translucent violet scrim to the video section, preserving the generated artwork while keeping every white heading line readable across bright and dark areas.
+- Strengthened video-heading shadows, darkened secondary copy in both variants, and locally reduced closing-art brightness behind white copy.
+- Rechecked the same responsive widths after the contrast pass; layout geometry and interaction targets are unchanged.
+
 ## Primary interaction checks
 
 - Telegram CTA destination resolves with HTTP 200.
