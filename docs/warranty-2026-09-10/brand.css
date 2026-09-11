@@ -73,86 +73,16 @@ a {
   flex-direction: column;
   overflow: hidden;
   border-radius: 0 0 26px 26px;
-  background:
-    linear-gradient(146deg, rgb(255 255 255 / 0.98) 0%, rgb(250 237 235 / 0.86) 46%, rgb(240 235 255 / 0.94) 100%),
-    #f7f7fb;
-}
-
-.hero::before,
-.hero::after {
-  position: absolute;
-  z-index: -1;
-  content: "";
-  pointer-events: none;
-}
-
-.hero::before {
-  top: 38%;
-  right: -18%;
-  width: 76%;
-  height: 42%;
-  background: linear-gradient(148deg, rgb(254 112 80 / 0.12), rgb(140 100 254 / 0.18));
-  clip-path: polygon(27% 0, 100% 18%, 77% 100%, 0 80%);
-  transform: rotate(-7deg);
+  background: #f7f7fb url("assets/hero-flow-mobile.webp") center / cover no-repeat;
 }
 
 .hero::after {
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 38%;
-  background: linear-gradient(180deg, rgb(255 255 255 / 0) 0%, rgb(255 255 255 / 0.5) 70%, rgb(255 255 255 / 0.8) 100%);
-}
-
-.hero__art {
   position: absolute;
   inset: 0;
-  z-index: -1;
-  overflow: hidden;
+  z-index: 0;
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.5) 0%, rgb(255 255 255 / 0.08) 42%, rgb(255 255 255 / 0.16) 72%, rgb(255 255 255 / 0.5) 100%);
+  content: "";
   pointer-events: none;
-}
-
-.hero__arc {
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  background: var(--gradient-figma);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-.hero__arc--main {
-  top: 31%;
-  left: -53%;
-  width: 151%;
-  aspect-ratio: 1.8 / 1;
-  padding: 15px;
-  opacity: 0.52;
-  transform: rotate(-17deg);
-}
-
-.hero__arc--fine {
-  top: 39%;
-  left: -35%;
-  width: 124%;
-  aspect-ratio: 1.72 / 1;
-  padding: 2px;
-  opacity: 0.45;
-  transform: rotate(-20deg);
-}
-
-.hero__trace {
-  position: absolute;
-  top: 48%;
-  right: -6%;
-  width: 42%;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--gradient);
-  box-shadow: 0 0 25px rgb(112 53 244 / 0.28);
-  opacity: 0.7;
-  transform: rotate(-24deg);
 }
 
 .hero__header {
@@ -256,21 +186,23 @@ a {
 
 .primary-button {
   display: inline-flex;
-  width: min(100%, 354px);
-  min-height: 56px;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 52px;
   align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 7px 7px 7px 20px;
+  justify-content: center;
+  gap: 10px;
+  padding: 9px 17px 9px 11px;
   border: 1px solid rgb(255 255 255 / 0.72);
-  border-radius: 18px 999px 999px 18px;
+  border-radius: 12px;
   background: var(--gradient);
-  box-shadow: 0 13px 28px rgb(75 53 244 / 0.2);
+  box-shadow: 0 12px 26px rgb(75 53 244 / 0.18);
   color: #ffffff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.35;
   text-decoration: none;
+  white-space: nowrap;
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -281,15 +213,26 @@ a {
 
 .primary-button__icon {
   display: grid;
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  order: -1;
   place-items: center;
-  border-radius: 50%;
-  background: #ffffff;
+  border-radius: 9px;
+  background: rgb(255 255 255 / 0.16);
+}
+
+.primary-button__icon::before {
+  width: 19px;
+  height: 19px;
+  background: currentColor;
+  content: "";
+  -webkit-mask: url("assets/shield-check.svg") center / contain no-repeat;
+  mask: url("assets/shield-check.svg") center / contain no-repeat;
 }
 
 .primary-button__icon img {
+  display: none;
   width: 20px;
   height: 20px;
 }
@@ -371,48 +314,38 @@ a {
 /* The page stays identical across previews; only the hero CTA changes. */
 html[data-cta="gradient"] .hero .primary-button {
   border-color: rgb(255 255 255 / 0.75);
-  border-radius: 15px 999px 999px 15px;
+  border-radius: 12px;
   background: var(--gradient-figma);
 }
 
 html[data-cta="outline"] .hero .primary-button {
-  position: relative;
   border: 2px solid transparent;
-  border-radius: 16px;
+  border-radius: 12px;
   background: linear-gradient(#ffffff, #ffffff) padding-box, var(--gradient) border-box;
   box-shadow: 0 13px 30px rgb(75 53 244 / 0.14);
   color: var(--purple-dark);
 }
 
 html[data-cta="outline"] .hero .primary-button__icon {
-  border-radius: 10px;
   background: var(--gradient);
-}
-
-html[data-cta="outline"] .hero .primary-button__icon img {
-  filter: invert(1);
+  color: #ffffff;
 }
 
 html[data-cta="split"] .hero .primary-button {
-  gap: 8px;
-  padding: 0 0 0 20px;
-  overflow: hidden;
-  border: 0;
-  border-radius: 14px;
+  gap: 11px;
+  padding: 9px 18px 9px 10px;
+  border: 1px solid rgb(45 27 148 / 0.08);
+  border-radius: 12px;
   background: var(--purple-deep);
   box-shadow: 0 14px 30px rgb(45 27 148 / 0.22);
 }
 
 html[data-cta="split"] .hero .primary-button__icon {
-  width: 58px;
-  height: 58px;
-  flex-basis: 58px;
-  border-radius: 0;
+  width: 34px;
+  height: 34px;
+  flex-basis: 34px;
+  border-radius: 9px;
   background: linear-gradient(145deg, #fe7050, #ba5bc7 55%, #7035f4);
-}
-
-html[data-cta="split"] .hero .primary-button__icon img {
-  filter: invert(1);
 }
 
 .quick-nav {
@@ -843,8 +776,8 @@ html[data-cta="split"] .hero .primary-button__icon img {
   .hero .primary-button {
     position: relative;
     z-index: 2;
-    width: min(100%, 354px);
-    min-height: 58px;
+    width: fit-content;
+    min-height: 52px;
   }
 
   .hero .primary-button:hover {
@@ -1041,14 +974,14 @@ dialog::backdrop {
 
   .primary-button {
     min-height: 52px;
-    padding-left: 16px;
-    font-size: 14px;
+    padding-inline: 10px 14px;
+    font-size: 13px;
   }
 
   .primary-button__icon {
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
   }
 
   .hero__facts strong {
@@ -1128,35 +1061,11 @@ dialog::backdrop {
     min-height: 640px;
     max-height: 820px;
     border-radius: 31px;
+    background-image: url("assets/hero-flow-wide.webp");
   }
 
-  .hero::before {
-    top: 11%;
-    right: -4%;
-    width: 54%;
-    height: 69%;
-  }
-
-  .hero__arc--main {
-    top: -8%;
-    left: 34%;
-    width: 86%;
-    padding: 24px;
-    opacity: 0.48;
-    transform: rotate(-26deg);
-  }
-
-  .hero__arc--fine {
-    top: 8%;
-    left: 48%;
-    width: 62%;
-    transform: rotate(-29deg);
-  }
-
-  .hero__trace {
-    top: 57%;
-    right: 5%;
-    width: 26%;
+  .hero::after {
+    background: linear-gradient(90deg, rgb(255 255 255 / 0.52) 0%, rgb(255 255 255 / 0.12) 43%, rgb(255 255 255 / 0.02) 72%);
   }
 
   .hero__header {
@@ -1214,8 +1123,8 @@ dialog::backdrop {
   }
 
   .primary-button {
-    width: 370px;
-    min-height: 58px;
+    width: fit-content;
+    min-height: 54px;
     font-size: 15px;
   }
 

@@ -7,6 +7,8 @@
   <meta name="theme-color" content="#f7f7fb">
   <title>Гарантия на покупку</title>
   <meta name="description" content="Подтвердите свою покупку в Telegram и получите расширенную гарантию на товар.">
+  <link rel="preload" as="image" href="assets/hero-flow-mobile.webp" media="(max-width: 759px)">
+  <link rel="preload" as="image" href="assets/hero-flow-wide.webp" media="(min-width: 760px)">
   <script>
     (() => {
       const variants = new Set(['gradient', 'outline', 'split']);
@@ -14,24 +16,19 @@
       document.documentElement.dataset.cta = variants.has(selected) ? selected : 'gradient';
     })();
   </script>
-  <link rel="stylesheet" href="brand.css?v=14">
+  <link rel="stylesheet" href="brand.css?v=15">
   <script src="landing.js?v=3" defer></script>
 </head>
 <body>
   <main id="top">
     <div class="hero-shell">
       <section class="hero" aria-labelledby="headline">
-        <div class="hero__art" aria-hidden="true">
-          <span class="hero__arc hero__arc--main"></span>
-          <span class="hero__arc hero__arc--fine"></span>
-          <span class="hero__trace"></span>
-        </div>
         <div class="hero__copy">
           <h1 id="headline">Расширенная гарантия<br>на покупку</h1>
           <p class="hero__lead">Подтвердите свою покупку в Telegram. После проверки вы получите расширенную гарантию на товар.</p>
           <a class="primary-button" href="https://t.me/giftsactivate_bot?start=landing" target="_blank" rel="noopener noreferrer">
             <span>Активировать гарантию</span>
-            <span class="primary-button__icon"><img src="assets/arrow-right.svg" width="20" height="20" alt=""></span>
+            <span class="primary-button__icon" aria-hidden="true"></span>
           </a>
           <p class="hero__note">Откроется Telegram. Следуйте подсказкам бота.</p>
         </div>
@@ -96,7 +93,7 @@
         <p>Перейдите в Telegram и следуйте подсказкам. Условия гарантии будут доступны в боте.</p>
         <a class="primary-button" href="https://t.me/giftsactivate_bot?start=landing" target="_blank" rel="noopener noreferrer">
           <span>Активировать гарантию</span>
-          <span class="primary-button__icon"><img src="assets/arrow-right.svg" width="20" height="20" alt=""></span>
+          <span class="primary-button__icon" aria-hidden="true"></span>
         </a>
       </div>
     </section>
