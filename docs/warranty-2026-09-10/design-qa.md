@@ -67,6 +67,16 @@ Fixes:
 - Strengthened video-heading shadows, darkened secondary copy in both variants, and locally reduced closing-art brightness behind white copy.
 - Rechecked the same responsive widths after the contrast pass; layout geometry and interaction targets are unchanged.
 
+### Iteration 4
+
+- P2: the full-width contrast scrim made the approved background substantially darker and reduced the visibility of its gradient transitions.
+
+Fixes:
+
+- Removed the scrim and restored the original artwork without filters.
+- Kept the video copy white over the dark mobile crop and changed only its text color to dark ink at the desktop crop, where the artwork is pale.
+- Preserved the darker secondary hero and benefit text on white areas.
+
 ## Primary interaction checks
 
 - Telegram CTA destination resolves with HTTP 200.

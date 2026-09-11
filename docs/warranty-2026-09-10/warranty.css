@@ -229,22 +229,9 @@ a {
 }
 
 .lessons {
-  position: relative;
-  isolation: isolate;
   padding-top: 34px;
   padding-bottom: 62px;
   color: #ffffff;
-}
-
-.lessons::before {
-  position: absolute;
-  inset: 0 auto 0 50%;
-  z-index: -1;
-  width: 100vw;
-  background: rgb(37 17 121 / 0.64);
-  content: "";
-  pointer-events: none;
-  transform: translateX(-50%);
 }
 
 .section-label {
@@ -275,11 +262,11 @@ a {
 .section-heading--light .section-label,
 .section-heading--light > p:last-child {
   color: #ffffff;
-  text-shadow: 0 2px 5px rgb(31 13 107 / 0.76), 0 8px 24px rgb(31 13 107 / 0.42);
+  text-shadow: 0 2px 14px rgb(32 15 126 / 0.55);
 }
 
 .section-heading--light h2 {
-  text-shadow: 0 2px 6px rgb(31 13 107 / 0.76), 0 10px 30px rgb(31 13 107 / 0.46);
+  text-shadow: 0 3px 20px rgb(32 15 126 / 0.58);
 }
 
 .lesson-track {
@@ -467,10 +454,6 @@ a {
   object-position: center bottom;
 }
 
-.theme-folded .closing__background {
-  filter: brightness(0.72) saturate(1.12);
-}
-
 .closing__inner {
   padding-top: 52px;
   padding-bottom: 58px;
@@ -480,7 +463,7 @@ a {
   max-width: 430px;
   margin: 0;
   color: #ffffff;
-  text-shadow: 0 2px 5px rgb(28 13 99 / 0.78), 0 9px 28px rgb(28 13 99 / 0.5);
+  text-shadow: 0 2px 16px rgb(28 13 99 / 0.32);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.42;
@@ -717,6 +700,21 @@ dialog::backdrop {
   .section-heading > p:last-child {
     max-width: 510px;
     font-size: 15px;
+  }
+
+  .section-heading--light .section-label {
+    color: #2b1685;
+    text-shadow: none;
+  }
+
+  .section-heading--light h2 {
+    color: #17131f;
+    text-shadow: none;
+  }
+
+  .section-heading--light > p:last-child {
+    color: #474151;
+    text-shadow: none;
   }
 
   .lesson-track {
