@@ -713,6 +713,81 @@ a {
   background: var(--line);
 }
 
+@media (max-width: 759px) {
+  .section {
+    padding: 46px 20px;
+  }
+
+  .activation {
+    padding-top: 34px;
+    padding-bottom: 40px;
+  }
+
+  .section-intro {
+    margin-top: 14px;
+  }
+
+  .steps {
+    margin-top: 24px;
+  }
+
+  .step {
+    min-height: 156px;
+    gap: 22px;
+    padding: 20px;
+  }
+
+  .result-section {
+    padding-bottom: 0;
+  }
+
+  .result-panel {
+    padding: 25px 20px 18px;
+  }
+
+  .result-panel > div > p:last-child {
+    margin-top: 12px;
+  }
+
+  .result-stats {
+    margin-top: 20px;
+  }
+
+  .lessons {
+    padding-top: 42px;
+    padding-bottom: 40px;
+  }
+
+  .lesson-track {
+    margin-top: 24px;
+  }
+
+  .support__inner {
+    padding: 42px 22px 44px;
+  }
+
+  .support p:not(.support__label) {
+    margin: 14px 0 22px;
+  }
+
+  .faq {
+    padding-top: 34px;
+    padding-bottom: 24px;
+  }
+
+  .faq-list {
+    margin-top: 24px;
+  }
+
+  .closing__inner {
+    padding: 44px 22px 48px;
+  }
+
+  .closing__inner > p:not(.closing__label) {
+    margin: 14px 0 22px;
+  }
+}
+
 dialog {
   width: min(440px, calc(100% - 28px));
   max-height: calc(100dvh - 32px);
