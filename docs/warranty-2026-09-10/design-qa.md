@@ -56,6 +56,17 @@ Fixes:
 - The hero remains three lines, CTA remains compact, and the video rail retains a visible next-slide cue at every tested width.
 - No actionable P0, P1, or P2 visual mismatch remains.
 
+### Iteration 3
+
+- P2: the rounded bottom of the video section exposed white side wedges before the FAQ.
+- P2: the saturated lower fold of the light artwork appeared as a separate ribbon and ended abruptly above the video heading.
+
+Fixes:
+
+- Kept the video background full-width beneath the overlapping FAQ, so the white section now enters as one continuous curve without side gaps.
+- Extended the light artwork above its clipped section and anchored it to the top, keeping the hero texture while removing the isolated lower ribbon.
+- Rechecked the two boundaries at `390 x 844` and `320 x 780`; the page width remained equal to the viewport and browser logs stayed empty.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.

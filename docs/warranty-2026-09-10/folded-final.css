@@ -97,9 +97,10 @@ a {
 }
 
 .flow-background--light {
-  inset: 0;
+  inset: 0 0 auto;
+  height: 165%;
   object-fit: cover;
-  object-position: center 24%;
+  object-position: center top;
 }
 
 .hero {
@@ -231,8 +232,7 @@ a {
   z-index: 2;
   margin-top: -27px;
   padding-top: 65px;
-  padding-bottom: 57px;
-  border-radius: 0 0 50% 50% / 0 0 28px 28px;
+  padding-bottom: 68px;
   background: var(--violet-deep);
   color: #ffffff;
 }
@@ -439,7 +439,7 @@ a {
 .faq {
   position: relative;
   z-index: 3;
-  margin-top: -28px;
+  margin-top: -34px;
   padding-top: 58px;
   padding-bottom: 54px;
   border-radius: 50% 50% 50% 50% / 28px 28px 28px 28px;
