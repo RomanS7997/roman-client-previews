@@ -225,7 +225,6 @@ a {
 .benefit__icon img {
   width: 25px;
   height: 25px;
-  filter: invert(22%) sepia(96%) saturate(6601%) hue-rotate(252deg) brightness(96%) contrast(98%);
 }
 
 .lessons {

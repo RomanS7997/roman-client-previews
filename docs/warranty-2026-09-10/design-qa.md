@@ -89,6 +89,15 @@ Fixes:
 
 - Restored the closing statement to white as requested; the “Видеоинструкции” label remains black on its pale background.
 
+### Iteration 7
+
+- P2: the high-saturation CSS recoloring filter shifted the benefit icons toward neon pink in mobile Safari.
+
+Fixes:
+
+- Removed the filter and assigned the three SVG icons the fixed brand violet `#4B27F4`.
+- Added versioned icon URLs so mobile browsers cannot reuse the previously filtered SVG cache.
+
 ## Primary interaction checks
 
 - Telegram CTA destination resolves with HTTP 200.
