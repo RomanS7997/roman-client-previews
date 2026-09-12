@@ -8,7 +8,9 @@
   --violet: #5638c8;
   --violet-deep: #351b63;
   --coral: #ec746b;
-  --action-blue: #3d5296;
+  --action-violet: #6c4db4;
+  --action-violet-hover: #795cc3;
+  --icon-violet: #765ac0;
   --gutter: 20px;
   --shell: 480px;
 }
@@ -137,10 +139,10 @@ a {
   gap: 10px;
   margin-top: 17px;
   padding: 7px 17px 7px 7px;
-  border: 1px solid var(--action-blue);
+  border: 1px solid var(--action-violet);
   border-radius: 10px;
-  background: var(--action-blue);
-  box-shadow: 0 14px 30px rgb(42 57 123 / 0.3), 0 0 0 1px rgb(255 255 255 / 0.46);
+  background: var(--action-violet);
+  box-shadow: 0 14px 30px rgb(77 49 143 / 0.3), 0 0 0 1px rgb(255 255 255 / 0.46);
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
@@ -167,8 +169,8 @@ a {
 }
 
 .primary-button:hover {
-  background: #4a60aa;
-  box-shadow: 0 18px 34px rgb(42 57 123 / 0.36), 0 0 0 1px rgb(255 255 255 / 0.64);
+  background: var(--action-violet-hover);
+  box-shadow: 0 18px 34px rgb(77 49 143 / 0.36), 0 0 0 1px rgb(255 255 255 / 0.64);
   transform: translateY(-2px);
 }
 
@@ -219,8 +221,8 @@ a {
   place-items: center;
   border: 1px solid rgb(255 255 255 / 0.62);
   border-radius: 14px;
-  background: #5369ad;
-  box-shadow: 0 8px 18px rgb(42 57 123 / 0.16), inset 0 1px 0 rgb(255 255 255 / 0.14);
+  background: var(--icon-violet);
+  box-shadow: 0 8px 18px rgb(88 57 151 / 0.18), inset 0 1px 0 rgb(255 255 255 / 0.16);
 }
 
 .benefit__icon img {
@@ -232,7 +234,7 @@ a {
 .video-section {
   z-index: 2;
   margin-top: -27px;
-  padding-top: 103px;
+  padding-top: 72px;
   padding-bottom: 68px;
   background: #6269b8;
   color: #ffffff;
@@ -489,7 +491,7 @@ a {
   width: 19px;
   height: 19px;
   flex: 0 0 19px;
-  filter: brightness(0) saturate(100%) invert(34%) sepia(20%) saturate(2198%) hue-rotate(186deg) brightness(87%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(28%) sepia(93%) saturate(2552%) hue-rotate(245deg) brightness(79%) contrast(70%);
   transition: transform 160ms ease;
 }
 
@@ -534,11 +536,11 @@ a {
 }
 
 .closing .primary-button {
-  box-shadow: 0 14px 30px rgb(42 57 123 / 0.3);
+  box-shadow: 0 14px 30px rgb(77 49 143 / 0.3);
 }
 
 .closing .primary-button:hover {
-  box-shadow: 0 18px 34px rgb(42 57 123 / 0.36);
+  box-shadow: 0 18px 34px rgb(77 49 143 / 0.36);
 }
 
 .footer {

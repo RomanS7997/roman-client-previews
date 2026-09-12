@@ -164,6 +164,19 @@ Fixes:
 - Left the hero, buttons, benefit block, FAQ, closing section, spacing, and interactions unchanged for an isolated color comparison.
 - Rechecked the isolated change at `320 x 780`, `390 x 844`, and `430 x 932`: the section transitions remain clean, all white copy is readable, and the carousel geometry is unchanged.
 
+### Iteration 13
+
+- P2: the deep blue action controls and benefit icons sat outside the warm violet palette of the shield artwork.
+- P2: the space between the curved benefits panel and the video heading felt larger than the spacing rhythm used elsewhere on the page.
+
+Fixes:
+
+- Recolored both activation buttons to a muted warm violet and the three benefit badges to a related lighter violet, preserving white-label contrast and the existing compact geometry.
+- Matched the FAQ plus icons and violet action shadows to the same accent family so the page no longer mixes unrelated blue and purple controls.
+- Reduced only the video section's top padding by `31 px`, moving the heading and carousel upward while retaining a deliberate gap beneath the curved white panel.
+- Rechecked at `320 x 780`, `390 x 844`, and `430 x 932`: the curve-to-heading gap is consistently `45 px`, page width matches every viewport, and both button labels remain unbroken.
+- White text on the default violet button is `6.25:1`; carousel, video dialog, FAQ, documents dialog, and both Telegram links still work, with no browser warnings or errors.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.
