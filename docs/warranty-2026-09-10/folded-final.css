@@ -92,7 +92,7 @@ a {
 
 .intro-flow {
   z-index: 3;
-  padding-bottom: 38px;
+  padding-bottom: 0;
   border-radius: 0 0 50% 50% / 0 0 26px 26px;
   background: #fffaff;
 }
@@ -236,7 +236,7 @@ a {
 .video-section {
   z-index: 2;
   margin-top: -27px;
-  padding-top: 65px;
+  padding-top: 103px;
   padding-bottom: 68px;
   background: var(--violet-deep);
   color: #ffffff;

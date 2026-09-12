@@ -104,6 +104,16 @@ Fixes:
 - Retained the solid fills and compact button geometry so the CTAs remain distinct from the gradient background.
 - Rechecked the updated palette at `320 x 780` and `390 x 844`: labels remain readable, the three icons are consistent, and the closing CTA uses the same blue accent.
 
+### Iteration 7
+
+- P2: a pale grey strip remained between the curved benefits panel and the dark video section.
+
+Fixes:
+
+- Removed the unused light-background space below the benefits panel so the dark artwork now begins directly beneath its lower curve.
+- Increased the video section's top padding by the same amount, preserving the established position of the video heading and carousel.
+- Rechecked the transition at `320 x 780`, `390 x 844`, and `430 x 932`: the pale strip is gone and the dark artwork now meets the white curve cleanly at every width.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.
