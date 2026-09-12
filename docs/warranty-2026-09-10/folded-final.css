@@ -219,8 +219,19 @@ a {
   margin-top: -27px;
   padding-top: 72px;
   padding-bottom: 68px;
-  background: #6269b8;
+  background: #574b96;
   color: #ffffff;
+}
+
+.video-section::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: url("assets/video-gradient-field.webp") center / cover no-repeat;
+  content: "";
+  filter: brightness(0.72) saturate(0.78);
+  opacity: 0.52;
+  pointer-events: none;
 }
 
 .video-section__inner {

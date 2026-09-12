@@ -188,6 +188,18 @@ Fixes:
 - Rechecked at `320 x 780` and `390 x 844`: both labels stay on one line, the buttons remain `52 px` high, no unused icon nodes remain, and page width matches the viewport.
 - Confirmed the closing CTA uses the same `205.45 x 52 px` geometry as the hero CTA at `390 px`; browser warnings and errors remain empty.
 
+### Iteration 15
+
+- P2: the solid iris video background lacked the gradual depth change shown in the selected reference.
+
+Fixes:
+
+- Added a lightweight custom raster field that moves from a denser upper area into a softer, warmer lower area without copying the reference palette.
+- Toned the asset over the existing violet family so white headings and video captions retain clear contrast and the transition stays free of hard bands or seams.
+- Left video cards, typography, spacing, carousel behavior, and surrounding section geometry unchanged.
+- Rechecked the complete video section at `320 x 780`, `390 x 844`, and `430 x 932`: the color shift remains continuous, the FAQ overlap stays at `34 px`, and page width matches every viewport.
+- The production WebP is `19.7 KB`; all three video cards load and browser warnings and errors remain empty.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.
