@@ -114,6 +114,17 @@ Fixes:
 - Increased the video section's top padding by the same amount, preserving the established position of the video heading and carousel.
 - Rechecked the transition at `320 x 780`, `390 x 844`, and `430 x 932`: the pale strip is gone and the dark artwork now meets the white curve cleanly at every width.
 
+### Iteration 8
+
+- P2: the large circular icon badges, bright rim, and heavy shadow felt visually dated next to the cleaner page typography.
+
+Fixes:
+
+- Reworked the three benefit icons as compact `46 px` squircles with a calmer blue fill, restrained highlight, and softer shadow.
+- Reduced the pictograms to `23 px` so the line work has more breathing room.
+- Simplified both CTA icon chips by removing the outlined inset frame and reducing the shield to `21 px`.
+- Rechecked the hero, benefit rows, and closing CTA at `320 x 780` and `390 x 844`: every label fits, icon alignment is consistent, and no surrounding layout shifted.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.
