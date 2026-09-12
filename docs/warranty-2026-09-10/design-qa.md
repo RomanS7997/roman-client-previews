@@ -135,6 +135,15 @@ Fixes:
 - Removed the closing-only CTA overrides so the bottom action now matches the hero CTA in fill, typography, shield chip, border, shadow, and interaction states.
 - Rechecked the FAQ and closing action at `320 x 780`, `390 x 844`, and `430 x 932`: the plus icons remain blue, the CTA label fits, and the button stays visually distinct from the dark artwork.
 
+### Iteration 10
+
+- P2: the closing CTA still retained a modifier class and a one-pixel spacing override, allowing it to be perceived as a separate button variant.
+
+Fixes:
+
+- Removed the closing modifier from both HTML and CSS. The hero and closing actions now use the exact same class, dimensions, spacing, colors, shield treatment, shadow, and interaction states.
+- Compared both rendered actions at `320 x 780` and `390 x 844`: their geometry and visual treatment now match exactly.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.

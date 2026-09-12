@@ -541,10 +541,6 @@ a {
   text-shadow: 0 2px 15px rgb(34 13 118 / 0.3);
 }
 
-.primary-button--closing {
-  margin-top: 18px;
-}
-
 .footer {
   display: flex;
   align-items: center;
