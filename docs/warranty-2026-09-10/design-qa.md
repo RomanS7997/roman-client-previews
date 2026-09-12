@@ -144,6 +144,15 @@ Fixes:
 - Removed the closing modifier from both HTML and CSS. The hero and closing actions now use the exact same class, dimensions, spacing, colors, shield treatment, shadow, and interaction states.
 - Compared both rendered actions at `320 x 780` and `390 x 844`: their geometry and visual treatment now match exactly.
 
+### Iteration 11
+
+- P3: the inherited white one-pixel outer highlight was too visible around the closing CTA on the darker background.
+
+Fixes:
+
+- Removed only the white outer highlight from the closing CTA in its default and hover states, retaining its blue border, fill, geometry, shield chip, and primary shadow.
+- Rechecked the closing CTA at `320 x 780` and `390 x 844`: no white rim remains around the button or its shadow.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.
