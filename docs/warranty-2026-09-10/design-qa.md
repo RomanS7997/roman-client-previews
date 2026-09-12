@@ -125,6 +125,16 @@ Fixes:
 - Simplified both CTA icon chips by removing the outlined inset frame and reducing the shield to `21 px`.
 - Rechecked the hero, benefit rows, and closing CTA at `320 x 780` and `390 x 844`: every label fits, icon alignment is consistent, and no surrounding layout shifted.
 
+### Iteration 9
+
+- P2: the FAQ plus icons shifted toward bright pink on mobile, while the closing CTA used a separate white treatment.
+
+Fixes:
+
+- Applied the same deterministic deep-blue color treatment to every FAQ plus icon.
+- Removed the closing-only CTA overrides so the bottom action now matches the hero CTA in fill, typography, shield chip, border, shadow, and interaction states.
+- Rechecked the FAQ and closing action at `320 x 780`, `390 x 844`, and `430 x 932`: the plus icons remain blue, the CTA label fits, and the button stays visually distinct from the dark artwork.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.

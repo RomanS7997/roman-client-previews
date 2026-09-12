@@ -497,7 +497,7 @@ a {
   width: 19px;
   height: 19px;
   flex: 0 0 19px;
-  filter: invert(24%) sepia(92%) saturate(5212%) hue-rotate(249deg) brightness(94%) contrast(105%);
+  filter: brightness(0) saturate(100%) invert(34%) sepia(20%) saturate(2198%) hue-rotate(186deg) brightness(87%) contrast(90%);
   transition: transform 160ms ease;
 }
 
@@ -543,23 +543,6 @@ a {
 
 .primary-button--closing {
   margin-top: 18px;
-  border-color: #ffffff;
-  background: #ffffff;
-  box-shadow: 0 14px 30px rgb(24 10 52 / 0.34);
-  color: var(--action-blue);
-}
-
-.primary-button--closing .primary-button__icon {
-  background: #eef1fb;
-}
-
-.primary-button--closing .primary-button__icon img {
-  filter: brightness(0) saturate(100%) invert(34%) sepia(20%) saturate(2198%) hue-rotate(186deg) brightness(87%) contrast(90%);
-}
-
-.primary-button--closing:hover {
-  background: #f3eff9;
-  box-shadow: 0 18px 34px rgb(24 10 52 / 0.4);
 }
 
 .footer {
