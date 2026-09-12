@@ -93,6 +93,17 @@ Fixes:
 - At `320 px`, the lead is constrained to `220 px`; at `390` and `430 px`, it is `255 px`, preventing the copy from crossing the shield's brightest checkmark.
 - Rechecked `320 x 780`, `390 x 844`, and `430 x 932`: the hero background loaded, browser logs remained empty, and `scrollWidth` matched every viewport.
 
+### Iteration 6
+
+- P2: the solid action controls and benefit icons read as nearly black against the luminous peach-violet artwork.
+
+Fixes:
+
+- Shifted the shared action color from black-plum to a lighter deep blue (`#3d5296`) while preserving white-label contrast.
+- Applied the same blue to all three benefit circles, the closing CTA text, and its shield icon so both action areas now belong to one color system.
+- Retained the solid fills and compact button geometry so the CTAs remain distinct from the gradient background.
+- Rechecked the updated palette at `320 x 780` and `390 x 844`: labels remain readable, the three icons are consistent, and the closing CTA uses the same blue accent.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.
