@@ -153,6 +153,17 @@ Fixes:
 - Removed only the white outer highlight from the closing CTA in its default and hover states, retaining its blue border, fill, geometry, shield chip, and primary shadow.
 - Rechecked the closing CTA at `320 x 780` and `390 x 844`: no white rim remains around the button or its shadow.
 
+### Iteration 12
+
+- P2: the darkened multicolor artwork made the video section feel heavy and visually competed with the brighter hero.
+
+Fixes:
+
+- Changed only the video section to a calm solid iris (`#6269b8`) and removed its decorative background image.
+- Made the supporting copy and video-card captions fully white; the white-to-iris contrast ratio is `4.96:1`, passing WCAG AA for their body-size text.
+- Left the hero, buttons, benefit block, FAQ, closing section, spacing, and interactions unchanged for an isolated color comparison.
+- Rechecked the isolated change at `320 x 780`, `390 x 844`, and `430 x 932`: the section transitions remain clean, all white copy is readable, and the carousel geometry is unchanged.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.

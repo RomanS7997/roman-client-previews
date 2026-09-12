@@ -234,16 +234,8 @@ a {
   margin-top: -27px;
   padding-top: 103px;
   padding-bottom: 68px;
-  background: var(--violet-deep);
+  background: #6269b8;
   color: #ffffff;
-}
-
-.flow-background--dark {
-  inset: 0;
-  object-fit: cover;
-  object-position: center 100%;
-  filter: brightness(0.86) contrast(1.03) saturate(0.92);
-  opacity: 0.44;
 }
 
 .video-section__inner {
@@ -292,7 +284,7 @@ a {
 
 .section-heading--inverse > p:last-child {
   max-width: 350px;
-  color: rgb(255 255 255 / 0.86);
+  color: #ffffff;
   font-size: 13.5px;
   line-height: 1.42;
 }
@@ -410,7 +402,7 @@ a {
 
 .lesson__copy small {
   margin-top: 3px;
-  color: rgb(255 255 255 / 0.68);
+  color: #ffffff;
   font-size: 11px;
   line-height: 1.35;
 }
