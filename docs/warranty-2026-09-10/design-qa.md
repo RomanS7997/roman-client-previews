@@ -177,6 +177,17 @@ Fixes:
 - Rechecked at `320 x 780`, `390 x 844`, and `430 x 932`: the curve-to-heading gap is consistently `45 px`, page width matches every viewport, and both button labels remain unbroken.
 - White text on the default violet button is `6.25:1`; carousel, video dialog, FAQ, documents dialog, and both Telegram links still work, with no browser warnings or errors.
 
+### Iteration 14
+
+- P3: the small shield chip inside the activation CTA duplicated the much stronger shield artwork in the hero and made the compact button feel busier than necessary.
+
+Fixes:
+
+- Removed the shield chip from both activation buttons so their shared style remains identical.
+- Rebalanced the controls as centered text-only buttons with equal horizontal padding, retaining the existing height, violet fill, label weight, and interaction states.
+- Rechecked at `320 x 780` and `390 x 844`: both labels stay on one line, the buttons remain `52 px` high, no unused icon nodes remain, and page width matches the viewport.
+- Confirmed the closing CTA uses the same `205.45 x 52 px` geometry as the hero CTA at `390 px`; browser warnings and errors remain empty.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.

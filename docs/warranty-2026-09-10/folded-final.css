@@ -131,14 +131,13 @@ a {
 }
 
 .primary-button {
-  display: inline-grid;
+  display: inline-flex;
   min-height: 52px;
   max-width: 100%;
-  grid-template-columns: 32px minmax(0, auto);
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   margin-top: 17px;
-  padding: 7px 17px 7px 7px;
+  padding: 0 18px;
   border: 1px solid var(--action-violet);
   border-radius: 10px;
   background: var(--action-violet);
@@ -150,22 +149,6 @@ a {
   text-decoration: none;
   white-space: nowrap;
   transition: box-shadow 180ms ease, transform 180ms ease;
-}
-
-.primary-button__icon {
-  display: grid;
-  width: 32px;
-  height: 32px;
-  place-items: center;
-  border: 0;
-  border-radius: 9px;
-  background: rgb(255 255 255 / 0.14);
-}
-
-.primary-button__icon img {
-  width: 21px;
-  height: 21px;
-  filter: brightness(0) invert(1);
 }
 
 .primary-button:hover {
@@ -683,8 +666,7 @@ dialog::backdrop {
   }
 
   .primary-button {
-    gap: 8px;
-    padding-right: 13px;
+    padding-inline: 16px;
     font-size: 13px;
   }
 
