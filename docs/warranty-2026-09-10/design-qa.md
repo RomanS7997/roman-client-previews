@@ -239,6 +239,7 @@ Fixes:
 
 - Shifted only the closing activation button from `#f29a7e` to coral-orange `#eb7a56`, retaining white text and the approved compact geometry.
 - Kept the hero CTA and benefit icons unchanged.
+- Declared the existing shield asset as the page favicon so browsers do not fall back to a missing `/favicon.ico` request.
 - Rechecked the closing section at `390 x 844`: the button resolves to `rgb(235, 122, 86)`, page width remains equal to the viewport, all four document links and all three video sources remain present, and browser warnings/errors are empty.
 
 ## Primary interaction checks
