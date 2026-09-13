@@ -528,15 +528,15 @@ a {
 }
 
 .closing .primary-button {
-  border-color: #f29a7e;
-  background: #f29a7e;
+  border-color: #eb7a56;
+  background: #eb7a56;
   box-shadow: 0 14px 30px rgb(49 20 86 / 0.32);
   color: #ffffff;
 }
 
 .closing .primary-button:hover {
-  border-color: #ffa98f;
-  background: #ffa98f;
+  border-color: #f18b68;
+  background: #f18b68;
   box-shadow: 0 18px 34px rgb(49 20 86 / 0.38);
 }
 

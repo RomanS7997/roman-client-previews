@@ -231,6 +231,16 @@ Fixes:
 - Every tested page has `scrollWidth` equal to `clientWidth`, all four footer links are present, headings fit, and browser warnings/errors remain empty.
 - Normalized rendered legal body text matches production exactly for all four pages (`3471`, `3865`, `2020`, and `1571` characters respectively).
 
+### Iteration 18
+
+- P3: the closing peach CTA needed a slightly warmer orange cast before the production release.
+
+Fixes:
+
+- Shifted only the closing activation button from `#f29a7e` to coral-orange `#eb7a56`, retaining white text and the approved compact geometry.
+- Kept the hero CTA and benefit icons unchanged.
+- Rechecked the closing section at `390 x 844`: the button resolves to `rgb(235, 122, 86)`, page width remains equal to the viewport, all four document links and all three video sources remain present, and browser warnings/errors are empty.
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the portrait rail to `scrollLeft: 250` at `430 px` and updated `aria-current` from slide 1 to slide 2.
