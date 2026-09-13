@@ -216,11 +216,27 @@ Fixes:
 - Rechecked at `320 x 780`, `390 x 844`, and `430 x 932`: page width matches every viewport, the portrait cards remain `9:16`, and the full-screen viewer fills the complete viewport at both `320` and `390 px` widths.
 - Confirmed all three MP4 files load as `720 x 1280` videos with the expected durations (`1:20`, `0:57`, and `0:49`).
 
+### Iteration 17
+
+- P1: the four document links left the new warranty experience and opened legacy beige pages with an unrelated brand treatment.
+- P1: the local document copies were older than the versions currently published on `giftsactivate.ru`, so reusing them would have regressed legal content.
+
+Fixes:
+
+- Imported the current production versions of `terms.html`, `privacy.html`, `pd-consent.html`, and `marketing-consent.html`, then preserved their legal body text exactly.
+- Added one shared `legal.css` for all four pages, using the selected shield artwork, Onest typography, violet controls, a restrained white reading surface, and the same document footer treatment as the landing.
+- Replaced the landing's external production document URLs with relative links so the complete landing and document set can be deployed together without a second linking pass.
+- Added direct navigation among all four documents and back to the selected landing; internal policy and terms references are relative and work in both preview and root deployment.
+- Compared the old and new rules pages at the same `390 x 844` viewport, then checked all four new pages at `320 x 780`, `390 x 844`, `430 x 932`, and desktop `1024 x 900`.
+- Every tested page has `scrollWidth` equal to `clientWidth`, all four footer links are present, headings fit, and browser warnings/errors remain empty.
+- Normalized rendered legal body text matches production exactly for all four pages (`3471`, `3865`, `2020`, and `1571` characters respectively).
+
 ## Primary interaction checks
 
 - Carousel dot 2 moved the portrait rail to `scrollLeft: 250` at `430 px` and updated `aria-current` from slide 1 to slide 2.
 - FAQ expanded and exposed the approved marketplace copy, then collapsed again.
 - All four production document links are directly visible in the footer; no documents dialog or redundant `О гарантии` link remains.
+- The landing's `Правила розыгрыша` link opens the bundled redesigned `terms.html`; each legal page exposes the full four-document navigation.
 - Each supplied MP4 opened in the full-viewport viewer with the correct title and source URL; closing restored page scrolling and focus.
 - Telegram CTA remains `https://t.me/giftsactivate_bot?start=landing`.
 - Browser console warnings/errors: none.
