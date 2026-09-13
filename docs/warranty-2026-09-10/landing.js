@@ -7,10 +7,6 @@ function openDialog(dialog, opener) {
   dialog.showModal();
   document.body.style.overflow = 'hidden';
 }
-const documents = document.getElementById('documents');
-const documentsOpen = document.getElementById('documents-open');
-documentsOpen?.addEventListener('click', () => openDialog(documents, documentsOpen));
-document.getElementById('documents-close')?.addEventListener('click', () => documents.close());
 document.querySelectorAll('[data-close-dialog]').forEach(button => {
   button.addEventListener('click', () => button.closest('dialog').close());
 });

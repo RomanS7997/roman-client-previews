@@ -200,12 +200,28 @@ Fixes:
 - Rechecked the complete video section at `320 x 780`, `390 x 844`, and `430 x 932`: the color shift remains continuous, the FAQ overlap stays at `34 px`, and page width matches every viewport.
 - The production WebP is `19.7 KB`; all three video cards load and browser warnings and errors remain empty.
 
+### Iteration 16
+
+- P1: the installation videos were presented as landscape crops even though all three supplied files are vertical phone recordings.
+- P1: opening a video or the document list created small floating dialogs instead of keeping the experience direct and native to the mobile page.
+- P2: the closing violet CTA blended into the dark violet background, and the footer's `О гарантии` shortcut did not provide a useful destination.
+
+Fixes:
+
+- Rebuilt the video rail with true `9:16` previews and compact portrait columns that preserve a visible cue for the next slide.
+- Reworked video playback as a full-viewport viewer with a fixed title bar, accessible close control, contained portrait video, and scroll restoration on close.
+- Changed the hero supporting copy to the manager-approved warranty-certificate wording while retaining `Всё в Telegram-боте` in the benefits block.
+- Changed only the closing CTA to a solid peach treatment with dark-violet text so it is distinct from the violet artwork; the hero CTA remains violet.
+- Removed `О гарантии` and the documents dialog, then exposed all four production document links directly in the footer.
+- Rechecked at `320 x 780`, `390 x 844`, and `430 x 932`: page width matches every viewport, the portrait cards remain `9:16`, and the full-screen viewer fills the complete viewport at both `320` and `390 px` widths.
+- Confirmed all three MP4 files load as `720 x 1280` videos with the expected durations (`1:20`, `0:57`, and `0:49`).
+
 ## Primary interaction checks
 
-- Carousel dot 2 moved the rail to `scrollLeft: 298` and updated `aria-current` from slide 1 to slide 2.
+- Carousel dot 2 moved the portrait rail to `scrollLeft: 250` at `430 px` and updated `aria-current` from slide 1 to slide 2.
 - FAQ expanded and exposed the approved marketplace copy, then collapsed again.
-- Documents dialog opened with all four production links and restored page scrolling on close.
-- The first supplied MP4 opened in the video dialog with the correct title and source URL.
+- All four production document links are directly visible in the footer; no documents dialog or redundant `О гарантии` link remains.
+- Each supplied MP4 opened in the full-viewport viewer with the correct title and source URL; closing restored page scrolling and focus.
 - Telegram CTA remains `https://t.me/giftsactivate_bot?start=landing`.
 - Browser console warnings/errors: none.
 

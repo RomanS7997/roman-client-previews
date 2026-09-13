@@ -292,7 +292,7 @@ a {
 
 .lesson-track {
   display: grid;
-  grid-auto-columns: calc(100% - 64px);
+  grid-auto-columns: clamp(190px, 62vw, 238px);
   grid-auto-flow: column;
   gap: 12px;
   padding: 0 var(--gutter) 8px 0;
@@ -318,7 +318,7 @@ a {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
   overflow: hidden;
   border: 1px solid rgb(255 255 255 / 0.7);
   border-radius: 8px;
@@ -331,16 +331,8 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center;
   transition: transform 240ms ease;
-}
-
-.lesson:nth-child(2) .lesson-thumb {
-  object-position: center 36%;
-}
-
-.lesson:nth-child(3) .lesson-thumb {
-  object-position: center 47%;
 }
 
 .lesson:hover .lesson-thumb {
@@ -481,6 +473,12 @@ a {
   display: none;
 }
 
+.faq-list summary:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: -2px;
+  border-radius: 7px;
+}
+
 .faq-list summary img {
   width: 19px;
   height: 19px;
@@ -530,40 +528,52 @@ a {
 }
 
 .closing .primary-button {
-  box-shadow: 0 14px 30px rgb(77 49 143 / 0.3);
+  border-color: #f29a7e;
+  background: #f29a7e;
+  box-shadow: 0 14px 30px rgb(49 20 86 / 0.32);
+  color: #2f174e;
 }
 
 .closing .primary-button:hover {
-  box-shadow: 0 18px 34px rgb(77 49 143 / 0.36);
+  border-color: #ffa98f;
+  background: #ffa98f;
+  box-shadow: 0 18px 34px rgb(49 20 86 / 0.38);
 }
 
 .footer {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding-top: 25px;
+  display: block;
+  padding-top: 30px;
   padding-bottom: max(25px, env(safe-area-inset-bottom));
   color: #ffffff;
   font-size: 12px;
 }
 
-.footer a,
-.text-link {
-  display: inline-flex;
-  min-height: 40px;
-  align-items: center;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: inherit;
-  font-size: inherit;
-  text-decoration: underline;
+.footer__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-.footer__divider {
-  width: 1px;
-  height: 17px;
-  background: rgb(255 255 255 / 0.58);
+.footer__documents {
+  display: grid;
+  margin-top: 10px;
+}
+
+.footer__documents a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid rgb(255 255 255 / 0.34);
+  color: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.footer__documents a:last-child {
+  border-bottom: 1px solid rgb(255 255 255 / 0.34);
 }
 
 dialog {
@@ -611,47 +621,78 @@ dialog::backdrop {
   height: 19px;
 }
 
-.document-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.document-list a {
-  display: flex;
-  min-height: 56px;
-  align-items: center;
-  padding-block: 10px;
-  border-top: 1px solid #e5e2eb;
-  font-size: 14px;
-  line-height: 1.5;
-  text-decoration: none;
-}
-
-.document-list a:last-child {
-  border-bottom: 1px solid #e5e2eb;
-}
-
 .media-dialog {
-  width: min(470px, calc(100% - 24px));
-  padding: 14px;
-  overflow: auto;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #0e0b18;
+  color: #ffffff;
+}
+
+.media-dialog[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+.media-dialog .dialog__heading {
+  min-height: 64px;
+  margin: 0;
+  padding: max(10px, env(safe-area-inset-top)) 14px 10px 18px;
+  background: #171225;
+}
+
+.media-dialog .dialog__heading h2 {
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.media-dialog .dialog__close {
+  border-color: rgb(255 255 255 / 0.2);
+  background: rgb(255 255 255 / 0.1);
+}
+
+.media-dialog .dialog__close img {
+  filter: brightness(0) invert(1);
 }
 
 .media-dialog video {
   display: block;
   width: 100%;
-  max-height: min(67dvh, 610px);
-  border-radius: 8px;
-  background: #111111;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  border-radius: 0;
+  background: #000000;
   object-fit: contain;
 }
 
-.media-dialog .video-fallback,
-.media-dialog .video-error {
-  margin: 12px 0 0;
+.media-dialog__footer {
+  padding: 10px 18px max(12px, env(safe-area-inset-bottom));
+  background: #171225;
   font-size: 12px;
   line-height: 1.5;
   text-align: center;
+}
+
+.media-dialog__footer a {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  color: #ffffff;
+}
+
+.media-dialog .video-error {
+  margin: 0 0 4px;
 }
 
 @media (max-width: 350px) {
@@ -707,10 +748,6 @@ dialog::backdrop {
 
   .section-heading--inverse h2 {
     font-size: 17px;
-  }
-
-  .lesson-track {
-    grid-auto-columns: calc(100% - 48px);
   }
 
   .faq-list summary {
