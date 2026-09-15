@@ -1016,6 +1016,10 @@ dialog::backdrop {
     min-height: 50px;
     font-size: 14px;
   }
+
+  .footer__documents a:last-child {
+    border-bottom: 0;
+  }
 }
 
 @media (min-width: 900px) {
