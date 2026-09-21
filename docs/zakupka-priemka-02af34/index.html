@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Приёмка калькулятора Закупщика</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style id="cl-style">
+  :root {
+    --ground: #f4f5f7;
+    --surface: #ffffff;
+    --ink: #16181d;
+    --muted: #5b6270;
+    --line: #e2e5ea;
+    --line-soft: #eef0f3;
+    --accent: #2563eb;
+    --accent-soft: #e9f0fe;
+    --wb: #7c3aed;
+    --ok: #15803d;
+    --ok-soft: #e7f5ec;
+    --bad: #c2261f;
+    --bad-soft: #fdecea;
+    --warn: #a15c07;
+    --warn-soft: #fdf2e2;
+    --shadow: 0 1px 2px rgba(22, 24, 29, .06), 0 4px 16px rgba(22, 24, 29, .04);
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0f1115;
+      --surface: #171a20;
+      --ink: #e8eaee;
+      --muted: #9aa1ad;
+      --line: #2a2f38;
+      --line-soft: #20242b;
+      --accent: #7aa5ff;
+      --accent-soft: #1a2436;
+      --wb: #b69cff;
+      --ok: #5fd48a;
+      --ok-soft: #14271c;
+      --bad: #ff8a80;
+      --bad-soft: #2d1717;
+      --warn: #f3b55a;
+      --warn-soft: #2b2112;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0f1115;
+    --surface: #171a20;
+    --ink: #e8eaee;
+    --muted: #9aa1ad;
+    --line: #2a2f38;
+    --line-soft: #20242b;
+    --accent: #7aa5ff;
+    --accent-soft: #1a2436;
+    --wb: #b69cff;
+    --ok: #5fd48a;
+    --ok-soft: #14271c;
+    --bad: #ff8a80;
+    --bad-soft: #2d1717;
+    --warn: #f3b55a;
+    --warn-soft: #2b2112;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font: 400 15px/1.55 "Golos Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-inline: 16px;
+    padding-block: 0 72px;
+  }
+  /* minmax(0, 1fr): иначе колонка сетки растёт под самый длинный неразрывный
+     кусок внутри и страница на телефоне уезжает вбок. */
+  .wrap { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  code, .mono { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace; }
+
+  /* ── шапка ─────────────────────────────────────────────── */
+  .head { padding-top: 36px; display: grid; gap: 10px; }
+  .eyebrow {
+    color: var(--muted); font-size: 12px; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase;
+  }
+  h1 {
+    margin: 0; font-size: clamp(26px, 4.6vw, 36px); line-height: 1.15;
+    font-weight: 700; letter-spacing: -.015em; text-wrap: balance;
+  }
+  .lede { margin: 0; color: var(--muted); max-width: 64ch; }
+  .lede b { color: var(--ink); font-weight: 600; }
+
+  /* ── липкая полоса итогов ───────────────────────────────── */
+  .bar {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+    padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px;
+    background: var(--surface); box-shadow: var(--shadow);
+  }
+  .tally { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-size: 14px; }
+  .tally b { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .tally .t-ok b { color: var(--ok); }
+  .tally .t-bad b { color: var(--bad); }
+  .tally .t-left { color: var(--muted); }
+  .meter { flex: 1 1 140px; height: 6px; border-radius: 99px; background: var(--line-soft); overflow: hidden; display: flex; }
+  .meter i { display: block; height: 100%; }
+  .meter .m-ok { background: var(--ok); }
+  .meter .m-bad { background: var(--bad); }
+  .who { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .who input { width: 150px; }
+  .actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+  .note-status { font-size: 12px; color: var(--muted); }
+  .note-status.is-warn { color: var(--warn); }
+  .filter { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); cursor: pointer; }
+
+  input[type="text"] {
+    font: inherit; font-size: 14px; color: var(--ink);
+    padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px;
+    background: var(--surface); min-width: 0;
+  }
+  input[type="text"]:focus-visible, button:focus-visible, input[type="checkbox"]:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px;
+  }
+  .btn {
+    font: 600 14px/1 "Golos Text", system-ui, sans-serif;
+    padding: 10px 16px; border-radius: 8px; cursor: pointer;
+    border: 1px solid var(--ink); background: var(--ink); color: var(--surface);
+  }
+  .btn:disabled { opacity: .4; cursor: default; }
+  .btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--line); }
+  .btn-ghost:hover { border-color: var(--muted); }
+  .toast {
+    position: fixed; left: 50%; transform: translateX(-50%); z-index: 20;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    padding: 10px 16px; border-radius: 10px; background: var(--ink); color: var(--surface);
+    font-size: 14px; box-shadow: var(--shadow); max-width: calc(100vw - 32px);
+  }
+  .report-box {
+    position: fixed; inset: 0; z-index: 30; display: grid; place-items: center;
+    padding: 16px; background: rgba(15, 17, 21, .5);
+  }
+  .report-box__in {
+    width: min(640px, 100%); display: grid; gap: 10px; padding: 18px;
+    border-radius: 12px; background: var(--surface); border: 1px solid var(--line);
+  }
+  .report-box__in b { font-size: 15px; }
+  .report-box textarea {
+    width: 100%; min-height: 260px; font: 13px/1.5 "JetBrains Mono", ui-monospace, monospace;
+    color: var(--ink); background: var(--ground); border: 1px solid var(--line);
+    border-radius: 8px; padding: 10px; resize: vertical;
+  }
+  .report-box__actions { display: flex; justify-content: flex-end; }
+
+  /* ── эталон ввода ───────────────────────────────────────── */
+  .panel {
+    border: 1px solid var(--line); border-radius: 12px; background: var(--surface);
+    padding: 18px 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px;
+  }
+  .panel h2 { margin: 0; font-size: 17px; font-weight: 600; }
+  .panel p { margin: 0; color: var(--muted); font-size: 14px; max-width: 70ch; }
+  .ref-wrap { overflow-x: auto; }
+  .ref { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 460px; }
+  .ref th, .ref td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  .ref th { color: var(--muted); font-weight: 500; width: 44%; }
+  .ref td code { font-size: 13px; }
+  .ref tr:last-child th, .ref tr:last-child td { border-bottom: 0; }
+  .ref .grp th { padding-top: 14px; color: var(--ink); font-weight: 600; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  .mp-wb { color: var(--wb); font-weight: 600; }
+  .mp-oz { color: var(--accent); font-weight: 600; }
+
+  /* ── разделы и пункты ──────────────────────────────────── */
+  .sec { display: grid; gap: 0; }
+  .sec-head {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    padding-bottom: 8px; border-bottom: 2px solid var(--ink); margin-bottom: 2px;
+  }
+  .sec-head h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
+  .sec-head span { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .sec-lede { margin: 8px 0 4px; color: var(--muted); font-size: 14px; max-width: 70ch; }
+
+  .item {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 16px;
+    padding: 14px 0; border-bottom: 1px solid var(--line);
+  }
+  .item.is-bad .i-title { color: var(--bad); }
+  .i-status { grid-row: 1 / span 3; display: flex; gap: 4px; align-self: start; }
+  .st {
+    font: 600 12px/1 "Golos Text", system-ui, sans-serif;
+    padding: 7px 9px; border-radius: 7px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+    min-width: 34px;
+  }
+  .st:hover { border-color: var(--muted); }
+  .st[aria-pressed="true"].st-ok { background: var(--ok-soft); border-color: var(--ok); color: var(--ok); }
+  .st[aria-pressed="true"].st-bad { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
+  .i-title { font-weight: 600; font-size: 15px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .i-num { color: var(--muted); font-weight: 500; font-size: 13px; font-variant-numeric: tabular-nums; }
+  .tag {
+    font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 5px;
+    letter-spacing: .02em; white-space: nowrap;
+  }
+  .tag-fix { background: var(--ok-soft); color: var(--ok); }
+  .tag-new { background: var(--accent-soft); color: var(--accent); }
+  .tag-ask { background: var(--warn-soft); color: var(--warn); }
+  .i-expect { color: var(--muted); font-size: 14px; max-width: 72ch; }
+  .i-expect b { color: var(--ink); font-weight: 600; }
+  .i-expect code, .i-do code {
+    font-size: 12.5px; background: var(--line-soft); color: var(--ink);
+    padding: 1px 5px; border-radius: 4px;
+    /* Короткие значения не рвутся и так, а длинная строка предпросмотра
+       обязана переноситься — одна она шире телефона. */
+    overflow-wrap: anywhere; box-decoration-break: clone; -webkit-box-decoration-break: clone;
+  }
+  .i-do { font-size: 14px; max-width: 72ch; }
+  .i-note { width: 100%; }
+  .i-note input { width: 100%; }
+  .item.hide-by-filter { display: none; }
+
+  .ask-list { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: 14px; color: var(--muted); max-width: 72ch; }
+  .ask-list b { color: var(--ink); }
+
+  .foot { color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 560px) {
+    .item { grid-template-columns: minmax(0, 1fr); }
+    .i-status { grid-row: auto; }
+    .actions { margin-left: 0; width: 100%; justify-content: space-between; }
+    .who input { width: 120px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main id="app"></main>
+<noscript><p style="padding:24px">Для отметок нужен JavaScript.</p></noscript>
+<div class="report-box" id="report-box" hidden>
+  <div class="report-box__in" role="dialog" aria-modal="true" aria-labelledby="report-h">
+    <b id="report-h">Скопируйте отчёт и отправьте Роману</b>
+    <textarea id="report-text" readonly aria-label="Текст отчёта"></textarea>
+    <div class="report-box__actions"><button type="button" class="btn btn-ghost" id="report-close">Закрыть</button></div>
+  </div>
+</div>
+
+<script type="application/json" id="cl-state">{"tester":"","savedAt":"","marks":{}}</script>
+
+<script id="cl-script">
+(function () {
+  "use strict";
+
+  // ── Содержание чек-листа ─────────────────────────────────────────────
+  // id пунктов не менять: по ним хранятся отметки проверяющего.
+  var SECTIONS = [
+    { id: "form", title: "Форма с нуля", lede: "Откройте калькулятор заново, ничего не вводя.", items: [
+      { id: "a1", tag: "fix", t: "Поля закупки, габаритов и категорий пустые",
+        e: "Раньше там стояли 750 ₽, 11×6×3 и «Внешние аккумуляторы»/«Конструктор» — они молча уходили в расчёт. Остаются по умолчанию только <b>ДРР 10%</b>, <b>СПП Ozon 60%</b> и <b>СПП WB</b>, которую калькулятор подставляет сам — рядом плашка «подставлена»." },
+      { id: "a2", tag: "fix", t: "Поля «Наша скидка» нет нигде",
+        e: "Ни в блоке цены, ни в блоках площадок. Общей «Цены до СПП» тоже нет — цена теперь вводится по каждой площадке." },
+      { id: "a3", tag: "fix", t: "Над формой нет плашки с четырьмя показателями",
+        e: "Режим доставки, себестоимость, объём и цены сверху убраны: цифры видны прямо у полей, по мере заполнения." }
+    ]},
+    { id: "landed", title: "Заход в Россию", lede: "Введите эталон из таблицы выше: закупка в юанях, упаковка, вес, курсы.", items: [
+      { id: "b1", tag: "new", t: "Предпросмотр считает заход сразу при вводе",
+        e: "Под закупкой: <code>25,00 ¥ × 12,5000 = 313 ₽ (закупка 20,00 + упаковка 5,00) · логистика 20 ₽ · страховка 5 ₽ → заход в Россию 338 ₽</code>. Меняется на каждое нажатие, без Enter." },
+      { id: "b2", tag: "fix", t: "Вес не стирается",
+        e: "Посчитайте, затем поменяйте любое поле. В «Весе с упаковкой» остаётся <code>120</code>. Раньше вес стирался при каждом пересчёте, и из-за этого «Посчитать» переставала работать." },
+      { id: "b3", tag: "new", t: "Без веса предпросмотр говорит, чего не хватает",
+        e: "Сотрите вес — в строке появится <code>логистика — нужен вес</code>." },
+      { id: "b4", tag: "new", t: "При закупке в рублях предпросмотр скрыт",
+        e: "Переводить нечего — блок исчезает. Вернёте юани — появится снова." },
+      { id: "b5", tag: "fix", t: "Предпросмотр и карточка дают одно число",
+        e: "После расчёта в карточке «Заход товара» — <b>338</b>, как в предпросмотре. Добавьте в «Расходы на заход товара» маркировку <code>15</code> — предпросмотр станет <code>≈ 353 ₽</code>." }
+    ]},
+    { id: "price", title: "Цена продажи → цена до СПП", lede: "Главная правка созвона 16.09: вводится то, что платит покупатель на витрине, отдельно для ВБ и Ozon.", items: [
+      { id: "c1", tag: "new", t: "Две колонки: Wildberries и Ozon",
+        e: "В каждой — цена продажи, серый блок «цена до СПП», СПП и реклама. На телефоне колонки встают друг под другом." },
+      { id: "c2", tag: "new", t: "ВБ: 450 при СПП 20% → 562,50 ₽",
+        e: "Цена до СПП считается при вводе, до нажатия «Посчитать», с формулой под ней: <code>450 ÷ (1 − 0,20) = 562,50</code>." },
+      { id: "c3", tag: "ask", t: "Ozon: 500 при СПП 60% → 1 250 ₽",
+        e: "Это деление: СПП считается долей от цены до СПП, как её отдаёт WB. Если по вашему опыту цена до СПП на Ozon должна быть <b>800 ₽</b> (500 плюс 60%) — отметьте «Баг» и напишите, какое число верное." },
+      { id: "c4", t: "Цена с запятой и с пробелами принимается",
+        e: "<code>450,5</code> → <code>563,13 ₽</code>; <code>1 200</code> → <code>1 500 ₽</code>." },
+      { id: "c5", tag: "fix", t: "СПП 100% и выше — ошибка поля",
+        e: "Поле СПП краснеет, расчёт не идёт. Раньше Ozon в этом случае молча считался по цене ВБ." },
+      { id: "c6", t: "Маркет: своя цена продажи, без СПП",
+        e: "В блоке Яндекс Маркета поле «Цена продажи Маркет». Пусто — берётся цена до СПП ВБ (для эталона — 562,50)." }
+    ]},
+    { id: "calc", title: "Кнопка «Посчитать»", items: [
+      { id: "d1", tag: "fix", t: "Пустое обязательное поле краснеет",
+        e: "Сотрите цену продажи Ozon и нажмите «Посчитать»: поле краснеет с подписью «Заполните поле», экран сам едет к нему. Кнопка не должна «молчать» — раньше она ничего не делала, если не хватало веса." },
+      { id: "d2", t: "Обе категории и обе цены продажи обязательны",
+        e: "Без категории или цены любой из двух площадок расчёт не показывается, поле подсвечено." }
+    ]},
+    { id: "cards", title: "Карточки схем", lede: "Посчитайте эталон целиком. Прибыль и комиссии зависят от тарифов площадок на день проверки, поэтому здесь нет «правильной прибыли» — проверяются связки между числами.", items: [
+      { id: "e1", t: "Шесть карточек",
+        e: "WB · FBS, WB · FBO, WB Global, Ozon · FBO, Ozon · FBS, Ozon Global (плюс две Маркета, если выбрана его категория). В каждой сверху: заход товара, цена продажи, прибыль после УСН и ROI." },
+      { id: "e2", tag: "new", t: "Правка цены в карточке ВБ меняет только ВБ",
+        e: "В WB · FBS впишите в «Цену продажи» <code>990</code>. Через полсекунды пересчитываются все три карточки ВБ, Ozon не трогается. В колонке ВБ формы: цена продажи <code>990</code>, цена до СПП <code>1 237,50 ₽</code>." },
+      { id: "e3", tag: "new", t: "Правка в карточке Ozon меняет только Ozon",
+        e: "Впишите <code>777</code> в Ozon · FBO — меняются карточки Ozon и колонка Ozon (<code>1 942,50 ₽</code>), ВБ остаётся как был." },
+      { id: "e4", tag: "fix", t: "Пересчёт без Enter и без миганий",
+        e: "Меняете число — карточки обновляются сами. Раскрытая свёртка «из чего сложилась цифра» не закрывается, курсор не выпрыгивает из поля, блок не гаснет." },
+      { id: "e5", t: "Заход вручную и возврат",
+        e: "Впишите в «Заход товара» <code>200</code> — под полем «задано вручную» и крестик. Крестик возвращает расчётный заход." },
+      { id: "e6", t: "Счётчик ROI",
+        e: "Поставьте <code>250</code> — цена «Под ROI» растёт, в разборе под карточкой пишется «до 250%», а не «до 100%»." },
+      { id: "e7", tag: "new", t: "«поставить» подставляет цену на месте",
+        e: "Под ценой «Под ROI» нажмите «поставить»: цена продажи этой площадки становится ценой под ROI, страница не перезагружается. После этого кнопка серая с подсказкой «уже стоит в поле»." },
+      { id: "e8", t: "Контрольные цены не врут",
+        e: "После «поставить» при ROI 100% в карточке <b>ROI ровно 100%</b>. Если ввести цену из блока «В ноль» как цену продажи — прибыль <b>около 0 ₽</b> (плюс-минус рубль округления)." },
+      { id: "e9", tag: "fix", t: "Лишних показателей нет",
+        e: "Полоса «рентабельность / маржа / наценка / маржинальность по-старому» убрана. Остался разбор причин — в нём строка «Больше всего забирают: комиссия, реклама…»." },
+      { id: "e10", tag: "fix", t: "Разбор говорит на новом словаре",
+        e: "Например: «Не проходит точку нуля: цена до СПП 562 ₽, а безубыточно от … — это цена продажи от …» и «нужна цена продажи от … (до СПП — …)». Цифры совпадают с блоками «В ноль» и «Под ROI»." }
+    ]},
+    { id: "schemes", title: "Какие схемы показывать", items: [
+      { id: "f1", tag: "new", t: "Лишние схемы прячутся и не возвращаются сами",
+        e: "Над карточками снимите галочки с Global — карточки пропадают и остаются спрятанными после любого пересчёта и после перезагрузки страницы. Кнопка «все» возвращает всё." }
+    ]},
+    { id: "saved", title: "Сохранённые расчёты", items: [
+      { id: "g1", tag: "new", t: "Карточка в списке — общая картина",
+        e: "Себестоимость, заход в РФ, средние по площадкам: цена продажи, цена до СПП, прибыль, ROI. Ниже — прибыль по каждой схеме. Заход, введённый руками, помечен «вручную»." },
+      { id: "g2", t: "«Открыть» даёт те же цифры", e: "Открытый расчёт совпадает с тем, что сохраняли." },
+      { id: "g3", t: "«Копировать» даёт копию", e: "Открывается та же форма с теми же значениями, в списке появляется «Копия · …» после сохранения." },
+      { id: "g4", tag: "fix", t: "Excel — колонка на каждую схему",
+        e: "В выгрузке по одной колонке на схему (6, с Маркетом 8), у каждой своя прибыль. Раньше была одна колонка." },
+      { id: "g5", tag: "fix", t: "«Сравнить» показывает все отмеченные",
+        e: "Отметьте два расчёта и нажмите «Сравнить» — две колонки. Раньше терялась первая галочка и показывался один товар." },
+      { id: "g6", t: "Старые расчёты не поменялись",
+        e: "Расчёт, сохранённый до 21.09, открывается с той же прибылью, что была при сохранении." }
+    ]},
+    { id: "phone", title: "Телефон", items: [
+      { id: "h1", t: "Ничего не вылезает за край",
+        e: "Колонки ВБ и Ozon друг под другом, карточки в одну колонку, страница не листается вбок." }
+    ]}
+  ];
+
+  var LABEL = { fix: "исправлено", "new": "новое", ask: "вопрос" };
+  var STASH_KEY = "zk-priemka-draft";
+
+  // ── Состояние: хранится в этом браузере ───────────────────────────────
+  // Общего хранилища на GitHub Pages нет: отметки живут в localStorage, а
+  // Роману уходят кнопкой «Скопировать отчёт». В ключе версия чек-листа —
+  // при новой редакции пунктов старые отметки не налезут на новые.
+  var STORE_KEY = "zk-priemka-v1";
+  var state = { tester: "", savedAt: "", marks: {} };
+  try {
+    var saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+    if (saved && saved.marks) {
+      state = { tester: saved.tester || "", savedAt: saved.savedAt || "", marks: saved.marks };
+    }
+  } catch (_) {}
+  var storageOk = true;
+  try { localStorage.setItem("zk-priemka-probe", "1"); localStorage.removeItem("zk-priemka-probe"); }
+  catch (_) { storageOk = false; }
+  var changed = {};
+  var testerChanged = false;
+
+  var onlyBugs = false;
+  try { onlyBugs = localStorage.getItem("zk-priemka-only-bugs") === "1"; } catch (_) {}
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function allItems() {
+    var out = [];
+    SECTIONS.forEach(function (s) { s.items.forEach(function (it) { out.push(it); }); });
+    return out;
+  }
+  function mark(id) { return state.marks[id] || { s: "", n: "" }; }
+  function dirtyCount() { return Object.keys(changed).length + (testerChanged ? 1 : 0); }
+
+  // ── Отрисовка ────────────────────────────────────────────────────────
+  function refTable() {
+    var rows = [
+      ["grp", "Закупка"],
+      ["Валюта закупки", "юани, ¥"],
+      ["Закупка у поставщика", "<code>20</code> ¥"],
+      ["Упаковка и доп. расходы", "<code>5</code> ¥"],
+      ["Вес с упаковкой", "<code>120</code> г"],
+      ["Габариты", "<code>11 × 6 × 3</code> см"],
+      ["grp", "Курсы, страховка и отгрузка"],
+      ["Курс ¥ / курс $", "<code>12,5</code> / <code>84</code> — поставить руками, по умолчанию стоит курс ЦБ"],
+      ["Отгрузка, $ за кг", "<code>2</code>"],
+      ["Страховка", "<code>2</code> %"],
+      ["grp", "Категории"],
+      ["WB / Ozon", "«Защитные стекла» / «Защитное стекло»"],
+      ["grp", "Цена и продвижение"],
+      ['<span class="mp-wb">Wildberries</span>', "цена продажи <code>450</code>, СПП <code>20</code> %"],
+      ['<span class="mp-oz">Ozon</span>', "цена продажи <code>500</code>, СПП <code>60</code> %"],
+      ["Реклама ДРР, модель WB", "по умолчанию: <code>10</code> %, FBS"]
+    ];
+    return '<div class="ref-wrap"><table class="ref"><tbody>' + rows.map(function (r) {
+      if (r[0] === "grp") return '<tr class="grp"><th colspan="2">' + r[1] + '</th></tr>';
+      return '<tr><th>' + r[0] + '</th><td>' + r[1] + '</td></tr>';
+    }).join("") + '</tbody></table></div>';
+  }
+
+  function itemHtml(it, secIndex, itemIndex) {
+    var m = mark(it.id);
+    var num = (secIndex + 1) + "." + (itemIndex + 1);
+    var cls = "item" + (m.s === "ok" ? " is-ok" : m.s === "bad" ? " is-bad" : "");
+    var tag = it.tag ? '<span class="tag tag-' + it.tag + '">' + LABEL[it.tag] + '</span>' : "";
+    return '<div class="' + cls + '" data-item="' + it.id + '">' +
+      '<div class="i-status" role="group" aria-label="Результат проверки ' + num + '">' +
+        '<button type="button" class="st st-ok" id="s-' + it.id + '-ok" data-set="ok" aria-pressed="' + (m.s === "ok") + '" title="Работает как написано">Ок</button>' +
+        '<button type="button" class="st st-bad" id="s-' + it.id + '-bad" data-set="bad" aria-pressed="' + (m.s === "bad") + '" title="Не так, как написано">Баг</button>' +
+      '</div>' +
+      '<div class="i-title"><span class="i-num">' + num + '</span><span>' + it.t + '</span>' + tag + '</div>' +
+      '<div class="i-expect">' + it.e + '</div>' +
+      '<div class="i-note"><input type="text" id="n-' + it.id + '" data-note="' + it.id + '" value="' + esc(m.n) +
+        '" placeholder="Заметка: что увидели, если не так" aria-label="Заметка к пункту ' + num + '"></div>' +
+    '</div>';
+  }
+
+  function render() {
+    var html = '<div class="wrap">' +
+      '<header class="head">' +
+        '<div class="eyebrow">Закупщик · юнит-калькулятор · правки с созвона 16.09</div>' +
+        '<h1>Приёмка калькулятора</h1>' +
+        '<p class="lede">Что поменялось и как это проверить. У каждого пункта — что должно получиться, с точными цифрами. ' +
+          'Отмечайте <b>«Ок»</b> или <b>«Баг»</b> и пишите заметку, если что-то не так. Отметки сохраняются в этом браузере сами — можно закрыть и вернуться. ' +
+          'Закончив, нажмите <b>«Скопировать отчёт»</b> и отправьте его Роману в чат.</p>' +
+      '</header>' +
+      '<div class="bar" id="bar"></div>' +
+      '<section class="panel" aria-labelledby="ref-h">' +
+        '<h2 id="ref-h">Эталонный ввод</h2>' +
+        '<p>Большинство пунктов проверяются на этих числах — все ожидаемые значения ниже посчитаны от них. Вход: личная ссылка оператора или админка, раздел «Калькулятор».</p>' +
+        refTable() +
+      '</section>';
+    SECTIONS.forEach(function (sec, si) {
+      html += '<section class="sec" aria-labelledby="sec-' + sec.id + '">' +
+        '<div class="sec-head"><h2 id="sec-' + sec.id + '">' + sec.title + '</h2><span data-sec-count="' + sec.id + '"></span></div>' +
+        (sec.lede ? '<p class="sec-lede">' + sec.lede + '</p>' : "") +
+        sec.items.map(function (it, ii) { return itemHtml(it, si, ii); }).join("") +
+      '</section>';
+    });
+    html += '<section class="panel" aria-labelledby="ask-h">' +
+        '<h2 id="ask-h">Что известно заранее</h2>' +
+        '<ul class="ask-list">' +
+          '<li><b>Ozon и деление.</b> Пункт 3.3: если цена до СПП на Ozon должна считаться как «цена продажи плюс процент», все цифры Ozon поменяются. Это решение оператора, а не ошибка кода — отметьте, какое число верное.</li>' +
+          '<li><b>Прибыль зависит от тарифов.</b> Комиссии и логистика подтягиваются из площадок на день проверки, поэтому точной прибыли в чек-листе нет — проверяются связки: «в ноль» даёт ноль, «под ROI» даёт нужный ROI.</li>' +
+          '<li><b>Два пункта с созвона не сделаны:</b> «поле такого же размера и цвета» и «эта проблема не пофиксилась» — без скриншота не удалось понять, о каких местах речь. Если заметите — опишите в заметке к любому пункту.</li>' +
+          '<li><b>Плашки в карточке ужаты частично:</b> укорочены сноски, высота карточек прежняя.</li>' +
+        '</ul>' +
+      '</section>' +
+      '<p class="foot" id="foot"></p>' +
+    '</div>';
+    document.getElementById("app").innerHTML = html;
+    renderBar();
+    applyFilter();
+  }
+
+  function renderBar() {
+    var items = allItems();
+    var ok = 0, bad = 0;
+    items.forEach(function (it) { var s = mark(it.id).s; if (s === "ok") ok++; else if (s === "bad") bad++; });
+    var total = items.length, left = total - ok - bad;
+    var bar = document.getElementById("bar");
+    var status = storageOk
+      ? '<span class="note-status">' + (state.savedAt
+          ? 'Сохранено в этом браузере ' + esc(fmtDate(state.savedAt))
+          : 'Отметки сохраняются в этом браузере') + '</span>'
+      : '<span class="note-status is-warn">Браузер не даёт сохранять — не закрывайте вкладку, пока не отправите отчёт</span>';
+    bar.innerHTML =
+      '<div class="tally" aria-live="polite">' +
+        '<span class="t-ok"><b>' + ok + '</b> ок</span>' +
+        '<span class="t-bad"><b>' + bad + '</b> баг</span>' +
+        '<span class="t-left"><b>' + left + '</b> из ' + total + ' не проверено</span>' +
+      '</div>' +
+      '<div class="meter" aria-hidden="true"><i class="m-ok" style="width:' + (ok / total * 100) + '%"></i><i class="m-bad" style="width:' + (bad / total * 100) + '%"></i></div>' +
+      '<label class="who" for="tester">Проверяет <input type="text" id="tester" value="' + esc(state.tester) + '" placeholder="имя"></label>' +
+      '<label class="filter" for="only-bugs"><input type="checkbox" id="only-bugs"' + (onlyBugs ? " checked" : "") + '> только баги</label>' +
+      '<div class="actions">' + status +
+        '<button type="button" class="btn btn-ghost" id="reset">Сбросить</button>' +
+        '<button type="button" class="btn" id="copy">Скопировать отчёт</button>' +
+      '</div>';
+    SECTIONS.forEach(function (sec) {
+      var el = document.querySelector('[data-sec-count="' + sec.id + '"]');
+      if (!el) return;
+      var done = sec.items.filter(function (it) { return mark(it.id).s; }).length;
+      el.textContent = done + " из " + sec.items.length;
+    });
+    var foot = document.getElementById("foot");
+    if (foot) foot.textContent = state.tester ? ("Проверяет: " + state.tester + (state.savedAt ? " · последнее сохранение " + fmtDate(state.savedAt) : "")) : "";
+  }
+
+  function fmtDate(iso) {
+    try {
+      var d = new Date(iso);
+      return d.toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+    } catch (_) { return iso; }
+  }
+
+  function applyFilter() {
+    document.querySelectorAll(".item").forEach(function (el) {
+      var hide = onlyBugs && mark(el.dataset.item).s !== "bad";
+      el.classList.toggle("hide-by-filter", hide);
+    });
+  }
+
+  function stash() {
+    state.savedAt = new Date().toISOString();
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (_) {}
+  }
+
+  // ── Действия ─────────────────────────────────────────────────────────
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest(".st") : null;
+    if (btn) {
+      var row = btn.closest(".item");
+      var id = row.dataset.item;
+      var cur = mark(id);
+      var want = btn.dataset.set;
+      var next = { s: cur.s === want ? "" : want, n: cur.n || "" };
+      state.marks[id] = next;
+      changed[id] = next;
+      row.classList.toggle("is-ok", next.s === "ok");
+      row.classList.toggle("is-bad", next.s === "bad");
+      row.querySelectorAll(".st").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.set === next.s)); });
+      stash(); renderBar(); applyFilter();
+      return;
+    }
+    if (e.target && e.target.id === "copy") copyReport();
+    if (e.target && e.target.id === "reset") resetAll();
+    if (e.target && e.target.id === "report-close") document.getElementById("report-box").hidden = true;
+  });
+
+  document.addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.dataset && t.dataset.note) {
+      var id = t.dataset.note;
+      var cur = mark(id);
+      var next = { s: cur.s || "", n: t.value };
+      state.marks[id] = next; changed[id] = next;
+      stash(); renderBarKeepFocus();
+    } else if (t.id === "tester") {
+      state.tester = t.value; testerChanged = true;
+      stash(); renderBarKeepFocus();
+    }
+  });
+
+  document.addEventListener("change", function (e) {
+    if (e.target && e.target.id === "only-bugs") {
+      onlyBugs = e.target.checked;
+      try { localStorage.setItem("zk-priemka-only-bugs", onlyBugs ? "1" : "0"); } catch (_) {}
+      applyFilter();
+    }
+  });
+
+  // Полоса перерисовывается целиком, а в ней поле имени: при вводе имени
+  // фокус и курсор надо вернуть на место.
+  function renderBarKeepFocus() {
+    var a = document.activeElement, pos = null, id = a && a.id;
+    if (id === "tester") pos = a.selectionStart;
+    renderBar();
+    if (id === "tester") {
+      var again = document.getElementById("tester");
+      if (again) { again.focus(); try { again.setSelectionRange(pos, pos); } catch (_) {} }
+    }
+  }
+
+  // ── Отчёт для Романа ─────────────────────────────────────────────────
+  // Простой текст — вставляется в Telegram как есть. Баги идут первыми:
+  // ради них отчёт и читают.
+  function plain(html) {
+    var d = document.createElement("div");
+    d.innerHTML = html;
+    return (d.textContent || "").replace(/\s+/g, " ").trim();
+  }
+  function buildReport() {
+    var items = allItems();
+    var ok = 0, bad = 0;
+    items.forEach(function (it) { var m = mark(it.id); if (m.s === "ok") ok++; else if (m.s === "bad") bad++; });
+    var lines = [];
+    lines.push("Приёмка калькулятора Закупщика");
+    lines.push("Проверял: " + (state.tester || "—") + (state.savedAt ? " · " + fmtDate(state.savedAt) : ""));
+    lines.push("Итог: " + ok + " ок · " + bad + " баг · " + (items.length - ok - bad) + " не проверено");
+    var bugs = [];
+    SECTIONS.forEach(function (sec, si) {
+      sec.items.forEach(function (it, ii) {
+        var m = mark(it.id);
+        if (m.s === "bad") bugs.push((si + 1) + "." + (ii + 1) + " " + plain(it.t) + (m.n ? " — " + m.n : ""));
+      });
+    });
+    lines.push("");
+    lines.push("БАГИ" + (bugs.length ? "" : ": нет"));
+    bugs.forEach(function (b) { lines.push("✗ " + b); });
+    lines.push("");
+    lines.push("ВСЕ ПУНКТЫ");
+    SECTIONS.forEach(function (sec, si) {
+      lines.push("");
+      lines.push(sec.title);
+      sec.items.forEach(function (it, ii) {
+        var m = mark(it.id);
+        var sign = m.s === "ok" ? "✓" : m.s === "bad" ? "✗" : "·";
+        lines.push("  " + sign + " " + (si + 1) + "." + (ii + 1) + " " + plain(it.t) +
+          (m.n ? " — " + m.n : "") + (m.s ? "" : " (не проверено)"));
+      });
+    });
+    return lines.join("\n");
+  }
+
+  function toast(text) {
+    var t = document.getElementById("toast");
+    if (!t) {
+      t = document.createElement("div");
+      t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status");
+      document.body.appendChild(t);
+    }
+    t.textContent = text; t.hidden = false;
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { t.hidden = true; }, 3200);
+  }
+
+  // Буфер обмена бывает закрыт (старый браузер, окно без фокуса) — тогда
+  // показываем текст, выделенным, чтобы скопировать руками.
+  function showReportBox(text) {
+    var box = document.getElementById("report-box");
+    var area = document.getElementById("report-text");
+    area.value = text;
+    box.hidden = false;
+    area.focus(); area.select();
+  }
+  function copyReport() {
+    var text = buildReport();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        toast("Отчёт скопирован — вставьте его Роману в чат");
+      }, function () { showReportBox(text); });
+    } else {
+      showReportBox(text);
+    }
+  }
+
+  function resetAll() {
+    if (!confirm("Сбросить все отметки и заметки в этом браузере?")) return;
+    state = { tester: state.tester, savedAt: "", marks: {} };
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (_) {}
+    render();
+  }
+
+  render();
+
+})();
+</script>
+</body>
+</html>
