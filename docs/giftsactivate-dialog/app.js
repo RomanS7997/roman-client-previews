@@ -3,7 +3,7 @@
   const data = window.DIALOG_DATA;
   const $ = (selector) => document.querySelector(selector);
   const nodes = data.nodes;
-  const key = `giftsactivate-dialog:${data.revision}`;
+  const key = `giftsactivate-dialog:${data.reviewRevision || data.revision}`;
   let reviews = {}, reviewer = '', selected = nodes.find(n => n.category === 'entry').id, mode = 'screen', paused = false, edition = 'julia';
   let query = '', filter = 'all';
   const choices = {};
@@ -215,7 +215,7 @@
   });
   $('#focus').addEventListener('click', () => { const active = document.body.classList.toggle('focus-mode'); $('#focus').title = active ? 'Вернуть панели' : 'Режим показа'; $('#focus').setAttribute('aria-label', $('#focus').title); $('#focus').innerHTML = `<i data-lucide="${active ? 'minimize-2' : 'maximize-2'}"></i>`; icons(); });
   $('#export').addEventListener('click', () => {
-    const body = { format: 'giftsactivate-dialog-review', revision: data.revision, exportedAt: new Date().toISOString(), reviewer,
+    const body = { format: 'giftsactivate-dialog-review', revision: data.reviewRevision || data.revision, contentRevision: data.revision, exportedAt: new Date().toISOString(), reviewer,
       screens: nodes.map(n => ({ id: n.id, title: n.title, source: n.source, ...review(n.id) })) };
     const url = URL.createObjectURL(new Blob([JSON.stringify(body, null, 2)], { type: 'application/json' }));
     const a = document.createElement('a'); a.href = url; a.download = `giftsactivate-review-${data.revision}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); toast('Отметки и комментарии экспортированы');
@@ -226,7 +226,7 @@
     try {
       if (file.size > 2000000) throw new Error('Файл слишком большой');
       const body = JSON.parse(await file.text());
-      if (body.format !== 'giftsactivate-dialog-review' || body.revision !== data.revision || !Array.isArray(body.screens)) throw new Error('Файл относится к другой версии диалога');
+      if (body.format !== 'giftsactivate-dialog-review' || ![data.revision, data.reviewRevision].filter(Boolean).includes(body.revision) || !Array.isArray(body.screens)) throw new Error('Файл относится к другой версии диалога');
       const incoming = {};
       body.screens.forEach(s => { if (nodes.some(n => n.id === s.id) && ['approved','changes','pending'].includes(s.status)) incoming[s.id] = { status:s.status, note:String(s.note || '').slice(0,20000) }; });
       reviews = { ...reviews, ...incoming }; reviewer = String(body.reviewer || '').slice(0,100); $('#reviewer').value = reviewer;

@@ -974,9 +974,47 @@ window.DIALOG_DATA = {
           ]
         }
       ],
-      "julia": [],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/8bb4ca3805-63_device.webm",
+          "poster": "assets/d4fbcf684f-63_device.webp"
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "📱 Последний вопрос: какой у тебя телефон?",
+          "buttons": [
+            "🍏 iPhone",
+            "🤖 Android"
+          ],
+          "keyboardType": "inline",
+          "rows": [
+            [
+              {
+                "text": "🍏 iPhone",
+                "value": "prof:d:ios",
+                "url": null,
+                "contact": false
+              },
+              {
+                "text": "🤖 Android",
+                "value": "prof:d:android",
+                "url": null,
+                "contact": false
+              }
+            ]
+          ]
+        }
+      ],
       "proposalStatus": "question",
-      "juliaNote": "тут важна модель? или только бренд принципиален<br><br>📱 Последний вопрос: какой у тебя телефон?",
+      "juliaNote": "тут важна модель? или только бренд принципиален",
       "decisionHint": "Код сохраняет только iPhone/Android. Модель телефона сейчас нигде не хранится.",
       "warnings": [
         "В отчёте оставлен вопрос; готовая редакция не утверждена."
@@ -984,7 +1022,7 @@ window.DIALOG_DATA = {
       "mapAnchor": "qa.entry[5] · texts_v2.ask_device_text",
       "imported": true,
       "scope": "active",
-      "search": "вопрос об устройстве qa.entry[5] · texts_v2.ask_device_text  📱 <b>последний вопрос — какой у вас телефон?</b>  тут важна модель? или только бренд принципиален📱 последний вопрос: какой у тебя телефон?"
+      "search": "вопрос об устройстве qa.entry[5] · texts_v2.ask_device_text  📱 <b>последний вопрос — какой у вас телефон?</b> 📱 последний вопрос: какой у тебя телефон? тут важна модель? или только бренд принципиален"
     },
     {
       "id": "c15169fdc09a",
@@ -12693,17 +12731,18 @@ window.DIALOG_DATA = {
       "search": "мои покупки: несколько страниц qa.entry[18] · handlers.qa_catalog._purchases_paginated_text 📦 <b>мои покупки — 8 · стр. 1 из 2</b><br><br><blockquote>🛡 <b>защитное стекло для смартфона</b><br>🏬 wildberries · куплено 15.09.2026<br>📅 гарантия до <b>15.09.2027</b> · осталось 365 дней<br>🎟 билет wb-000123</blockquote><br><br>🎟 билетов в розыгрыше за сентябрь: <b>1</b> — итоги придут сюда же.<br><br>💬 что-то не так с товаром — напишите в техподдержку, разберёмся.<br><br><i>чем больше гарантий активируете, тем больше билетов.</i> 📦 мои покупки: 8 товаров (страница 1 из 2)🛡 защитное стекло для смартфона🏬 wildberries | дата покупки: 15.09.2026📅 гарантия до 15.09.2027 (осталось 365 дней)🎟 билет № wb-000123🎟 твоих билетов в розыгрыше за сентябрь: 1 шт. итоги пришлём прямо в этот чат!💬 что то не так с товаром? напиши в техподдержку, обязательно разберёмся.больше активированных гарантий: больше билетов и шансов на победу! "
     }
   ],
+  "reviewRevision": "f7c6570dae2f",
   "counts": {
     "screens": 235,
     "sections": 11,
     "qa": 229,
     "mapImported": 226,
-    "julia": 199,
+    "julia": 200,
     "questions": 22,
-    "withoutDraft": 36,
+    "withoutDraft": 35,
     "warnings": 40,
     "assets": 55
   },
   "sourceRevision": "73dca9480831",
-  "revision": "f7c6570dae2f"
+  "revision": "9c3ea6e1f719"
 };
