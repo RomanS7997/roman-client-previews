@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>GiftsActivate · Просмотр диалогов</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="assets/lucide.min.js"></script>
+  <script defer src="data.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img src="assets/avatar.jpg" alt=""><div><strong>GiftsActivate</strong><span>Приёмка диалогов</span></div><span class="dev-label">DEV</span></div>
+    <div class="top-actions"><span id="save-state" role="status">На этом устройстве</span><button id="import" class="icon-button" title="Импортировать отметки" aria-label="Импортировать отметки"><i data-lucide="upload"></i></button><button id="export" class="button"><i data-lucide="download"></i><span>Экспорт правок</span></button><input id="import-file" type="file" accept="application/json,.json" hidden></div>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar" aria-label="Сценарии">
+      <div class="side-title">ВСЕ СЦЕНАРИИ <span id="total-count"></span></div>
+      <h1>Диалоги бота</h1>
+      <div class="coverage"><span><b id="approved-count">0</b> из <span id="review-total"></span> согласовано</span><span id="percent">0%</span></div><progress id="progress" value="0"></progress>
+      <label class="search-field"><i data-lucide="search"></i><input id="search" type="search" placeholder="Экран, текст, № в карте" aria-label="Поиск экрана"></label>
+      <select id="review-filter" aria-label="Фильтр экранов"><option value="all">Все экраны</option><option value="draft">С редакцией Юлии</option><option value="issues">Требуют решения</option><option value="unreviewed">Не согласованы</option></select>
+      <div id="category-nav"></div><p id="empty-search" hidden>Ничего не найдено</p>
+      <div class="side-bottom"><i data-lucide="git-branch"></i><div><strong>Снимок DEV</strong><span id="snapshot"></span></div></div>
+    </aside>
+    <main class="preview">
+      <div class="preview-toolbar"><div class="segmented" aria-label="Режим просмотра"><button data-mode="screen" class="active" aria-pressed="true"><i data-lucide="smartphone"></i>Экран</button><button data-mode="dialog" aria-pressed="false"><i data-lucide="messages-square"></i>Переписка</button></div><div class="preview-tools"><button class="icon-button" id="animation" title="Приостановить анимацию" aria-label="Приостановить анимацию" aria-pressed="false"><i data-lucide="pause"></i></button><button class="icon-button" id="theme" title="Светлая тема Telegram" aria-label="Светлая тема Telegram"><i data-lucide="sun"></i></button><button class="icon-button" id="focus" title="Режим показа" aria-label="Режим показа"><i data-lucide="maximize-2"></i></button></div></div>
+      <div class="edition-toolbar"><div class="segmented" aria-label="Редакция текста"><button data-edition="julia" class="active" aria-pressed="true">Редакция Юлии</button><button data-edition="current" aria-pressed="false">Снимок DEV</button></div><span id="edition-state"></span></div>
+      <section class="phone" aria-label="Telegram на телефоне">
+        <div class="phone-status"><strong>9:41</strong><div><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+        <div class="telegram-header"><i data-lucide="chevron-left" class="back-icon"></i><img src="assets/avatar.jpg" alt="Аватар бота"><div><strong>Хранилище плюшек 🥨</strong><span>бот</span></div><i data-lucide="ellipsis-vertical"></i></div>
+        <div class="chat-scroll" id="chat" tabindex="0" aria-label="Сообщения бота"></div>
+        <div class="composer"><i data-lucide="paperclip"></i><span>Сообщение</span><i data-lucide="smile"></i><i data-lucide="mic"></i></div>
+        <div id="reply-keyboard" class="reply-keyboard"></div><div class="home-indicator"><span></span></div>
+      </section>
+      <div class="step-controls"><button id="previous" class="icon-button" title="Предыдущий экран" aria-label="Предыдущий экран"><i data-lucide="arrow-left"></i></button><div><span id="current-title"></span><small id="current-position"></small></div><button id="next" class="next-button">Дальше<i data-lucide="arrow-right"></i></button></div>
+    </main>
+    <aside class="inspector" aria-label="Проверка экрана">
+      <div class="inspector-heading"><span>ПРОВЕРКА ЭКРАНА</span><i data-lucide="clipboard-check"></i></div>
+      <h2 id="review-title"></h2><div class="source-pill" id="copy-source"></div>
+      <div id="review-warnings" class="review-warnings"></div>
+      <details id="julia-details" class="julia-details"><summary>Комментарий Юлии</summary><div id="julia-comment"></div></details>
+      <fieldset class="decisions"><legend>Решение</legend><button data-status="approved"><i data-lucide="check-circle-2"></i>Согласовано<span class="radio-dot"></span></button><button data-status="changes"><i data-lucide="pencil-line"></i>Нужны правки<span class="radio-dot"></span></button><button data-status="pending"><i data-lucide="circle-dashed"></i>Не рассмотрено<span class="radio-dot"></span></button></fieldset>
+      <label class="note-label" for="note">Комментарий</label><textarea id="note" placeholder="Что изменить на этом экране…" rows="6"></textarea><div class="note-footer"><span id="note-state">Без комментария</span><span id="note-length">0</span></div>
+      <label class="note-label" for="reviewer">Кто проверяет</label><input id="reviewer" autocomplete="name" placeholder="Имя">
+      <details class="source-details"><summary>Источник <i data-lucide="code-2"></i></summary><code id="source"></code><span id="revision"></span></details>
+      <div class="pilot-meta"><i data-lucide="flask-conical"></i><span id="catalog-meta"></span></div>
+    </aside>
+  </div>
+  <div id="toast" role="status"></div>
+  <dialog id="boundary"><button class="icon-button close-dialog" aria-label="Закрыть" title="Закрыть"><i data-lucide="x"></i></button><i data-lucide="layers-2" class="dialog-icon"></i><h2 id="boundary-title"></h2><p id="boundary-description"></p><div id="boundary-options"></div><button class="button close-dialog">Закрыть</button></dialog>
+</body>
+</html>
