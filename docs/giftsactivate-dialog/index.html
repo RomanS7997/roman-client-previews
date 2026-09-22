@@ -6,7 +6,7 @@
   <title>GiftsActivate · Просмотр диалогов</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="assets/lucide.min.js"></script>
-  <script defer src="data.js?v=20260922-device"></script><script defer src="app.js?v=20260922-device"></script>
+  <script defer src="data.js?v=20260922-comments"></script><script defer src="app.js?v=20260922-comments"></script>
 </head>
 <body>
   <header class="topbar">
@@ -40,6 +40,8 @@
       <h2 id="review-title"></h2><div class="source-pill" id="copy-source"></div>
       <div id="review-warnings" class="review-warnings"></div>
       <details id="julia-details" class="julia-details"><summary>Комментарий Юлии</summary><div id="julia-comment"></div></details>
+      <p id="draft-assembly" class="pilot-meta"></p>
+      <details id="original-note-details" class="julia-details" hidden><summary>Исходная правка Юлии</summary><div id="original-note"></div></details>
       <fieldset class="decisions"><legend>Решение</legend><button data-status="approved"><i data-lucide="check-circle-2"></i>Согласовано<span class="radio-dot"></span></button><button data-status="changes"><i data-lucide="pencil-line"></i>Нужны правки<span class="radio-dot"></span></button><button data-status="pending"><i data-lucide="circle-dashed"></i>Не рассмотрено<span class="radio-dot"></span></button></fieldset>
       <label class="note-label" for="note">Комментарий</label><textarea id="note" placeholder="Что изменить на этом экране…" rows="6"></textarea><div class="note-footer"><span id="note-state">Без комментария</span><span id="note-length">0</span></div>
       <label class="note-label" for="reviewer">Кто проверяет</label><input id="reviewer" autocomplete="name" placeholder="Имя">

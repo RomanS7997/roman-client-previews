@@ -124,14 +124,14 @@
     visible.forEach(node => {
       const block = document.createElement('section'); block.className = 'message-block'; block.dataset.message = node.id; block.setAttribute('aria-label', node.title);
       if (mode === 'dialog') { const label = document.createElement('div'); label.className = 'day'; label.textContent = node.title; block.append(label); }
-      const calls = edition === 'current' ? node.current : node.julia;
-      if (!calls.length) {
+      const fallback=edition==='julia'&&!node.julia.length;
+      const calls = edition === 'current' || fallback ? node.current : node.julia;
+      if (fallback) {
         const note = document.createElement('div'); note.className = 'editor-placeholder';
-        note.textContent = node.proposalStatus === 'question' ? 'Для этого экрана Юлия оставила вопрос. Комментарий рядом с телефоном.' : 'Для этого экрана нет готовой редакции Юлии.';
+        note.textContent = 'Текст DEV · редакция Юлии не передана';
         block.append(note);
       }
-      const rendered = calls.length ? calls : node.current.filter(c => c.asset).map(c => ({...c,text:'',rows:[]}));
-      rendered.forEach(call => {
+      calls.forEach(call => {
         if (call.asset) {
           if (['sticker','video','animation'].includes(call.kind)) {
             const video = document.createElement('video'); const sticker = call.kind === 'sticker';
@@ -176,13 +176,16 @@
     $('#current-position').textContent = `${index + 1} / ${nodes.length} экранов`;
     $('#previous').disabled = index === 0; $('#next').disabled = index === nodes.length - 1;
     $('#source').textContent = node.source;
-    $('#copy-source').textContent = node.julia.length ? 'Редакция Юлии · карта №' + node.number : node.proposalStatus === 'question' ? 'Вопрос Юлии · карта №' + node.number : 'Редакция не передана';
+    $('#copy-source').textContent = edition==='current' ? 'Снимок DEV' : node.julia.length ? (node.copyOrigin==='comment'?'Текст из комментария Юлии':'Редакция Юлии')+' · карта №'+node.number : 'Показан DEV · редакция Юлии не передана';
     $('#review-warnings').replaceChildren();
-    [...node.warnings, node.decisionHint].filter(Boolean).forEach(text => { const p=document.createElement('p');p.textContent=text;$('#review-warnings').append(p); });
+    [...node.warnings, node.decisionHint].filter(Boolean).forEach(text => { const p=document.createElement('p');p.append(safeMessage(text));$('#review-warnings').append(p); });
+    $('#draft-assembly').textContent=node.draftAssembly||'';
+    $('#original-note-details').hidden=!node.originalNote;
+    $('#original-note').replaceChildren(safeMessage(node.originalNote||''));
     $('#julia-details').hidden = !node.juliaNote;
     $('#julia-details').open = Boolean(node.juliaNote);
     $('#julia-comment').replaceChildren(safeMessage(node.juliaNote));
-    $('#edition-state').textContent = edition === 'current' ? 'DEV · ' + data.sourceRevision : node.julia.length ? 'Текст для согласования' : 'Нет итогового текста';
+    $('#edition-state').textContent = edition === 'current' ? 'DEV · ' + data.sourceRevision : node.julia.length ? 'Текст для согласования' : 'Показан текст DEV';
     $('#note').value = review().note || ''; $('#note-length').textContent = $('#note').value.length;
     $('#note-state').textContent = $('#note').value ? 'Комментарий сохранён' : 'Без комментария';
     renderDecisions(); renderNavigation(); renderPhone();
