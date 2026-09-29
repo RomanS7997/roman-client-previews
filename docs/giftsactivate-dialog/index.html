@@ -4,9 +4,9 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <title>GiftsActivate · Просмотр диалогов</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260929-viewed">
   <script defer src="assets/lucide.min.js"></script>
-  <script defer src="data.js?v=20260922-comments"></script><script defer src="app.js?v=20260922-comments"></script>
+  <script defer src="data.js?v=20260922-comments"></script><script defer src="app.js?v=20260929-viewed"></script>
 </head>
 <body>
   <header class="topbar">
@@ -17,9 +17,9 @@
     <aside class="sidebar" aria-label="Сценарии">
       <div class="side-title">ВСЕ СЦЕНАРИИ <span id="total-count"></span></div>
       <h1>Диалоги бота</h1>
-      <div class="coverage"><span><b id="approved-count">0</b> из <span id="review-total"></span> согласовано</span><span id="percent">0%</span></div><progress id="progress" value="0"></progress>
+      <div class="coverage"><span><b id="viewed-count">0</b> из <span id="review-total"></span> просмотрено</span><span id="percent">0%</span></div><progress id="progress" value="0" aria-label="Просмотрено экранов"></progress><div class="approval-summary">Согласовано: <b id="approved-count">0</b></div>
       <label class="search-field"><i data-lucide="search"></i><input id="search" type="search" placeholder="Экран, текст, № в карте" aria-label="Поиск экрана"></label>
-      <select id="review-filter" aria-label="Фильтр экранов"><option value="all">Все экраны</option><option value="draft">С редакцией Юлии</option><option value="issues">Требуют решения</option><option value="unreviewed">Не согласованы</option></select>
+      <select id="review-filter" aria-label="Фильтр экранов"><option value="all">Все экраны</option><option value="unviewed">Не просмотрены</option><option value="viewed">Просмотрены</option><option value="draft">С редакцией Юлии</option><option value="issues">Требуют решения</option><option value="unreviewed">Не согласованы</option></select>
       <div id="category-nav"></div><p id="empty-search" hidden>Ничего не найдено</p>
       <div class="side-bottom"><i data-lucide="git-branch"></i><div><strong>Снимок DEV</strong><span id="snapshot"></span></div></div>
     </aside>
@@ -33,6 +33,7 @@
         <div class="composer"><i data-lucide="paperclip"></i><span>Сообщение</span><i data-lucide="smile"></i><i data-lucide="mic"></i></div>
         <div id="reply-keyboard" class="reply-keyboard"></div><div class="home-indicator"><span></span></div>
       </section>
+      <label class="viewed-control"><input id="viewed" type="checkbox"><span>Просмотрено</span><small id="viewed-summary"></small></label>
       <div class="step-controls"><button id="previous" class="icon-button" title="Предыдущий экран" aria-label="Предыдущий экран"><i data-lucide="arrow-left"></i></button><div><span id="current-title"></span><small id="current-position"></small></div><button id="next" class="next-button">Дальше<i data-lucide="arrow-right"></i></button></div>
     </main>
     <aside class="inspector" aria-label="Проверка экрана">

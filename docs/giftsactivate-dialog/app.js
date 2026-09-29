@@ -8,29 +8,34 @@
   let query = '', filter = 'all';
   const choices = {};
   let toastTimer;
-  try { const saved = JSON.parse(localStorage.getItem(key) || '{}'); reviews = saved.reviews || {}; reviewer = saved.reviewer || ''; } catch (_) { /* Review remains usable without storage. */ }
+  try { const saved = JSON.parse(localStorage.getItem(key) || '{}'); reviews = saved.reviews || {}; reviewer = saved.reviewer || ''; if (nodes.some(n => n.id === saved.selected)) selected = saved.selected; } catch (_) { /* Review remains usable without storage. */ }
   function icons() { if (window.lucide) window.lucide.createIcons(); }
   function toast(text) { $('#toast').textContent = text; $('#toast').classList.add('visible'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 2700); }
   function current() { return nodes.find(n => n.id === selected); }
   function review(id = selected) { return reviews[id] || { status: 'pending', note: '' }; }
+  function isViewed(id = selected) { const r = review(id); return typeof r.viewed === 'boolean' ? r.viewed : ['approved', 'changes'].includes(r.status); }
   function persist() {
-    try { localStorage.setItem(key, JSON.stringify({ reviews, reviewer })); $('#save-state').textContent = 'Сохранено на этом устройстве'; }
+    try { localStorage.setItem(key, JSON.stringify({ reviews, reviewer, selected })); $('#save-state').textContent = 'Сохранено на этом устройстве'; }
     catch (_) { $('#save-state').textContent = 'Не сохранено · экспортируйте правки'; }
   }
   function setReview(update) { reviews[selected] = { ...review(), ...update, updatedAt: new Date().toISOString() }; persist(); renderNavigation(); renderDecisions(); }
   function filteredNodes() {
     return nodes.filter(n => (!query || n.search.includes(query) || String(n.number) === query.replace(/^№/, '')) &&
-      (filter === 'all' || filter === 'draft' && n.julia.length || filter === 'issues' && n.warnings.length || filter === 'unreviewed' && review(n.id).status !== 'approved'));
+      (filter === 'all' || filter === 'viewed' && isViewed(n.id) || filter === 'unviewed' && !isViewed(n.id) || filter === 'draft' && n.julia.length || filter === 'issues' && n.warnings.length || filter === 'unreviewed' && review(n.id).status !== 'approved'));
+  }
+  function adjacent(offset) {
+    const index = nodes.findIndex(n => n.id === selected);
+    const candidates = filteredNodes().filter(n => offset > 0 ? nodes.indexOf(n) > index : nodes.indexOf(n) < index);
+    return offset > 0 ? candidates[0] : candidates[candidates.length - 1];
   }
   function updatePosition() {
     const visible=filteredNodes(), index=visible.findIndex(n=>n.id===selected);
     $('#current-position').textContent=index>=0?`${index+1} / ${visible.length} экранов`:`Вне фильтра · ${visible.length} экранов`;
-    $('#previous').disabled=index<=0;
-    $('#next').disabled=!visible.length || index===visible.length-1;
+    $('#previous').disabled=!adjacent(-1);
+    $('#next').disabled=!adjacent(1);
   }
   function step(offset) {
-    const visible=filteredNodes(), index=visible.findIndex(n=>n.id===selected);
-    const target=visible[index<0?0:Math.max(0,Math.min(visible.length-1,index+offset))];
+    const target=adjacent(offset);
     if(target) select(target.id);
   }
   function renderNavigation() {
@@ -45,18 +50,19 @@
       group.open = Boolean(query || current().category === section.key || opened.has(section.key));
       const summary = document.createElement('summary');
       const label = document.createElement('span'); label.textContent = section.title;
-      const count = document.createElement('small'); count.textContent = items.length;
+      const count = document.createElement('small'); count.textContent = `${items.filter(n => isViewed(n.id)).length} / ${items.length}`; count.title = 'Просмотрено / экранов в фильтре';
       summary.append(label, count); group.append(summary);
       const nav = document.createElement('nav'); group.append(nav); host.append(group);
       items.forEach(n => {
       const status = review(n.id).status;
       const button = document.createElement('button');
-      button.className = `step-item ${selected === n.id ? 'active' : ''} ${status}`;
+      button.className = `step-item ${selected === n.id ? 'active' : ''} ${status} ${isViewed(n.id) ? 'viewed' : ''}`;
+      button.title = isViewed(n.id) ? 'Просмотрено' : 'Не просмотрено';
       button.setAttribute('aria-current', selected === n.id ? 'step' : 'false');
       button.dataset.step = n.id;
       const number = document.createElement('span'); number.className = 'step-number'; number.textContent = n.number || 'DEV';
       const name = document.createElement('span'); name.className = 'step-name'; name.textContent = n.title;
-      const marker = document.createElement('i'); marker.dataset.lucide = status === 'approved' ? 'check' : status === 'changes' ? 'pencil' : 'circle'; marker.className = 'status-mark';
+      const marker = document.createElement('i'); marker.dataset.lucide = status === 'approved' ? 'check' : status === 'changes' ? 'pencil' : isViewed(n.id) ? 'eye' : 'circle'; marker.className = 'status-mark';
       button.append(number, name, marker); button.addEventListener('click', () => select(n.id));
       nav.append(button);
       });
@@ -64,7 +70,9 @@
     $('#empty-search').hidden = filtered.length !== 0;
     updatePosition();
     const approved = nodes.filter(n => review(n.id).status === 'approved').length;
-    $('#approved-count').textContent = approved; $('#progress').value = approved; $('#percent').textContent = Math.round(approved / nodes.length * 100) + '%';
+    const viewed = nodes.filter(n => isViewed(n.id)).length;
+    $('#approved-count').textContent = approved; $('#viewed-count').textContent = viewed; $('#progress').value = viewed; $('#percent').textContent = Math.round(viewed / nodes.length * 100) + '%';
+    $('#viewed-summary').textContent = `${viewed} / ${nodes.length}`;
     icons();
   }
   function safeMessage(html) {
@@ -167,6 +175,7 @@
     });
   }
   function renderDecisions() {
+    $('#viewed').checked = isViewed();
     document.querySelectorAll('[data-status]').forEach(b => { b.classList.toggle('active', b.dataset.status === review().status); b.setAttribute('aria-pressed', String(b.dataset.status === review().status)); });
   }
   function select(id, scroll = true) {
@@ -191,6 +200,7 @@
     renderDecisions(); renderNavigation(); renderPhone();
     if (scroll && innerWidth <= 600) document.querySelector(`[data-step="${selected}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     history.replaceState(null, '', '#' + id);
+    persist();
   }
   document.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => {
     mode = b.dataset.mode; document.querySelectorAll('[data-mode]').forEach(item => { item.classList.toggle('active', item === b); item.setAttribute('aria-pressed', String(item === b)); }); renderPhone();
@@ -200,7 +210,8 @@
   }));
   $('#search').addEventListener('input', () => {query=$('#search').value.toLowerCase().trim();renderNavigation();});
   $('#review-filter').addEventListener('change', () => {filter=$('#review-filter').value;renderNavigation();});
-  document.querySelectorAll('[data-status]').forEach(b => b.addEventListener('click', () => setReview({ status: b.dataset.status })));
+  document.querySelectorAll('[data-status]').forEach(b => b.addEventListener('click', () => setReview({ status: b.dataset.status, ...(['approved', 'changes'].includes(b.dataset.status) ? {viewed: true} : {}) })));
+  $('#viewed').addEventListener('change', () => setReview({ viewed: $('#viewed').checked }));
   $('#note').addEventListener('input', () => { setReview({ note: $('#note').value }); $('#note-length').textContent = $('#note').value.length; $('#note-state').textContent = 'Комментарий сохранён'; });
   $('#reviewer').value = reviewer; $('#reviewer').addEventListener('input', () => { reviewer = $('#reviewer').value; persist(); });
   $('#previous').addEventListener('click', () => step(-1));
@@ -219,7 +230,7 @@
   $('#focus').addEventListener('click', () => { const active = document.body.classList.toggle('focus-mode'); $('#focus').title = active ? 'Вернуть панели' : 'Режим показа'; $('#focus').setAttribute('aria-label', $('#focus').title); $('#focus').innerHTML = `<i data-lucide="${active ? 'minimize-2' : 'maximize-2'}"></i>`; icons(); });
   $('#export').addEventListener('click', () => {
     const body = { format: 'giftsactivate-dialog-review', revision: data.reviewRevision || data.revision, contentRevision: data.revision, exportedAt: new Date().toISOString(), reviewer,
-      screens: nodes.map(n => ({ id: n.id, title: n.title, source: n.source, ...review(n.id) })) };
+      screens: nodes.map(n => ({ id: n.id, title: n.title, source: n.source, ...review(n.id), viewed: isViewed(n.id) })) };
     const url = URL.createObjectURL(new Blob([JSON.stringify(body, null, 2)], { type: 'application/json' }));
     const a = document.createElement('a'); a.href = url; a.download = `giftsactivate-review-${data.revision}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); toast('Отметки и комментарии экспортированы');
   });
@@ -231,7 +242,7 @@
       const body = JSON.parse(await file.text());
       if (body.format !== 'giftsactivate-dialog-review' || ![data.revision, data.reviewRevision].filter(Boolean).includes(body.revision) || !Array.isArray(body.screens)) throw new Error('Файл относится к другой версии диалога');
       const incoming = {};
-      body.screens.forEach(s => { if (nodes.some(n => n.id === s.id) && ['approved','changes','pending'].includes(s.status)) incoming[s.id] = { status:s.status, note:String(s.note || '').slice(0,20000) }; });
+      body.screens.forEach(s => { if (nodes.some(n => n.id === s.id) && ['approved','changes','pending'].includes(s.status)) incoming[s.id] = { status:s.status, note:String(s.note || '').slice(0,20000), viewed: typeof s.viewed === 'boolean' ? s.viewed : isViewed(s.id) || ['approved','changes'].includes(s.status) }; });
       reviews = { ...reviews, ...incoming }; reviewer = String(body.reviewer || '').slice(0,100); $('#reviewer').value = reviewer;
       persist(); select(selected); toast('Отметки загружены');
     } catch (error) { toast(error.message || 'Не удалось прочитать файл'); }
