@@ -2,7 +2,7 @@
 (() => {
   const data = window.DIALOG_DATA;
   const $ = (selector) => document.querySelector(selector);
-  const nodes = data.nodes.filter(n => n.category !== 'legacy');
+  const nodes = data.nodes.filter(n => !n.previewHidden && !['legacy','warranty'].includes(n.category));
   const key = `giftsactivate-dialog:${data.reviewRevision || data.revision}`;
   let reviews = {}, reviewer = '', selected = nodes.find(n => n.category === 'entry').id, mode = 'screen', paused = false, edition = 'julia';
   let query = '', filter = 'all';
@@ -286,6 +286,8 @@
   });
   $('#snapshot').textContent = new Date(data.exportedAt).toLocaleString('ru-RU', { day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit' });
   $('#total-count').textContent=nodes.length;$('#review-total').textContent=nodes.length;$('#progress').max=nodes.length;
-  const hash = location.hash.slice(1); if (nodes.some(n => n.id === hash)) selected = hash;
+  const requested = location.hash.slice(1);
+  const hash = data.nodes.find(n => n.id === requested)?.previewAlias || requested;
+  if (nodes.some(n => n.id === hash)) selected = hash;
   select(selected, false);
 })();
