@@ -226,7 +226,9 @@
     $('#current-position').textContent = `${index + 1} / ${nodes.length} экранов`;
     $('#previous').disabled = index === 0; $('#next').disabled = index === nodes.length - 1;
     $('#source').textContent = node.source;
-    $('#copy-source').textContent = node.category==='giveaway_yandex'
+    $('#copy-source').textContent = edition==='julia' && node.copyOrigin==='adaptation'
+      ? 'Адаптация в стиле Юлии'+(node.number?' · карта №'+node.number:'')
+      : node.category==='giveaway_yandex'
       ? (edition==='current'?'На основе DEV':'На основе редакции Юлии')+' · Яндекс'
       : edition==='current' ? 'Снимок DEV' : node.julia.length ? (node.copyOrigin==='comment'?'Текст из комментария Юлии':'Редакция Юлии')+' · карта №'+node.number : 'Показан DEV · редакция Юлии не передана';
     $('#review-warnings').replaceChildren();
@@ -299,7 +301,7 @@
   $('#snapshot').textContent = new Date(data.exportedAt).toLocaleString('ru-RU', { day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit' });
   $('#revision').textContent = 'Версия ' + data.revision;
   $('#total-count').textContent=nodes.length;$('#review-total').textContent=nodes.length;$('#progress').max=nodes.length;
-  $('#catalog-meta').textContent=`${data.counts.screens} экранов · ${data.counts.julia} с редакцией Юлии. Данные и билеты — тестовые примеры.`;
+  $('#catalog-meta').textContent=`${data.counts.screens} экрана с текстом · ${data.counts.adaptations||0} адаптаций отмечены отдельно. Кнопки из снимка DEV. Данные и билеты — тестовые примеры.`;
   const hash = location.hash.slice(1); if (nodes.some(n => n.id === hash)) selected = hash;
   select(selected, false);
 })();
