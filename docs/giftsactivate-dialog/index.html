@@ -4,9 +4,9 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <title>GiftsActivate · Просмотр диалогов</title>
-  <link rel="stylesheet" href="style.css?v=20260930-tickets">
+  <link rel="stylesheet" href="style.css?v=20260930-simple">
   <script defer src="assets/lucide.min.js"></script>
-  <script defer src="data.js?v=20260930-clean-tickets"></script><script defer src="emoji-data.js?v=20260930"></script><script defer src="app.js?v=20260930-tickets"></script>
+  <script defer src="data.js?v=20260930-clean-tickets"></script><script defer src="emoji-data.js?v=20260930"></script><script defer src="app.js?v=20260930-simple"></script>
 </head>
 <body>
   <header class="topbar">
@@ -17,9 +17,9 @@
     <aside class="sidebar" aria-label="Сценарии">
       <div class="side-title">ВСЕ СЦЕНАРИИ <span id="total-count"></span></div>
       <h1>Диалоги бота</h1>
-      <div class="coverage"><span><b id="viewed-count">0</b> из <span id="review-total"></span> просмотрено</span><span id="percent">0%</span></div><progress id="progress" value="0" aria-label="Просмотрено экранов"></progress><div class="approval-summary">Согласовано: <b id="approved-count">0</b></div>
+      <div class="coverage"><span><b id="viewed-count">0</b> из <span id="review-total"></span> просмотрено</span><span id="percent">0%</span></div><progress id="progress" value="0" aria-label="Просмотрено экранов"></progress>
       <label class="search-field"><i data-lucide="search"></i><input id="search" type="search" placeholder="Экран, текст, № в карте" aria-label="Поиск экрана"></label>
-      <select id="review-filter" aria-label="Фильтр экранов"><option value="all">Все экраны</option><option value="unviewed">Не просмотрены</option><option value="viewed">Просмотрены</option><option value="draft">С редакцией Юлии</option><option value="issues">Требуют решения</option><option value="unreviewed">Не согласованы</option></select>
+      <select id="review-filter" aria-label="Фильтр экранов"><option value="all">Все экраны</option><option value="unviewed">Не просмотрены</option><option value="viewed">Просмотрены</option></select>
       <div id="category-nav"></div><p id="empty-search" hidden>Ничего не найдено</p>
       <div class="side-bottom"><i data-lucide="git-branch"></i><div><strong>Снимок DEV</strong><span id="snapshot"></span></div></div>
     </aside>
@@ -33,23 +33,8 @@
         <div class="composer"><i data-lucide="paperclip"></i><span>Сообщение</span><i data-lucide="smile"></i><i data-lucide="mic"></i></div>
         <div id="reply-keyboard" class="reply-keyboard"></div><div class="home-indicator"><span></span></div>
       </section>
-      <label class="viewed-control"><input id="viewed" type="checkbox"><span>Просмотрено</span><small id="viewed-summary"></small></label>
       <div class="step-controls"><button id="previous" class="icon-button" title="Предыдущий экран" aria-label="Предыдущий экран"><i data-lucide="arrow-left"></i></button><div><span id="current-title"></span><small id="current-position"></small></div><button id="next" class="next-button">Дальше<i data-lucide="arrow-right"></i></button></div>
     </main>
-    <aside class="inspector" aria-label="Проверка экрана">
-      <div class="inspector-heading"><span>ПРОВЕРКА ЭКРАНА</span><i data-lucide="clipboard-check"></i></div>
-      <h2 id="review-title"></h2><div class="source-pill" id="copy-source"></div>
-      <div id="review-warnings" class="review-warnings"></div>
-      <details id="julia-details" class="julia-details"><summary>Комментарий Юлии</summary><div id="julia-comment"></div></details>
-      <p id="draft-assembly" class="pilot-meta"></p>
-      <p class="pilot-meta"><a href="copy-changes-20260930.html" target="_blank" rel="noopener">Все правки от 30.09: было → стало</a></p>
-      <details id="original-note-details" class="julia-details" hidden><summary>Исходная правка Юлии</summary><div id="original-note"></div></details>
-      <fieldset class="decisions"><legend>Решение</legend><button data-status="approved"><i data-lucide="check-circle-2"></i>Согласовано<span class="radio-dot"></span></button><button data-status="changes"><i data-lucide="pencil-line"></i>Нужны правки<span class="radio-dot"></span></button><button data-status="pending"><i data-lucide="circle-dashed"></i>Не рассмотрено<span class="radio-dot"></span></button></fieldset>
-      <label class="note-label" for="note">Комментарий</label><textarea id="note" placeholder="Что изменить на этом экране…" rows="6"></textarea><div class="note-footer"><span id="note-state">Без комментария</span><span id="note-length">0</span></div>
-      <label class="note-label" for="reviewer">Кто проверяет</label><input id="reviewer" autocomplete="name" placeholder="Имя">
-      <details class="source-details"><summary>Источник <i data-lucide="code-2"></i></summary><code id="source"></code><span id="revision"></span></details>
-      <div class="pilot-meta"><i data-lucide="flask-conical"></i><span id="catalog-meta"></span></div>
-    </aside>
   </div>
   <div id="toast" role="status"></div>
   <dialog id="photo-viewer" aria-label="Просмотр изображения"><form method="dialog"><button class="icon-button" title="Закрыть изображение" aria-label="Закрыть изображение"><i data-lucide="x"></i></button></form><img id="photo-viewer-image" alt=""></dialog>

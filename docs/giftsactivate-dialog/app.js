@@ -2,7 +2,7 @@
 (() => {
   const data = window.DIALOG_DATA;
   const $ = (selector) => document.querySelector(selector);
-  const nodes = data.nodes;
+  const nodes = data.nodes.filter(n => n.category !== 'legacy');
   const key = `giftsactivate-dialog:${data.reviewRevision || data.revision}`;
   let reviews = {}, reviewer = '', selected = nodes.find(n => n.category === 'entry').id, mode = 'screen', paused = false, edition = 'julia';
   let query = '', filter = 'all';
@@ -28,10 +28,9 @@
     try { localStorage.setItem(key, JSON.stringify({ reviews, reviewer, selected })); $('#save-state').textContent = 'Сохранено на этом устройстве'; }
     catch (_) { $('#save-state').textContent = 'Не сохранено · экспортируйте правки'; }
   }
-  function setReview(update) { reviews[selected] = { ...review(), ...update, updatedAt: new Date().toISOString() }; persist(); renderNavigation(); renderDecisions(); }
   function filteredNodes() {
     return nodes.filter(n => (!query || n.search.includes(query) || String(n.number) === query.replace(/^№/, '')) &&
-      (filter === 'all' || filter === 'viewed' && isViewed(n.id) || filter === 'unviewed' && !isViewed(n.id) || filter === 'draft' && n.julia.length || filter === 'issues' && n.warnings.length || filter === 'unreviewed' && review(n.id).status !== 'approved'));
+      (filter === 'all' || filter === 'viewed' && isViewed(n.id) || filter === 'unviewed' && !isViewed(n.id)));
   }
   function adjacent(offset) {
     const index = nodes.findIndex(n => n.id === selected);
@@ -64,25 +63,23 @@
       summary.append(label, count); group.append(summary);
       const nav = document.createElement('nav'); group.append(nav); host.append(group);
       items.forEach(n => {
-      const status = review(n.id).status;
       const button = document.createElement('button');
-      button.className = `step-item ${selected === n.id ? 'active' : ''} ${status} ${isViewed(n.id) ? 'viewed' : ''}`;
+      button.className = `step-item ${selected === n.id ? 'active' : ''} ${isViewed(n.id) ? 'viewed' : ''}`;
       button.title = isViewed(n.id) ? 'Просмотрено' : 'Не просмотрено';
       button.setAttribute('aria-current', selected === n.id ? 'step' : 'false');
       button.dataset.step = n.id;
       const number = document.createElement('span'); number.className = 'step-number'; number.textContent = n.number || 'DEV';
       const name = document.createElement('span'); name.className = 'step-name'; name.textContent = n.title;
-      const marker = document.createElement('i'); marker.dataset.lucide = status === 'approved' ? 'check' : status === 'changes' ? 'pencil' : isViewed(n.id) ? 'eye' : 'circle'; marker.className = 'status-mark';
-      button.append(number, name, marker); button.addEventListener('click', () => select(n.id));
+      button.append(number, name);
+      if(isViewed(n.id)) {const marker=document.createElement('i');marker.dataset.lucide='eye';marker.className='status-mark';marker.setAttribute('aria-label','Просмотрено');button.append(marker);}
+      button.addEventListener('click', () => select(n.id));
       nav.append(button);
       });
     });
     $('#empty-search').hidden = filtered.length !== 0;
     updatePosition();
-    const approved = nodes.filter(n => review(n.id).status === 'approved').length;
     const viewed = nodes.filter(n => isViewed(n.id)).length;
-    $('#approved-count').textContent = approved; $('#viewed-count').textContent = viewed; $('#progress').value = viewed; $('#percent').textContent = Math.round(viewed / nodes.length * 100) + '%';
-    $('#viewed-summary').textContent = `${viewed} / ${nodes.length}`;
+    $('#viewed-count').textContent = viewed; $('#progress').value = viewed; $('#percent').textContent = Math.round(viewed / nodes.length * 100) + '%';
     icons();
   }
   function safeMessage(html) {
@@ -227,34 +224,14 @@
       chat.scrollTo({ top: mode === 'dialog' && target ? target.offsetTop - chat.offsetTop : 0, behavior: 'instant' });
     });
   }
-  function renderDecisions() {
-    $('#viewed').checked = isViewed();
-    document.querySelectorAll('[data-status]').forEach(b => { b.classList.toggle('active', b.dataset.status === review().status); b.setAttribute('aria-pressed', String(b.dataset.status === review().status)); });
-  }
-  function select(id, scroll = true) {
+  function select(id, scroll = true, markViewed = true) {
+    if(!nodes.some(n=>n.id===id)) return;
     selected = id; const node = current();
-    $('#current-title').textContent = node.title; $('#review-title').textContent = node.title;
-    const index = nodes.findIndex(n => n.id === id);
-    $('#current-position').textContent = `${index + 1} / ${nodes.length} экранов`;
-    $('#previous').disabled = index === 0; $('#next').disabled = index === nodes.length - 1;
-    $('#source').textContent = node.source;
-    $('#copy-source').textContent = edition==='julia' && node.copyOrigin==='adaptation'
-      ? 'Адаптация в стиле Юлии'+(node.number?' · карта №'+node.number:'')
-      : node.category==='giveaway_yandex'
-      ? (edition==='current'?'На основе DEV':'На основе редакции Юлии')+' · Яндекс'
-      : edition==='current' ? 'Снимок DEV' : node.julia.length ? (node.copyOrigin==='comment'?'Текст из комментария Юлии':'Редакция Юлии')+' · карта №'+node.number : 'Показан DEV · редакция Юлии не передана';
-    $('#review-warnings').replaceChildren();
-    [...node.warnings, node.decisionHint].filter(Boolean).forEach(text => { const p=document.createElement('p');p.append(safeMessage(text));$('#review-warnings').append(p); });
-    $('#draft-assembly').textContent=[node.draftAssembly,node.mediaAssembly].filter(Boolean).join(' ');
-    $('#original-note-details').hidden=!node.originalNote;
-    $('#original-note').replaceChildren(safeMessage(node.originalNote||''));
-    $('#julia-details').hidden = !node.juliaNote;
-    $('#julia-details').open = Boolean(node.juliaNote);
-    $('#julia-comment').replaceChildren(safeMessage(node.juliaNote));
-    $('#edition-state').textContent = edition === 'current' ? 'DEV · ' + data.sourceRevision : node.julia.length ? 'Текст для согласования' : 'Показан текст DEV';
-    $('#note').value = review().note || ''; $('#note-length').textContent = $('#note').value.length;
-    $('#note-state').textContent = $('#note').value ? 'Комментарий сохранён' : 'Без комментария';
-    renderDecisions(); renderNavigation(); renderPhone();
+    $('#current-title').textContent = node.title;
+    $('#edition-state').textContent = edition === 'current' ? 'Снимок DEV' : node.copyOrigin==='adaptation' ? 'Адаптация в стиле Юлии' : 'Редакция Юлии';
+    renderPhone();
+    if(markViewed&&!isViewed(id)) reviews[id]={...review(id),viewed:true,updatedAt:new Date().toISOString()};
+    renderNavigation();
     if (scroll && innerWidth <= 600) document.querySelector(`[data-step="${selected}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     history.replaceState(null, '', '#' + id);
     persist();
@@ -267,10 +244,6 @@
   }));
   $('#search').addEventListener('input', () => {query=$('#search').value.toLowerCase().trim();renderNavigation();});
   $('#review-filter').addEventListener('change', () => {filter=$('#review-filter').value;renderNavigation();});
-  document.querySelectorAll('[data-status]').forEach(b => b.addEventListener('click', () => setReview({ status: b.dataset.status, ...(['approved', 'changes'].includes(b.dataset.status) ? {viewed: true} : {}) })));
-  $('#viewed').addEventListener('change', () => setReview({ viewed: $('#viewed').checked }));
-  $('#note').addEventListener('input', () => { setReview({ note: $('#note').value }); $('#note-length').textContent = $('#note').value.length; $('#note-state').textContent = 'Комментарий сохранён'; });
-  $('#reviewer').value = reviewer; $('#reviewer').addEventListener('input', () => { reviewer = $('#reviewer').value; persist(); });
   $('#previous').addEventListener('click', () => step(-1));
   $('#next').addEventListener('click', () => step(1));
   $('#animation').addEventListener('click', () => {
@@ -300,20 +273,18 @@
       if (body.format !== 'giftsactivate-dialog-review' || ![data.revision, data.reviewRevision].filter(Boolean).includes(body.revision) || !Array.isArray(body.screens)) throw new Error('Файл относится к другой версии диалога');
       const incoming = {};
       body.screens.forEach(s => { if (nodes.some(n => n.id === s.id) && ['approved','changes','pending'].includes(s.status)) incoming[s.id] = { status:s.status, note:String(s.note || '').slice(0,20000), viewed: typeof s.viewed === 'boolean' ? s.viewed : isViewed(s.id) || ['approved','changes'].includes(s.status) }; });
-      reviews = { ...reviews, ...incoming }; reviewer = String(body.reviewer || '').slice(0,100); $('#reviewer').value = reviewer;
-      persist(); select(selected); toast('Отметки загружены');
+      reviews = { ...reviews, ...incoming }; reviewer = String(body.reviewer || reviewer).slice(0,100);
+      persist(); select(selected,false,false); toast('Отметки загружены');
     } catch (error) { toast(error.message || 'Не удалось прочитать файл'); }
     $('#import-file').value = '';
   });
   document.querySelectorAll('.close-dialog').forEach(b => b.addEventListener('click', () => $('#boundary').close()));
-  document.addEventListener('keydown', e => { if (e.target.matches('input,textarea,select') || $('#boundary').open) return;
+  document.addEventListener('keydown', e => { if (e.target.matches('input,textarea,select') || $('#boundary').open || $('#photo-viewer').open) return;
     if (e.key === 'ArrowRight') $('#next').click(); if (e.key === 'ArrowLeft') $('#previous').click();
     if (e.key === 'Escape') document.body.classList.remove('focus-mode');
   });
   $('#snapshot').textContent = new Date(data.exportedAt).toLocaleString('ru-RU', { day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit' });
-  $('#revision').textContent = 'Версия ' + data.revision;
   $('#total-count').textContent=nodes.length;$('#review-total').textContent=nodes.length;$('#progress').max=nodes.length;
-  $('#catalog-meta').textContent=`${data.counts.screens} экрана с текстом · ${data.counts.adaptations||0} адаптаций отмечены отдельно. Кнопки из снимка DEV. Данные и билеты — тестовые примеры.`;
   const hash = location.hash.slice(1); if (nodes.some(n => n.id === hash)) selected = hash;
   select(selected, false);
 })();
