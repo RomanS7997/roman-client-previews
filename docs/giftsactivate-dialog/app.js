@@ -177,6 +177,11 @@
         block.append(note);
       }
       calls.forEach(call => {
+        let messageHost=block;
+        if(call.kind==='photo') {
+          messageHost=document.createElement('div');messageHost.className='photo-message';
+          block.append(messageHost);
+        }
         if (call.asset) {
           if (['sticker','video','animation'].includes(call.kind)) {
             const video = document.createElement('video'); const sticker = call.kind === 'sticker';
@@ -188,14 +193,21 @@
               else { const note=document.createElement('p');note.className='editor-placeholder';note.textContent='Не удалось загрузить видео';video.replaceWith(note); }
             }, {once:true}); block.append(video);
           } else if (call.kind === 'photo') {
-            const img=new Image();img.src=call.asset;img.alt=node.title;img.className='message-photo';img.loading='lazy';block.append(img);
+            const open=document.createElement('button');open.className='photo-open';open.type='button';
+            open.title='Открыть изображение';open.setAttribute('aria-label','Открыть изображение: '+node.title);
+            const img=new Image();img.src=call.asset;img.alt=call.previewTicket?'Билет '+call.previewTicket:node.title;img.className='message-photo';img.loading='lazy';
+            open.append(img);messageHost.append(open);
+            open.addEventListener('click',()=>{
+              const viewer=$('#photo-viewer');$('#photo-viewer-image').src=call.asset;$('#photo-viewer-image').alt=img.alt;viewer.showModal();
+            });
+            if(!call.text){const time=document.createElement('span');time.className='photo-time';time.textContent='9:41';messageHost.append(time);}
           } else {
             const link=document.createElement('a');link.href=call.asset;link.target='_blank';link.rel='noopener';link.className='message-document';link.textContent='Открыть документ';block.append(link);
           }
         }
         if (call.text) {
           const bubble=document.createElement('div');bubble.className='bubble';bubble.append(safeMessage(call.text));
-          const time=document.createElement('span');time.className='timestamp';time.textContent='9:41';bubble.append(time);block.append(bubble);
+          const time=document.createElement('span');time.className='timestamp';time.textContent='9:41';bubble.append(time);messageHost.append(bubble);
         }
         if (call.rows?.length) {
           if (call.keyboardType === 'inline') block.append(keyboard(node,call.rows));
@@ -233,7 +245,7 @@
       : edition==='current' ? 'Снимок DEV' : node.julia.length ? (node.copyOrigin==='comment'?'Текст из комментария Юлии':'Редакция Юлии')+' · карта №'+node.number : 'Показан DEV · редакция Юлии не передана';
     $('#review-warnings').replaceChildren();
     [...node.warnings, node.decisionHint].filter(Boolean).forEach(text => { const p=document.createElement('p');p.append(safeMessage(text));$('#review-warnings').append(p); });
-    $('#draft-assembly').textContent=node.draftAssembly||'';
+    $('#draft-assembly').textContent=[node.draftAssembly,node.mediaAssembly].filter(Boolean).join(' ');
     $('#original-note-details').hidden=!node.originalNote;
     $('#original-note').replaceChildren(safeMessage(node.originalNote||''));
     $('#julia-details').hidden = !node.juliaNote;
