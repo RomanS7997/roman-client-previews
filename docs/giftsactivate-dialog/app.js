@@ -185,7 +185,9 @@
     $('#current-position').textContent = `${index + 1} / ${nodes.length} экранов`;
     $('#previous').disabled = index === 0; $('#next').disabled = index === nodes.length - 1;
     $('#source').textContent = node.source;
-    $('#copy-source').textContent = edition==='current' ? 'Снимок DEV' : node.julia.length ? (node.copyOrigin==='comment'?'Текст из комментария Юлии':'Редакция Юлии')+' · карта №'+node.number : 'Показан DEV · редакция Юлии не передана';
+    $('#copy-source').textContent = node.category==='giveaway_yandex'
+      ? (edition==='current'?'На основе DEV':'На основе редакции Юлии')+' · Яндекс'
+      : edition==='current' ? 'Снимок DEV' : node.julia.length ? (node.copyOrigin==='comment'?'Текст из комментария Юлии':'Редакция Юлии')+' · карта №'+node.number : 'Показан DEV · редакция Юлии не передана';
     $('#review-warnings').replaceChildren();
     [...node.warnings, node.decisionHint].filter(Boolean).forEach(text => { const p=document.createElement('p');p.append(safeMessage(text));$('#review-warnings').append(p); });
     $('#draft-assembly').textContent=node.draftAssembly||'';

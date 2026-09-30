@@ -36,6 +36,10 @@ window.DIALOG_DATA = {
       "title": "Раздачи и отчёт"
     },
     {
+      "key": "giveaway_yandex",
+      "title": "Раздачи · Яндекс"
+    },
+    {
       "key": "raffle",
       "title": "Билеты и розыгрыш"
     },
@@ -10049,26 +10053,36 @@ window.DIALOG_DATA = {
       "source": "qa.giveaway[27] · custom:giveaway_step:order_no_ya",
       "current": [
         {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-order-number.mp4",
+          "poster": "assets/ym-giveaway-20260930-order-number-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
           "owner": "message",
-          "method": "answer_photo",
+          "method": "answer",
           "text": "7️⃣ <b>Шаг 7 из 7 · оформляем заказ</b>\n\n🎯 Последний шаг — после него заявка уйдёт на проверку.\n\n🔢 Пришлите номер заказа, оформленного на Яндекс Маркет — например <code>31415926</code>.\n\n🚫 Номер отправления и трек-номер не подойдут.\n\n📎 Дальше попросим один скрин оформленного заказа. Ошиблись — номер можно исправить до отправки скрина.\n\n<i>Найти его можно в приложении маркетплейса, в списке ваших заказов.</i>",
           "buttons": [],
           "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/747e744b1c-shot_order_no_ya.png"
+          "rows": []
         }
       ],
       "julia": [
         {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-order-number.mp4",
+          "poster": "assets/ym-giveaway-20260930-order-number-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
           "owner": "message",
-          "method": "answer_photo",
+          "method": "answer",
           "text": "7️⃣ Шаг 7 из 7 • Оформляем заказ<br><br>🎯 Последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 Пришли номер заказа, оформленного на Яндекс Маркет (например 31415926).<br>🚫 Обрати внимание! Номер отправления и трек номер не подойдут.<br>📎 Дальше попросим один скриншот оформленного заказа. Если опечатаешься, номер получится исправить до отправки скрина! Найти его можно в приложении маркетплейса, прямо в списке твоих покупок.",
           "buttons": [],
           "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/747e744b1c-shot_order_no_ya.png"
+          "rows": []
         }
       ],
       "proposalStatus": "new",
@@ -12071,6 +12085,672 @@ window.DIALOG_DATA = {
       "search": "сертификат выдан автовыдачей qa.giveaway[69] · qa.literal 🎉 <b>сертификат ваш.</b>\n\n🎁 код: <code>demo-599</code>\n\n<i>спасибо, что прошли раздачу до конца.</i> 🎉 сертификат уже твой!🎁 код: demo-599🙌 ты дошёл до самого конца, спасибо за крутое сотрудничество! "
     },
     {
+      "id": "yandex-giveaway-competitors",
+      "title": "Шаг 1: поиск и корзина конкурентов",
+      "number": null,
+      "category": "giveaway_yandex",
+      "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[17] · custom:giveaway_step:competitors",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/df6c0b2318-31_cart_others.webm",
+          "poster": "assets/22dded00c7-31_cart_others.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-search-competitors.mp4",
+          "poster": "assets/ym-giveaway-20260930-search-competitors-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-competitors-cart.mp4",
+          "poster": "assets/ym-giveaway-20260930-competitors-cart-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ <b>Место ваше — держим его 120 минут.</b>\n\n🪜 За это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ Шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 За 30 минут до конца пришлём напоминание.\n⏹ Как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>Так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>Шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 Введите в поиске Яндекс Маркет запрос: «<b>Павербанк магнитный</b>».\n2. 👀 Просмотрите карточки конкурентов из ТОП-10.\n3. 🧺 Положите в корзину <b>2–3</b> похожих товара.\n\n📷 Пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>Так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/df6c0b2318-31_cart_others.webm",
+          "poster": "assets/22dded00c7-31_cart_others.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-search-competitors.mp4",
+          "poster": "assets/ym-giveaway-20260930-search-competitors-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-competitors-cart.mp4",
+          "poster": "assets/ym-giveaway-20260930-competitors-cart-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ Место забронировано за тобой! Держим его 120 минут.<br>🪜 За это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ Шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 За 30 минут до конца пришлём напоминание.<br>⏹ Как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>Так ты не потеряешь место, даже если проверка займёт время..<br><br>1️⃣ Шаг 1 из 7 · Конкуренты<br><br>1. 🔎 🔎 Открой поиск Яндекс Маркет и введи запрос: «Павербанк магнитный»<br>2. 👀 Просмотри карточки конкурентов из ТОП-10.<br>3. 🧺 Положи в корзину 2–3 похожих товара.<br>📷 Пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>Так маркетплейс видит живой интерес к категории!",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "julia",
+      "draftAssembly": "Материалы Яндекса от 30.09.2026. Тексты на основе редакции Юлии; пример товара и бренда заменён на Puloka из видео. Это превью, не выгрузка нового кода бота.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 1: поиск и корзина конкурентов яндекс раздачи    ✅ <b>место ваше — держим его 120 минут.</b>\n\n🪜 за это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 за 30 минут до конца пришлём напоминание.\n⏹ как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 введите в поиске яндекс маркет запрос: «<b>павербанк магнитный</b>».\n2. 👀 просмотрите карточки конкурентов из топ-10.\n3. 🧺 положите в корзину <b>2–3</b> похожих товара.\n\n📷 пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>    ✅ место забронировано за тобой! держим его 120 минут.<br>🪜 за это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 за 30 минут до конца пришлём напоминание.<br>⏹ как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>так ты не потеряешь место, даже если проверка займёт время..<br><br>1️⃣ шаг 1 из 7 · конкуренты<br><br>1. 🔎 🔎 открой поиск яндекс маркет и введи запрос: «павербанк магнитный»<br>2. 👀 просмотри карточки конкурентов из топ-10.<br>3. 🧺 положи в корзину 2–3 похожих товара.<br>📷 пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>так маркетплейс видит живой интерес к категории!"
+    },
+    {
+      "id": "yandex-giveaway-search",
+      "title": "Шаг 2: фильтр бренда и наш товар",
+      "number": null,
+      "category": "giveaway_yandex",
+      "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[18] · custom:giveaway_step:search",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/de5446759f-32_find_product.webm",
+          "poster": "assets/74f039bbb3-32_find_product.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-search-product.mp4",
+          "poster": "assets/ym-giveaway-20260930-search-product-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-product-search.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "2️⃣ <b>Шаг 2 из 7 · наш товар</b>\n\n🔎 В фильтре «Бренд» выберите <b>Puloka</b> и найдите наш товар «Магнитный повербанк 10000 мАч» по фотографии.\n\n📷 Пришлите скрин, где одновременно видны:\n🔤 Поисковый запрос «<b>Павербанк магнитный</b>»\n🖼 Карточка нашего товара\n\n<i>Прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/de5446759f-32_find_product.webm",
+          "poster": "assets/74f039bbb3-32_find_product.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-search-product.mp4",
+          "poster": "assets/ym-giveaway-20260930-search-product-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-product-search.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "2️⃣ Шаг 2 из 7 · Наш товар<br><br>🔎 Открой фильтр «Бренд», выбери Puloka и найди наш товар «Магнитный повербанк 10000 мАч» по фотографии.<br>📷 Пришли скриншот, где одновременно видны:<br>🔤 Поисковый запрос «Павербанк магнитный»<br>🖼 Карточка нашего товара<br><br>Прямую ссылку специально не даём, ведь товар нужно найти именно через поиск!",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "julia",
+      "draftAssembly": "Материалы Яндекса от 30.09.2026. Тексты на основе редакции Юлии; пример товара и бренда заменён на Puloka из видео. Это превью, не выгрузка нового кода бота.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 2: фильтр бренда и наш товар яндекс раздачи    2️⃣ <b>шаг 2 из 7 · наш товар</b>\n\n🔎 в фильтре «бренд» выберите <b>puloka</b> и найдите наш товар «магнитный повербанк 10000 мач» по фотографии.\n\n📷 пришлите скрин, где одновременно видны:\n🔤 поисковый запрос «<b>павербанк магнитный</b>»\n🖼 карточка нашего товара\n\n<i>прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>    2️⃣ шаг 2 из 7 · наш товар<br><br>🔎 открой фильтр «бренд», выбери puloka и найди наш товар «магнитный повербанк 10000 мач» по фотографии.<br>📷 пришли скриншот, где одновременно видны:<br>🔤 поисковый запрос «павербанк магнитный»<br>🖼 карточка нашего товара<br><br>прямую ссылку специально не даём, ведь товар нужно найти именно через поиск!"
+    },
+    {
+      "id": "yandex-giveaway-card",
+      "title": "Шаг 3: просмотр карточки",
+      "number": null,
+      "category": "giveaway_yandex",
+      "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[19] · custom:giveaway_step:card",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a144029a43-33_dwell.webm",
+          "poster": "assets/f7c15b2d0d-33_dwell.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-product-card.mp4",
+          "poster": "assets/ym-giveaway-20260930-product-card-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "3️⃣ <b>Шаг 3 из 7 · смотрим карточку</b>\n\n⏱ Самый спокойный шаг: ничего присылать не нужно. Откройте страницу товара «Магнитный повербанк 10000 мАч» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 Пока ждёте:\n🖼 Пролистайте фото и видео\n💬 Прочитайте отзывы\n📋 Посмотрите характеристики и описание\n\n👉 Нажмите «➡ Продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>Отсчёт идёт сам, следить за ним не нужно.</i>",
+          "buttons": [
+            "➡ Продолжить"
+          ],
+          "keyboardType": "inline",
+          "rows": [
+            [
+              {
+                "text": "➡ Продолжить",
+                "value": "gwf:step3",
+                "url": null,
+                "contact": false
+              }
+            ]
+          ]
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a144029a43-33_dwell.webm",
+          "poster": "assets/f7c15b2d0d-33_dwell.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-product-card.mp4",
+          "poster": "assets/ym-giveaway-20260930-product-card-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "3️⃣ Шаг 3 из 7 · Смотрим карточку<br><br>⏱ Самый спокойный шаг: ничего присылать не нужно! Открой страницу товара «Магнитный повербанк 10000 мАч» и побудь на ней 3 минуты 30 секунд.<br>👀 Пока ждёшь:<br>🖼 Пролистай фото и видео<br>💬 Прочитай отзывы<br>📋 Посмотри характеристики и описание<br>👉 Нажми «➡ Продолжить», когда время выйдет. Если нажать раньше, бот попросит ещё немного подождать. <br><br>Отсчёт идет сам, следить за ним не нужно!",
+          "buttons": [
+            "➡ Продолжить"
+          ],
+          "keyboardType": "inline",
+          "rows": [
+            [
+              {
+                "text": "➡ Продолжить",
+                "value": "gwf:step3",
+                "url": null,
+                "contact": false
+              }
+            ]
+          ]
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "julia",
+      "draftAssembly": "Материалы Яндекса от 30.09.2026. Тексты на основе редакции Юлии; пример товара и бренда заменён на Puloka из видео. Это превью, не выгрузка нового кода бота.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 3: просмотр карточки яндекс раздачи   3️⃣ <b>шаг 3 из 7 · смотрим карточку</b>\n\n⏱ самый спокойный шаг: ничего присылать не нужно. откройте страницу товара «магнитный повербанк 10000 мач» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 пока ждёте:\n🖼 пролистайте фото и видео\n💬 прочитайте отзывы\n📋 посмотрите характеристики и описание\n\n👉 нажмите «➡ продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>отсчёт идёт сам, следить за ним не нужно.</i>   3️⃣ шаг 3 из 7 · смотрим карточку<br><br>⏱ самый спокойный шаг: ничего присылать не нужно! открой страницу товара «магнитный повербанк 10000 мач» и побудь на ней 3 минуты 30 секунд.<br>👀 пока ждёшь:<br>🖼 пролистай фото и видео<br>💬 прочитай отзывы<br>📋 посмотри характеристики и описание<br>👉 нажми «➡ продолжить», когда время выйдет. если нажать раньше, бот попросит ещё немного подождать. <br><br>отсчёт идет сам, следить за ним не нужно!"
+    },
+    {
+      "id": "yandex-giveaway-cart",
+      "title": "Шаг 4: наш товар с конкурентами",
+      "number": null,
+      "category": "giveaway_yandex",
+      "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[22] · custom:giveaway_step:cart_competitors",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/c241390faf-34_cart_ours.webm",
+          "poster": "assets/09b6bfbea6-34_cart_ours.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-cart-together.mp4",
+          "poster": "assets/ym-giveaway-20260930-cart-together-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-cart-together.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "4️⃣ <b>Шаг 4 из 7 · общая корзина</b>\n\n⏹ Этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 Добавьте наш товар «Магнитный повербанк 10000 мАч» в корзину.\n\n📷 Пришлите один скрин, где одновременно видны:\n📦 Наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/c241390faf-34_cart_ours.webm",
+          "poster": "assets/09b6bfbea6-34_cart_ours.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-cart-together.mp4",
+          "poster": "assets/ym-giveaway-20260930-cart-together-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-cart-together.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "4️⃣ Шаг 4 из 7 · Общая корзина<br><br>⏹ Этот шаг останавливает таймер! Как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 Добавь наш товар «Магнитный повербанк 10000 мАч» в корзину.<br>📷 Пришли один скрин, где одновременно видны:<br>📦 Наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "julia",
+      "draftAssembly": "Материалы Яндекса от 30.09.2026. Тексты на основе редакции Юлии; пример товара и бренда заменён на Puloka из видео. Это превью, не выгрузка нового кода бота.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 4: наш товар с конкурентами яндекс раздачи    4️⃣ <b>шаг 4 из 7 · общая корзина</b>\n\n⏹ этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 добавьте наш товар «магнитный повербанк 10000 мач» в корзину.\n\n📷 пришлите один скрин, где одновременно видны:\n📦 наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили    4️⃣ шаг 4 из 7 · общая корзина<br><br>⏹ этот шаг останавливает таймер! как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 добавь наш товар «магнитный повербанк 10000 мач» в корзину.<br>📷 пришли один скрин, где одновременно видны:<br>📦 наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее"
+    },
+    {
+      "id": "yandex-giveaway-clean",
+      "title": "Шаг 5: удалить конкурентов",
+      "number": null,
+      "category": "giveaway_yandex",
+      "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[23] · custom:giveaway_step:cart_clean",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/f7379699b6-35_cart_clean.webm",
+          "poster": "assets/84c8f302cd-35_cart_clean.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-cart-clean.mp4",
+          "poster": "assets/ym-giveaway-20260930-cart-clean-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-cart-clean.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ <b>Общая корзина принята — место закреплено за вами.</b>\n\n♾ Таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>Шаг 5 из 7 · оставляем один товар</b>\n\n✂ Удалите из корзины лишние товары — должен остаться только наш товар «Магнитный повербанк 10000 мАч».\n\n📷 Пришлите новый скрин корзины, где это хорошо видно.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/f7379699b6-35_cart_clean.webm",
+          "poster": "assets/84c8f302cd-35_cart_clean.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-cart-clean.mp4",
+          "poster": "assets/ym-giveaway-20260930-cart-clean-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-cart-clean.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ Общая корзина принята, место закрепилось за тобой!<br>♾ Таймер остановлен! На шаги 5–7 времени сколько нужно.<br><br>5️⃣ Шаг 5 из 7 • Оставляем один товар<br><br>✂ Убери из корзины лишние позиции, там должен остаться только наш товар «Магнитный повербанк 10000 мАч».<br>📷 Пришли новый скриншот корзины, где это хорошо видно.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "julia",
+      "draftAssembly": "Материалы Яндекса от 30.09.2026. Тексты на основе редакции Юлии; пример товара и бренда заменён на Puloka из видео. Это превью, не выгрузка нового кода бота.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 5: удалить конкурентов яндекс раздачи    ✅ <b>общая корзина принята — место закреплено за вами.</b>\n\n♾ таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>шаг 5 из 7 · оставляем один товар</b>\n\n✂ удалите из корзины лишние товары — должен остаться только наш товар «магнитный повербанк 10000 мач».\n\n📷 пришлите новый скрин корзины, где это хорошо видно.    ✅ общая корзина принята, место закрепилось за тобой!<br>♾ таймер остановлен! на шаги 5–7 времени сколько нужно.<br><br>5️⃣ шаг 5 из 7 • оставляем один товар<br><br>✂ убери из корзины лишние позиции, там должен остаться только наш товар «магнитный повербанк 10000 мач».<br>📷 пришли новый скриншот корзины, где это хорошо видно."
+    },
+    {
+      "id": "yandex-giveaway-favorites",
+      "title": "Шаг 6: товар и бренд в избранном",
+      "number": null,
+      "category": "giveaway_yandex",
+      "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[24] · custom:giveaway_step:favorites",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a96e514268-36_favorites.webm",
+          "poster": "assets/02400d6c6b-36_favorites.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-favorites.mp4",
+          "poster": "assets/ym-giveaway-20260930-favorites-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-product-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-brand-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "6️⃣ <b>Шаг 6 из 7 · избранное</b>\n\n🎯 Предпоследний шаг — дальше только оформление заказа.\n\n❤️ Добавьте в избранное:\n\n1. 🏪 Магазин Puloka\n2. 📦 Наш товар «Магнитный повербанк 10000 мАч»\n\n📷 Пришлите два скрина: товар в избранном и магазин в избранном.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a96e514268-36_favorites.webm",
+          "poster": "assets/02400d6c6b-36_favorites.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-favorites.mp4",
+          "poster": "assets/ym-giveaway-20260930-favorites-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-product-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/ym-giveaway-20260930-brand-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "6️⃣ Шаг 6 из 7 • Избранное<br><br>🎯 Предпоследний шаг, а дальше только оформление заказа!<br>❤️ Добавь в избранное:<br>🏪 Магазин Puloka<br>📦 Наш товар «Магнитный повербанк 10000 мАч»<br>📷 Пришли два скриншота: товар в избранном и магазин в избранном.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "julia",
+      "draftAssembly": "Материалы Яндекса от 30.09.2026. Тексты на основе редакции Юлии; пример товара и бренда заменён на Puloka из видео. Это превью, не выгрузка нового кода бота.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 6: товар и бренд в избранном яндекс раздачи     6️⃣ <b>шаг 6 из 7 · избранное</b>\n\n🎯 предпоследний шаг — дальше только оформление заказа.\n\n❤️ добавьте в избранное:\n\n1. 🏪 магазин puloka\n2. 📦 наш товар «магнитный повербанк 10000 мач»\n\n📷 пришлите два скрина: товар в избранном и магазин в избранном.     6️⃣ шаг 6 из 7 • избранное<br><br>🎯 предпоследний шаг, а дальше только оформление заказа!<br>❤️ добавь в избранное:<br>🏪 магазин puloka<br>📦 наш товар «магнитный повербанк 10000 мач»<br>📷 пришли два скриншота: товар в избранном и магазин в избранном."
+    },
+    {
+      "id": "yandex-giveaway-order",
+      "title": "Шаг 7: где найти номер заказа",
+      "number": null,
+      "category": "giveaway_yandex",
+      "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[27] · custom:giveaway_step:order_no_ya",
+      "current": [
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-order-number.mp4",
+          "poster": "assets/ym-giveaway-20260930-order-number-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "7️⃣ <b>Шаг 7 из 7 · оформляем заказ</b>\n\n🎯 Последний шаг — после него заявка уйдёт на проверку.\n\n🔢 Пришлите номер заказа, оформленного на Яндекс Маркет — например <code>31415926</code>.\n\n🚫 Номер отправления и трек-номер не подойдут.\n\n📎 Дальше попросим один скрин оформленного заказа. Ошиблись — номер можно исправить до отправки скрина.\n\n<i>Найти его можно в приложении маркетплейса, в списке ваших заказов.</i>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-order-number.mp4",
+          "poster": "assets/ym-giveaway-20260930-order-number-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "7️⃣ Шаг 7 из 7 • Оформляем заказ<br><br>🎯 Последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 Пришли номер заказа, оформленного на Яндекс Маркет (например 31415926).<br>🚫 Обрати внимание! Номер отправления и трек номер не подойдут.<br>📎 Дальше попросим один скриншот оформленного заказа. Если опечатаешься, номер получится исправить до отправки скрина! Найти его можно в приложении маркетплейса, прямо в списке твоих покупок.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "julia",
+      "draftAssembly": "Материалы Яндекса от 30.09.2026. Тексты на основе редакции Юлии; пример товара и бренда заменён на Puloka из видео. Это превью, не выгрузка нового кода бота.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 7: где найти номер заказа яндекс раздачи  7️⃣ <b>шаг 7 из 7 · оформляем заказ</b>\n\n🎯 последний шаг — после него заявка уйдёт на проверку.\n\n🔢 пришлите номер заказа, оформленного на яндекс маркет — например <code>31415926</code>.\n\n🚫 номер отправления и трек-номер не подойдут.\n\n📎 дальше попросим один скрин оформленного заказа. ошиблись — номер можно исправить до отправки скрина.\n\n<i>найти его можно в приложении маркетплейса, в списке ваших заказов.</i>  7️⃣ шаг 7 из 7 • оформляем заказ<br><br>🎯 последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 пришли номер заказа, оформленного на яндекс маркет (например 31415926).<br>🚫 обрати внимание! номер отправления и трек номер не подойдут.<br>📎 дальше попросим один скриншот оформленного заказа. если опечатаешься, номер получится исправить до отправки скрина! найти его можно в приложении маркетплейса, прямо в списке твоих покупок."
+    },
+    {
+      "id": "yandex-giveaway-review",
+      "title": "Отчёт: текст отзыва и оценка 5 звёзд",
+      "number": null,
+      "category": "giveaway_yandex",
+      "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[58] · custom:report_step:published",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-review.mp4",
+          "poster": "assets/ym-giveaway-20260930-review-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "📷 <b>Предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 Пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 Если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/ym-giveaway-20260930-review.mp4",
+          "poster": "assets/ym-giveaway-20260930-review-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "📷 Предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 Пришли кадр, где на одном экране одновременно видно:<br>📦 Наш товар<br>⭐ Оценку 5 звёзд<br>💬 Текст отзыва<br>🎬 Опубликованные фото или видео<br>👤 Если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация!",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "julia",
+      "draftAssembly": "Материалы Яндекса от 30.09.2026. Тексты на основе редакции Юлии; пример товара и бренда заменён на Puloka из видео. Это превью, не выгрузка нового кода бота.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "отчёт: текст отзыва и оценка 5 звёзд яндекс раздачи   📷 <b>предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>   📷 предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 пришли кадр, где на одном экране одновременно видно:<br>📦 наш товар<br>⭐ оценку 5 звёзд<br>💬 текст отзыва<br>🎬 опубликованные фото или видео<br>👤 если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация!"
+    },
+    {
       "id": "41b386825b9a",
       "title": "Топ призов пока пуст",
       "number": 186,
@@ -13983,16 +14663,16 @@ window.DIALOG_DATA = {
   ],
   "reviewRevision": "f7c6570dae2f",
   "counts": {
-    "screens": 235,
-    "sections": 11,
+    "screens": 243,
+    "sections": 12,
     "qa": 229,
     "mapImported": 226,
-    "julia": 222,
+    "julia": 230,
     "questions": 22,
     "withoutDraft": 13,
     "warnings": 40,
-    "assets": 55
+    "assets": 103
   },
   "sourceRevision": "73dca9480831",
-  "revision": "d70c767195d6"
+  "revision": "9778566721b7"
 };
