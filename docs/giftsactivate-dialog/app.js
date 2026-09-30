@@ -7,6 +7,16 @@
   let reviews = {}, reviewer = '', selected = nodes.find(n => n.category === 'entry').id, mode = 'screen', paused = false, edition = 'julia';
   let query = '', filter = 'all';
   const choices = {};
+  const emojiPalette = window.DIALOG_EMOJI || {};
+  const emojiPattern = Object.keys(emojiPalette).length ? new RegExp(Object.keys(emojiPalette)
+    .sort((a,b)=>b.length-a.length).map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|'),'gu') : null;
+  const reducedMotion = Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches);
+  const emojiObserver = window.IntersectionObserver ? new IntersectionObserver(entries=>{
+    for(const {target,isIntersecting} of entries) {
+      if(isIntersecting && !paused && !reducedMotion) target.play().catch(()=>{});
+      else target.pause();
+    }
+  }) : null;
   let toastTimer;
   try { const saved = JSON.parse(localStorage.getItem(key) || '{}'); reviews = saved.reviews || {}; reviewer = saved.reviewer || ''; if (nodes.some(n => n.id === saved.selected)) selected = saved.selected; } catch (_) { /* Review remains usable without storage. */ }
   function icons() { if (window.lucide) window.lucide.createIcons(); }
@@ -86,7 +96,33 @@
         element.href = href; element.target = '_blank'; element.rel = 'noopener noreferrer';
       }
     });
+    decorateEmoji(template.content);
     return template.content;
+  }
+  function decorateEmoji(fragment) {
+    if(!emojiPattern) return;
+    const walker=document.createTreeWalker(fragment,NodeFilter.SHOW_TEXT), texts=[];
+    while(walker.nextNode()) texts.push(walker.currentNode);
+    let budget=90;
+    for(const text of texts) {
+      if(!budget) break;
+      const replacement=document.createDocumentFragment();let offset=0, changed=false;
+      for(const match of text.data.matchAll(emojiPattern)) {
+        if(budget<=0) break;
+        budget--;
+        const item=emojiPalette[match[0]];
+        replacement.append(document.createTextNode(text.data.slice(offset,match.index)));
+        const span=document.createElement('span');span.className='custom-emoji';
+        const fallback=document.createElement('span');fallback.className='emoji-fallback';fallback.textContent=match[0];
+        const video=document.createElement('video');video.className='emoji-video';
+        video.src=item.asset;video.poster=item.poster||'';video.loop=true;video.muted=true;
+        video.playsInline=true;video.preload='auto';video.setAttribute('aria-hidden','true');video.tabIndex=-1;
+        video.addEventListener('loadeddata',()=>span.classList.add('emoji-ready'),{once:true});
+        video.addEventListener('error',()=>{emojiObserver?.unobserve(video);video.remove();span.classList.remove('emoji-ready');},{once:true});
+        span.append(fallback,video);replacement.append(span);offset=match.index+match[0].length;changed=true;
+      }
+      if(changed){replacement.append(document.createTextNode(text.data.slice(offset)));text.replaceWith(replacement);}
+    }
   }
   function boundary(title, targets = []) {
     $('#boundary-title').textContent = title;
@@ -119,6 +155,7 @@
     }); return wrapper;
   }
   function renderPhone() {
+    emojiObserver?.disconnect();
     const chat = $('#chat'); chat.replaceChildren();
     const day = document.createElement('div'); day.className = 'day'; day.textContent = '21 сентября'; chat.append(day);
     let visible = [current()];
@@ -169,6 +206,10 @@
       chat.append(block);
     });
     chat.querySelectorAll('video.sticker').forEach(video => { if (!paused) video.play().catch(() => {}); });
+    chat.querySelectorAll('video.emoji-video').forEach(video=>{
+      if(emojiObserver) emojiObserver.observe(video);
+      else if(!paused&&!reducedMotion) video.play().catch(()=>{});
+    });
     requestAnimationFrame(() => {
       const target = chat.querySelector(`[data-message="${selected}"]`);
       chat.scrollTo({ top: mode === 'dialog' && target ? target.offsetTop - chat.offsetTop : 0, behavior: 'instant' });
@@ -222,7 +263,7 @@
     paused = !paused; $('#animation').setAttribute('aria-pressed', String(paused));
     $('#animation').title = paused ? 'Включить анимацию' : 'Приостановить анимацию'; $('#animation').setAttribute('aria-label', $('#animation').title);
     $('#animation').innerHTML = `<i data-lucide="${paused ? 'play' : 'pause'}"></i>`;
-    document.querySelectorAll('video.sticker').forEach(v => paused ? v.pause() : v.play().catch(() => {})); icons();
+    document.querySelectorAll('video.sticker, video.emoji-video').forEach(v => paused || (reducedMotion && v.classList.contains('emoji-video')) ? v.pause() : v.play().catch(() => {})); icons();
   });
   $('#theme').addEventListener('click', () => {
     const light = $('.phone').classList.toggle('light');
