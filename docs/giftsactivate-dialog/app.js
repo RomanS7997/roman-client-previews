@@ -132,6 +132,9 @@
     choices[node.id] = button.text;
     const entry = title => nodes.find(n => n.category === 'entry' && n.title === title);
     let target;
+    if(edition==='julia' && button.value==='prof:resume') {
+      select(node.previewResume || '968708bd37cc');return;
+    }
     if (button.contact || /Принять и продолжить/.test(button.text)) target = entry('После телефона: первый вопрос профиля');
     else if (/Мужчина|Женщина/.test(button.text)) target = entry('Вопрос о возрасте');
     else if (node.title === 'Вопрос о возрасте') target = entry('Вопрос об устройстве');
@@ -156,11 +159,9 @@
     const chat = $('#chat'); chat.replaceChildren();
     const day = document.createElement('div'); day.className = 'day'; day.textContent = '21 сентября'; chat.append(day);
     let visible = [current()];
-    if (mode === 'dialog') {
-      const group = filteredNodes().filter(n => n.category === current().category);
-      const index = group.findIndex(n => n.id === selected);
-      visible = group.slice(Math.max(0, index - 3), index + 1);
-      if (!visible.length) visible = [current()];
+    // Catalog neighbors are alternative states, not successive chat messages.
+    if (mode === 'dialog' && current().previewContext?.length) {
+      visible = [...current().previewContext.map(id=>nodes.find(n=>n.id===id)).filter(Boolean),current()];
     }
     $('#reply-keyboard').replaceChildren();
     visible.forEach(node => {
