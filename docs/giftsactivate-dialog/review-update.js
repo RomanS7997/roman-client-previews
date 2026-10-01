@@ -4,6 +4,21 @@
   const data=window.DIALOG_DATA;
   const byNumber=n=>data.nodes.find(x=>x.number===n);
   const byId=id=>data.nodes.find(x=>x.id===id);
+  const giveawayStickers={
+    '23_tags_cut':'tags','25_screenshot':'screenshot',
+    '31_cart_others':'cart','32_find_product':'screenshot','33_dwell':'screenshot',
+    '34_cart_ours':'cart','35_cart_clean':'cart-clean','36_favorites':'favorites',
+    '39_like':'favorites','42_cashback':'cashback'
+  };
+  for(const n of data.nodes.filter(n=>n.category.startsWith('giveaway'))){
+    for(const c of n.julia){
+      if(c.kind!=='sticker')continue;
+      const key=Object.keys(giveawayStickers).find(key=>(c.asset||'').includes(key));
+      if(!key)continue;
+      c.asset=`assets/giveaway-${giveawayStickers[key]}-v2.png`;
+      c.poster=c.asset;c.previewStaticSticker=true;
+    }
+  }
   const button=(text,value)=>({text,value,url:null,contact:false});
   const menu=structuredClone(byId('c1630293a5d8').julia.find(c=>c.rows?.length).rows);
   data.sections.splice(data.sections.findIndex(s=>s.key==='survey')+1,0,{key:'survey_status',title:'Опрос · статусы и исключения'});
