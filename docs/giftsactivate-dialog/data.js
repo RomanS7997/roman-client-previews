@@ -33,11 +33,19 @@ window.DIALOG_DATA = {
     },
     {
       "key": "giveaway",
-      "title": "Раздачи и отчёт"
+      "title": "Раздачи · общие состояния и отчёт"
     },
     {
       "key": "giveaway_yandex",
       "title": "Раздачи · Яндекс"
+    },
+    {
+      "key": "giveaway_ozon",
+      "title": "Раздачи · Ozon"
+    },
+    {
+      "key": "giveaway_wb",
+      "title": "Раздачи · Wildberries"
     },
     {
       "key": "raffle",
@@ -10031,225 +10039,6 @@ window.DIALOG_DATA = {
       "previewHidden": false
     },
     {
-      "id": "bbce88b1cba9",
-      "title": "Шаг 1: конкуренты и резерв",
-      "number": 133,
-      "category": "giveaway",
-      "source": "qa.giveaway[17] · custom:giveaway_step:competitors",
-      "current": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/df6c0b2318-31_cart_others.webm",
-          "poster": "assets/22dded00c7-31_cart_others.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "✅ <b>Место ваше — держим его 120 минут.</b>\n\n🪜 За это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ Шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 За 30 минут до конца пришлём напоминание.\n⏹ Как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>Так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>Шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 Введите в поиске Wildberries запрос: «<b>защитное стекло iPhone</b>».\n2. 👀 Просмотрите карточки конкурентов из ТОП-10.\n3. 🧺 Положите в корзину <b>2–3</b> похожих товара.\n\n📷 Пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>Так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/e87f9fd793-shot_competitors.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/df6c0b2318-31_cart_others.webm",
-          "poster": "assets/22dded00c7-31_cart_others.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "✅ Место забронировано за тобой! Держим его 120 минут.<br>🪜 За это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ Шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 За 30 минут до конца пришлём напоминание.<br>⏹ Как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>Так ты не потеряешь место, даже если проверка займёт время.<br><br>1️⃣ Шаг 1 из 7 · Конкуренты<br><br>1. 🔎 Открой поиск Wildberries и введи запрос: «защитное стекло iPhone»<br>2. 👀 Просмотри карточки конкурентов из ТОП-10.<br>3. 🧺 Положи в корзину 2–3 похожих товара.<br>📷 Пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>Так маркетплейс видит живой интерес к категории!",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/e87f9fd793-shot_competitors.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [
-        "Новая адаптация для согласования."
-      ],
-      "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии от 30.09.2026, не её дословная редакция. Убраны повтор значка поиска и лишняя точка; условия брони и шагов не изменены. Кнопки и медиа сохранены из снимка. Прод не изменён.",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[17] · custom:giveaway_step:competitors",
-      "imported": true,
-      "scope": "dev",
-      "search": "шаг 1: конкуренты и резерв qa.giveaway[17] · custom:giveaway_step:competitors  ✅ <b>место ваше — держим его 120 минут.</b>\n\n🪜 за это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 за 30 минут до конца пришлём напоминание.\n⏹ как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 введите в поиске wildberries запрос: «<b>защитное стекло iphone</b>».\n2. 👀 просмотрите карточки конкурентов из топ-10.\n3. 🧺 положите в корзину <b>2–3</b> похожих товара.\n\n📷 пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>  ✅ место забронировано за тобой! держим его 120 минут.<br>🪜 за это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 за 30 минут до конца пришлём напоминание.<br>⏹ как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>так ты не потеряешь место, даже если проверка займёт время.<br><br>1️⃣ шаг 1 из 7 · конкуренты<br><br>1. 🔎 открой поиск wildberries и введи запрос: «защитное стекло iphone»<br>2. 👀 просмотри карточки конкурентов из топ-10.<br>3. 🧺 положи в корзину 2–3 похожих товара.<br>📷 пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>так маркетплейс видит живой интерес к категории! ",
-      "previewHidden": false
-    },
-    {
-      "id": "cefea126d78f",
-      "title": "Шаг 2: наш товар",
-      "number": 134,
-      "category": "giveaway",
-      "source": "qa.giveaway[18] · custom:giveaway_step:search",
-      "current": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/de5446759f-32_find_product.webm",
-          "poster": "assets/74f039bbb3-32_find_product.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "2️⃣ <b>Шаг 2 из 7 · наш товар</b>\n\n🔎 В фильтре «Бренд» выберите <b>LifeStyle</b> и найдите наш товар «Защитное стекло» по фотографии.\n\n📷 Пришлите скрин, где одновременно видны:\n🔤 Поисковый запрос «<b>защитное стекло iPhone</b>»\n🖼 Карточка нашего товара\n\n<i>Прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/ab8525b77b-shot_search.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/de5446759f-32_find_product.webm",
-          "poster": "assets/74f039bbb3-32_find_product.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "2️⃣ Шаг 2 из 7 · Наш товар<br><br>🔎 Открой фильтр «Бренд», выбери LifeStyle и найди наш товар «Защитное стекло» по фотографии.<br>📷 Пришли скриншот, где одновременно видны:<br>🔤 Поисковый запрос «защитное стекло iPhone»<br>🖼 Карточка нашего товара<br><br>Прямую ссылку специально не даём, ведь товар нужно найти именно через поиск!",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/ab8525b77b-shot_search.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [],
-      "copyOrigin": "julia",
-      "draftAssembly": "",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[18] · custom:giveaway_step:search",
-      "imported": true,
-      "scope": "dev",
-      "search": "шаг 2: наш товар qa.giveaway[18] · custom:giveaway_step:search  2️⃣ <b>шаг 2 из 7 · наш товар</b>\n\n🔎 в фильтре «бренд» выберите <b>lifestyle</b> и найдите наш товар «защитное стекло» по фотографии.\n\n📷 пришлите скрин, где одновременно видны:\n🔤 поисковый запрос «<b>защитное стекло iphone</b>»\n🖼 карточка нашего товара\n\n<i>прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>  2️⃣ шаг 2 из 7 · наш товар<br><br>🔎 открой фильтр «бренд», выбери lifestyle и найди наш товар «защитное стекло» по фотографии.<br>📷 пришли скриншот, где одновременно видны:<br>🔤 поисковый запрос «защитное стекло iphone»<br>🖼 карточка нашего товара<br><br>прямую ссылку специально не даём, ведь товар нужно найти именно через поиск! ",
-      "previewHidden": false
-    },
-    {
-      "id": "4a34e84da45f",
-      "title": "Шаг 3: карточка товара",
-      "number": 135,
-      "category": "giveaway",
-      "source": "qa.giveaway[19] · custom:giveaway_step:card",
-      "current": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/a144029a43-33_dwell.webm",
-          "poster": "assets/f7c15b2d0d-33_dwell.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "3️⃣ <b>Шаг 3 из 7 · смотрим карточку</b>\n\n⏱ Самый спокойный шаг: ничего присылать не нужно. Откройте страницу товара «Защитное стекло» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 Пока ждёте:\n🖼 Пролистайте фото и видео\n💬 Прочитайте отзывы\n📋 Посмотрите характеристики и описание\n\n👉 Нажмите «➡ Продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>Отсчёт идёт сам, следить за ним не нужно.</i>",
-          "buttons": [
-            "➡ Продолжить"
-          ],
-          "keyboardType": "inline",
-          "rows": [
-            [
-              {
-                "text": "➡ Продолжить",
-                "value": "gwf:step3",
-                "url": null,
-                "contact": false
-              }
-            ]
-          ],
-          "kind": "photo",
-          "asset": "assets/af5368f697-shot_card.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/a144029a43-33_dwell.webm",
-          "poster": "assets/f7c15b2d0d-33_dwell.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "3️⃣ Шаг 3 из 7 · Смотрим карточку<br><br>⏱ Самый спокойный шаг: ничего присылать не нужно! Открой страницу товара «Защитное стекло» и побудь на ней 3 минуты 30 секунд.<br>👀 Пока ждёшь:<br>🖼 Пролистай фото и видео<br>💬 Прочитай отзывы<br>📋 Посмотри характеристики и описание<br>👉 Нажми «➡ Продолжить», когда время выйдет. Если нажать раньше, бот попросит ещё немного подождать. <br><br>Отсчёт идет сам, следить за ним не нужно!",
-          "buttons": [
-            "➡ Продолжить"
-          ],
-          "keyboardType": "inline",
-          "rows": [
-            [
-              {
-                "text": "➡ Продолжить",
-                "value": "gwf:step3",
-                "url": null,
-                "contact": false
-              }
-            ]
-          ],
-          "kind": "photo",
-          "asset": "assets/af5368f697-shot_card.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [],
-      "copyOrigin": "julia",
-      "draftAssembly": "",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[19] · custom:giveaway_step:card",
-      "imported": true,
-      "scope": "dev",
-      "search": "шаг 3: карточка товара qa.giveaway[19] · custom:giveaway_step:card  3️⃣ <b>шаг 3 из 7 · смотрим карточку</b>\n\n⏱ самый спокойный шаг: ничего присылать не нужно. откройте страницу товара «защитное стекло» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 пока ждёте:\n🖼 пролистайте фото и видео\n💬 прочитайте отзывы\n📋 посмотрите характеристики и описание\n\n👉 нажмите «➡ продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>отсчёт идёт сам, следить за ним не нужно.</i>  3️⃣ шаг 3 из 7 · смотрим карточку<br><br>⏱ самый спокойный шаг: ничего присылать не нужно! открой страницу товара «защитное стекло» и побудь на ней 3 минуты 30 секунд.<br>👀 пока ждёшь:<br>🖼 пролистай фото и видео<br>💬 прочитай отзывы<br>📋 посмотри характеристики и описание<br>👉 нажми «➡ продолжить», когда время выйдет. если нажать раньше, бот попросит ещё немного подождать. <br><br>отсчёт идет сам, следить за ним не нужно! ",
-      "previewHidden": false
-    },
-    {
       "id": "6735909feca5",
       "title": "Шаг 3: слишком рано",
       "number": 136,
@@ -10328,289 +10117,6 @@ window.DIALOG_DATA = {
       "previewHidden": false
     },
     {
-      "id": "f7a4d2728e9a",
-      "title": "Шаг 4: товар в корзине",
-      "number": 138,
-      "category": "giveaway",
-      "source": "qa.giveaway[22] · custom:giveaway_step:cart_competitors",
-      "current": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/c241390faf-34_cart_ours.webm",
-          "poster": "assets/09b6bfbea6-34_cart_ours.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "4️⃣ <b>Шаг 4 из 7 · общая корзина</b>\n\n⏹ Этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 Добавьте наш товар «Защитное стекло» в корзину.\n\n📷 Пришлите один скрин, где одновременно видны:\n📦 Наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/bf106eb73a-shot_cart_competitors.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/c241390faf-34_cart_ours.webm",
-          "poster": "assets/09b6bfbea6-34_cart_ours.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "4️⃣ Шаг 4 из 7 · Общая корзина<br><br>⏹ Этот шаг останавливает таймер! Как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 Добавь наш товар «Защитное стекло» в корзину.<br>📷 Пришли один скрин, где одновременно видны:<br>📦 Наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/bf106eb73a-shot_cart_competitors.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [],
-      "copyOrigin": "julia",
-      "draftAssembly": "",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[22] · custom:giveaway_step:cart_competitors",
-      "imported": true,
-      "scope": "dev",
-      "search": "шаг 4: товар в корзине qa.giveaway[22] · custom:giveaway_step:cart_competitors  4️⃣ <b>шаг 4 из 7 · общая корзина</b>\n\n⏹ этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 добавьте наш товар «защитное стекло» в корзину.\n\n📷 пришлите один скрин, где одновременно видны:\n📦 наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили  4️⃣ шаг 4 из 7 · общая корзина<br><br>⏹ этот шаг останавливает таймер! как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 добавь наш товар «защитное стекло» в корзину.<br>📷 пришли один скрин, где одновременно видны:<br>📦 наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее ",
-      "previewHidden": false
-    },
-    {
-      "id": "6afb490e2fd4",
-      "title": "Шаг 5: чистая корзина",
-      "number": 139,
-      "category": "giveaway",
-      "source": "qa.giveaway[23] · custom:giveaway_step:cart_clean",
-      "current": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/f7379699b6-35_cart_clean.webm",
-          "poster": "assets/84c8f302cd-35_cart_clean.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "✅ <b>Общая корзина принята — место закреплено за вами.</b>\n\n♾ Таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>Шаг 5 из 7 · оставляем один товар</b>\n\n✂ Удалите из корзины лишние товары — должен остаться только наш товар «Защитное стекло».\n\n📷 Пришлите новый скрин корзины, где это хорошо видно.",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/9fef7d6531-shot_cart_clean.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/f7379699b6-35_cart_clean.webm",
-          "poster": "assets/84c8f302cd-35_cart_clean.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "✅ Общая корзина принята, место закрепилось за тобой!<br>♾ Таймер остановлен! На шаги 5–7 времени сколько нужно.<br><br>5️⃣ Шаг 5 из 7 • Оставляем один товар<br><br>✂ Убери из корзины лишние позиции, там должен остаться только наш товар «Защитное стекло».<br>📷 Пришли новый скриншот корзины, где это хорошо видно.",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/9fef7d6531-shot_cart_clean.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [],
-      "copyOrigin": "julia",
-      "draftAssembly": "",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[23] · custom:giveaway_step:cart_clean",
-      "imported": true,
-      "scope": "dev",
-      "search": "шаг 5: чистая корзина qa.giveaway[23] · custom:giveaway_step:cart_clean  ✅ <b>общая корзина принята — место закреплено за вами.</b>\n\n♾ таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>шаг 5 из 7 · оставляем один товар</b>\n\n✂ удалите из корзины лишние товары — должен остаться только наш товар «защитное стекло».\n\n📷 пришлите новый скрин корзины, где это хорошо видно.  ✅ общая корзина принята, место закрепилось за тобой!<br>♾ таймер остановлен! на шаги 5–7 времени сколько нужно.<br><br>5️⃣ шаг 5 из 7 • оставляем один товар<br><br>✂ убери из корзины лишние позиции, там должен остаться только наш товар «защитное стекло».<br>📷 пришли новый скриншот корзины, где это хорошо видно. ",
-      "previewHidden": false
-    },
-    {
-      "id": "5779c52a0a2b",
-      "title": "Шаг 6: избранное",
-      "number": 140,
-      "category": "giveaway",
-      "source": "qa.giveaway[24] · custom:giveaway_step:favorites",
-      "current": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/a96e514268-36_favorites.webm",
-          "poster": "assets/02400d6c6b-36_favorites.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "6️⃣ <b>Шаг 6 из 7 · избранное</b>\n\n🎯 Предпоследний шаг — дальше только оформление заказа.\n\n❤️ Добавьте в избранное:\n\n1. 🏪 Магазин LifeStyle\n2. 📦 Наш товар «Защитное стекло»\n\n📷 Пришлите один скрин, где одновременно видны оба действия.",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/a9c5eebe6d-shot_favorites.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/a96e514268-36_favorites.webm",
-          "poster": "assets/02400d6c6b-36_favorites.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "6️⃣ Шаг 6 из 7 • Избранное<br><br>🎯 Предпоследний шаг, а дальше только оформление заказа!<br>❤️ Добавь в избранное:<br>🏪 Магазин LifeStyle<br>📦 Наш товар «Защитное стекло»<br>📷 Пришли один скриншот, где одновременно видны оба действия.",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/a9c5eebe6d-shot_favorites.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [
-        "Новая адаптация для согласования."
-      ],
-      "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии от 30.09.2026, не её дословная редакция. Удалены редакторские вступления; условие шага не изменено. Кнопки и медиа сохранены из снимка. Прод не изменён.",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[24] · custom:giveaway_step:favorites",
-      "imported": true,
-      "scope": "dev",
-      "search": "шаг 6: избранное qa.giveaway[24] · custom:giveaway_step:favorites  6️⃣ <b>шаг 6 из 7 · избранное</b>\n\n🎯 предпоследний шаг — дальше только оформление заказа.\n\n❤️ добавьте в избранное:\n\n1. 🏪 магазин lifestyle\n2. 📦 наш товар «защитное стекло»\n\n📷 пришлите один скрин, где одновременно видны оба действия.  6️⃣ шаг 6 из 7 • избранное<br><br>🎯 предпоследний шаг, а дальше только оформление заказа!<br>❤️ добавь в избранное:<br>🏪 магазин lifestyle<br>📦 наш товар «защитное стекло»<br>📷 пришли один скриншот, где одновременно видны оба действия. ",
-      "previewHidden": false
-    },
-    {
-      "id": "34ad51d8448b",
-      "title": "Шаг 7 WB: сумма",
-      "number": 141,
-      "category": "giveaway",
-      "source": "qa.giveaway[25] · custom:giveaway_step:amount_wb",
-      "current": [
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "7️⃣ <b>Шаг 7 из 7 · оформляем заказ</b>\n\n🎯 Последний шаг — после него заявка уйдёт на проверку.\n\n💵 Пришлите итоговую сумму заказа на Wildberries — точную, с копейками, например <code>512,37</code>.\n\n📎 Дальше попросим один скрин оформленного заказа. Ошиблись — сумму можно исправить до отправки скрина.\n\n<i>На Wildberries цена зависит от личной скидки, поэтому точная сумма подтверждает именно вашу покупку.</i>",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/12966dbb59-shot_amount_wb.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "7️⃣ Шаг 7 из 7 • Оформляем заказ<br><br>🎯 Последний шаг, после него заявка сразу уйдёт на проверку!<br>💵 Пришли итоговую сумму заказа на Wildberries: точную, с копейками (например 512,37).<br>📎 Дальше попросим один скриншот оформленного заказа. Если допустишь ошибку, сумму получится исправить до отправки скрина!<br><br>На Wildberries цена зависит от личной скидки, поэтому точная сумма подтверждает именно твою покупку.",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/12966dbb59-shot_amount_wb.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [],
-      "copyOrigin": "julia",
-      "draftAssembly": "",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[25] · custom:giveaway_step:amount_wb",
-      "imported": true,
-      "scope": "dev",
-      "search": "шаг 7 wb: сумма qa.giveaway[25] · custom:giveaway_step:amount_wb 7️⃣ <b>шаг 7 из 7 · оформляем заказ</b>\n\n🎯 последний шаг — после него заявка уйдёт на проверку.\n\n💵 пришлите итоговую сумму заказа на wildberries — точную, с копейками, например <code>512,37</code>.\n\n📎 дальше попросим один скрин оформленного заказа. ошиблись — сумму можно исправить до отправки скрина.\n\n<i>на wildberries цена зависит от личной скидки, поэтому точная сумма подтверждает именно вашу покупку.</i> 7️⃣ шаг 7 из 7 • оформляем заказ<br><br>🎯 последний шаг, после него заявка сразу уйдёт на проверку!<br>💵 пришли итоговую сумму заказа на wildberries: точную, с копейками (например 512,37).<br>📎 дальше попросим один скриншот оформленного заказа. если допустишь ошибку, сумму получится исправить до отправки скрина!<br><br>на wildberries цена зависит от личной скидки, поэтому точная сумма подтверждает именно твою покупку. ",
-      "previewHidden": false
-    },
-    {
-      "id": "9ca9f639aa16",
-      "title": "Шаг 7 Ozon: номер заказа",
-      "number": 142,
-      "category": "giveaway",
-      "source": "qa.giveaway[26] · custom:giveaway_step:order_no_ozon",
-      "current": [
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "7️⃣ <b>Шаг 7 из 7 · оформляем заказ</b>\n\n🎯 Последний шаг — после него заявка уйдёт на проверку.\n\n🔢 Пришлите номер заказа, оформленного на Ozon — например <code>0157262141-0136</code>.\n\n🚫 Номер отправления и трек-номер не подойдут.\n\n📎 Дальше попросим один скрин оформленного заказа. Ошиблись — номер можно исправить до отправки скрина.\n\n<i>Найти его можно в приложении маркетплейса, в списке ваших заказов.</i>",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/a32212642d-shot_order_no_ozon.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "7️⃣ Шаг 7 из 7 • Оформляем заказ<br><br>🎯 Последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 Пришли номер заказа, оформленного на Ozon (например 0157262141 0136).<br>🚫 Обрати внимание! Номер отправления и трек номер не подойдут.<br>📎 Дальше попросим один скриншот оформленного заказа. Если опечатаешься, номер получится исправить до отправки скрина! Найти его можно в приложении маркетплейса, прямо в списке твоих покупок.",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/a32212642d-shot_order_no_ozon.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [],
-      "copyOrigin": "julia",
-      "draftAssembly": "",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[26] · custom:giveaway_step:order_no_ozon",
-      "imported": true,
-      "scope": "dev",
-      "search": "шаг 7 ozon: номер заказа qa.giveaway[26] · custom:giveaway_step:order_no_ozon 7️⃣ <b>шаг 7 из 7 · оформляем заказ</b>\n\n🎯 последний шаг — после него заявка уйдёт на проверку.\n\n🔢 пришлите номер заказа, оформленного на ozon — например <code>0157262141-0136</code>.\n\n🚫 номер отправления и трек-номер не подойдут.\n\n📎 дальше попросим один скрин оформленного заказа. ошиблись — номер можно исправить до отправки скрина.\n\n<i>найти его можно в приложении маркетплейса, в списке ваших заказов.</i> 7️⃣ шаг 7 из 7 • оформляем заказ<br><br>🎯 последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 пришли номер заказа, оформленного на ozon (например 0157262141 0136).<br>🚫 обрати внимание! номер отправления и трек номер не подойдут.<br>📎 дальше попросим один скриншот оформленного заказа. если опечатаешься, номер получится исправить до отправки скрина! найти его можно в приложении маркетплейса, прямо в списке твоих покупок. ",
-      "previewHidden": false
-    },
-    {
       "id": "3843e33adf53",
       "title": "Шаг 7 Яндекс: номер заказа",
       "number": 143,
@@ -10619,8 +10125,8 @@ window.DIALOG_DATA = {
       "current": [
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-order-number.mp4",
-          "poster": "assets/ym-giveaway-20260930-order-number-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-order-number.mp4",
+          "poster": "assets/giveaway-20261001-ym-order-number-poster.jpg",
           "text": "",
           "rows": []
         },
@@ -10636,8 +10142,8 @@ window.DIALOG_DATA = {
       "julia": [
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-order-number.mp4",
-          "poster": "assets/ym-giveaway-20260930-order-number-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-order-number.mp4",
+          "poster": "assets/giveaway-20261001-ym-order-number-poster.jpg",
           "text": "",
           "rows": []
         },
@@ -10661,72 +10167,9 @@ window.DIALOG_DATA = {
       "imported": true,
       "scope": "dev",
       "search": "шаг 7 яндекс: номер заказа qa.giveaway[27] · custom:giveaway_step:order_no_ya  7️⃣ <b>шаг 7 из 7 · оформляем заказ</b>\n\n🎯 последний шаг — после него заявка уйдёт на проверку.\n\n🔢 пришлите номер заказа, оформленного на яндекс маркет — например <code>31415926</code>.\n\n🚫 номер отправления и трек-номер не подойдут.\n\n📎 дальше попросим один скрин оформленного заказа. ошиблись — номер можно исправить до отправки скрина.\n\n<i>найти его можно в приложении маркетплейса, в списке ваших заказов.</i>  7️⃣ шаг 7 из 7 • оформляем заказ<br><br>🎯 последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 пришли номер заказа, оформленного на яндекс маркет (например 31415926).<br>🚫 обрати внимание! номер отправления и трек номер не подойдут.<br>📎 дальше попросим один скриншот оформленного заказа. если опечатаешься, номер получится исправить до отправки скрина! найти его можно в приложении маркетплейса, прямо в списке твоих покупок. ",
-      "previewHidden": false
-    },
-    {
-      "id": "4c20e727b8d7",
-      "title": "Шаг 7: данные сохранены",
-      "number": 144,
-      "category": "giveaway",
-      "source": "qa.giveaway[28] · custom:giveaway_step:order",
-      "current": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/2a55d34135-25_screenshot.webm",
-          "poster": "assets/20de84f61e-25_screenshot.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "✅ <b>Номер заказа сохранили.</b>\n\n📎 Остался один кадр — и все семь шагов позади.\n\n📷 Пришлите скрин оформленного заказа, где видны:\n📦 Наш товар\n💵 Итоговая сумма\n📍 Адрес и название ПВЗ (или хотя бы название)",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/1b552d9eb3-shot_order.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/2a55d34135-25_screenshot.webm",
-          "poster": "assets/20de84f61e-25_screenshot.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "✅ Номер заказа сохранили!<br>📎 Остался один кадр, и все семь шагов позади.<br>📷 Пришли скриншот оформленного заказа, где видны:<br>📦 Наш товар<br>💵 Итоговая сумма<br>📍 Адрес и название ПВЗ (или хотя бы название)",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/1b552d9eb3-shot_order.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [],
-      "copyOrigin": "julia",
-      "draftAssembly": "",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[28] · custom:giveaway_step:order",
-      "imported": true,
-      "scope": "dev",
-      "search": "шаг 7: данные сохранены qa.giveaway[28] · custom:giveaway_step:order  ✅ <b>номер заказа сохранили.</b>\n\n📎 остался один кадр — и все семь шагов позади.\n\n📷 пришлите скрин оформленного заказа, где видны:\n📦 наш товар\n💵 итоговая сумма\n📍 адрес и название пвз (или хотя бы название)  ✅ номер заказа сохранили!<br>📎 остался один кадр, и все семь шагов позади.<br>📷 пришли скриншот оформленного заказа, где видны:<br>📦 наш товар<br>💵 итоговая сумма<br>📍 адрес и название пвз (или хотя бы название) ",
-      "previewHidden": false
+      "previewHidden": true,
+      "previewHiddenReason": "Дубликат yandex-giveaway-order",
+      "previewAlias": "yandex-giveaway-order"
     },
     {
       "id": "78cdd93a4591",
@@ -12154,71 +11597,6 @@ window.DIALOG_DATA = {
       "previewHidden": false
     },
     {
-      "id": "06947a70de4b",
-      "title": "Отчёт 4: публикация",
-      "number": 174,
-      "category": "giveaway",
-      "source": "qa.giveaway[58] · custom:report_step:published",
-      "current": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/2a55d34135-25_screenshot.webm",
-          "poster": "assets/20de84f61e-25_screenshot.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "📷 <b>Предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 Пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 Если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/97911248a5-shot_published.png"
-        }
-      ],
-      "julia": [
-        {
-          "owner": "bot",
-          "method": "send_sticker",
-          "text": "",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "sticker",
-          "asset": "assets/2a55d34135-25_screenshot.webm",
-          "poster": "assets/20de84f61e-25_screenshot.webp"
-        },
-        {
-          "owner": "message",
-          "method": "answer_photo",
-          "text": "📷 Предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 Пришли кадр, где на одном экране одновременно видно:<br>📦 Наш товар<br>⭐ Оценку 5 звёзд<br>💬 Текст отзыва<br>🎬 Опубликованные фото или видео<br>👤 Если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация!",
-          "buttons": [],
-          "keyboardType": "reply",
-          "rows": [],
-          "kind": "photo",
-          "asset": "assets/97911248a5-shot_published.png"
-        }
-      ],
-      "proposalStatus": "new",
-      "juliaNote": "",
-      "decisionHint": "",
-      "warnings": [],
-      "copyOrigin": "julia",
-      "draftAssembly": "",
-      "originalNote": "",
-      "mapAnchor": "qa.giveaway[58] · custom:report_step:published",
-      "imported": true,
-      "scope": "dev",
-      "search": "отчёт 4: публикация qa.giveaway[58] · custom:report_step:published  📷 <b>предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>  📷 предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 пришли кадр, где на одном экране одновременно видно:<br>📦 наш товар<br>⭐ оценку 5 звёзд<br>💬 текст отзыва<br>🎬 опубликованные фото или видео<br>👤 если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация! ",
-      "previewHidden": false
-    },
-    {
       "id": "4dcd119a881f",
       "title": "Отчёт 5: лайк",
       "number": 175,
@@ -12703,7 +12081,7 @@ window.DIALOG_DATA = {
     },
     {
       "id": "yandex-giveaway-competitors",
-      "title": "Шаг 1: поиск и корзина конкурентов",
+      "title": "Шаг 1: поиск и конкуренты",
       "number": null,
       "category": "giveaway_yandex",
       "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[17] · custom:giveaway_step:competitors",
@@ -12721,15 +12099,21 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-search-competitors.mp4",
-          "poster": "assets/ym-giveaway-20260930-search-competitors-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-search-competitors.mp4",
+          "poster": "assets/giveaway-20261001-ym-search-competitors-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-competitors-cart.mp4",
-          "poster": "assets/ym-giveaway-20260930-competitors-cart-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-competitors-cart.mp4",
+          "poster": "assets/giveaway-20261001-ym-competitors-cart-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-ym-competitors.jpg",
           "text": "",
           "rows": []
         },
@@ -12756,15 +12140,21 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-search-competitors.mp4",
-          "poster": "assets/ym-giveaway-20260930-search-competitors-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-search-competitors.mp4",
+          "poster": "assets/giveaway-20261001-ym-search-competitors-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-competitors-cart.mp4",
-          "poster": "assets/ym-giveaway-20260930-competitors-cart-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-competitors-cart.mp4",
+          "poster": "assets/giveaway-20261001-ym-competitors-cart-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-ym-competitors.jpg",
           "text": "",
           "rows": []
         },
@@ -12784,13 +12174,14 @@ window.DIALOG_DATA = {
         "Новая адаптация для согласования."
       ],
       "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии от 30.09.2026, не её дословная редакция. Убраны повтор значка поиска и лишняя точка; условия брони и шагов не изменены. Кнопки и медиа сохранены из снимка. Прод не изменён.",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
       "originalNote": "",
       "mapAnchor": null,
       "imported": false,
       "scope": "dev",
-      "search": "шаг 1: поиск и корзина конкурентов яндекс · материалы 30.09.2026 · qa.giveaway[17] · custom:giveaway_step:competitors    ✅ <b>место ваше — держим его 120 минут.</b>\n\n🪜 за это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 за 30 минут до конца пришлём напоминание.\n⏹ как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 введите в поиске яндекс маркет запрос: «<b>павербанк магнитный</b>».\n2. 👀 просмотрите карточки конкурентов из топ-10.\n3. 🧺 положите в корзину <b>2–3</b> похожих товара.\n\n📷 пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>    ✅ место забронировано за тобой! держим его 120 минут.<br>🪜 за это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 за 30 минут до конца пришлём напоминание.<br>⏹ как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>так ты не потеряешь место, даже если проверка займёт время.<br><br>1️⃣ шаг 1 из 7 · конкуренты<br><br>1. 🔎 открой поиск яндекс маркет и введи запрос: «павербанк магнитный»<br>2. 👀 просмотри карточки конкурентов из топ-10.<br>3. 🧺 положи в корзину 2–3 похожих товара.<br>📷 пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>так маркетплейс видит живой интерес к категории! ",
-      "previewHidden": false
+      "search": "шаг 1: поиск и конкуренты яндекс раздачи     ✅ <b>место ваше — держим его 120 минут.</b>\n\n🪜 за это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 за 30 минут до конца пришлём напоминание.\n⏹ как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 введите в поиске яндекс маркет запрос: «<b>павербанк магнитный</b>».\n2. 👀 просмотрите карточки конкурентов из топ-10.\n3. 🧺 положите в корзину <b>2–3</b> похожих товара.\n\n📷 пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>     ✅ место забронировано за тобой! держим его 120 минут.<br>🪜 за это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 за 30 минут до конца пришлём напоминание.<br>⏹ как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>так ты не потеряешь место, даже если проверка займёт время.<br><br>1️⃣ шаг 1 из 7 · конкуренты<br><br>1. 🔎 открой поиск яндекс маркет и введи запрос: «павербанк магнитный»<br>2. 👀 просмотри карточки конкурентов из топ-10.<br>3. 🧺 положи в корзину 2–3 похожих товара.<br>📷 пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>так маркетплейс видит живой интерес к категории!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
     },
     {
       "id": "yandex-giveaway-search",
@@ -12812,14 +12203,14 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-search-product.mp4",
-          "poster": "assets/ym-giveaway-20260930-search-product-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-search-product.mp4",
+          "poster": "assets/giveaway-20261001-ym-search-product-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-product-search.jpg",
+          "asset": "assets/giveaway-20261001-ym-product-search.jpg",
           "text": "",
           "rows": []
         },
@@ -12846,14 +12237,14 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-search-product.mp4",
-          "poster": "assets/ym-giveaway-20260930-search-product-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-search-product.mp4",
+          "poster": "assets/giveaway-20261001-ym-search-product-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-product-search.jpg",
+          "asset": "assets/giveaway-20261001-ym-product-search.jpg",
           "text": "",
           "rows": []
         },
@@ -12871,13 +12262,14 @@ window.DIALOG_DATA = {
       "decisionHint": "",
       "warnings": [],
       "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии под материалы Яндекса от 30.09.2026, не отдельная редакция Юлии: примеры Puloka, новые видео и скриншоты. Кнопки сохранены из снимка. Прод не изменён.",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
       "originalNote": "",
       "mapAnchor": null,
       "imported": false,
       "scope": "dev",
-      "search": "шаг 2: фильтр бренда и наш товар яндекс · материалы 30.09.2026 · qa.giveaway[18] · custom:giveaway_step:search    2️⃣ <b>шаг 2 из 7 · наш товар</b>\n\n🔎 в фильтре «бренд» выберите <b>puloka</b> и найдите наш товар «магнитный повербанк 10000 мач» по фотографии.\n\n📷 пришлите скрин, где одновременно видны:\n🔤 поисковый запрос «<b>павербанк магнитный</b>»\n🖼 карточка нашего товара\n\n<i>прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>    2️⃣ шаг 2 из 7 · наш товар<br><br>🔎 открой фильтр «бренд», выбери puloka и найди наш товар «магнитный повербанк 10000 мач» по фотографии.<br>📷 пришли скриншот, где одновременно видны:<br>🔤 поисковый запрос «павербанк магнитный»<br>🖼 карточка нашего товара<br><br>прямую ссылку специально не даём, ведь товар нужно найти именно через поиск! ",
-      "previewHidden": false
+      "search": "шаг 2: фильтр бренда и наш товар яндекс раздачи    2️⃣ <b>шаг 2 из 7 · наш товар</b>\n\n🔎 в фильтре «бренд» выберите <b>puloka</b> и найдите наш товар «магнитный повербанк 10000 мач» по фотографии.\n\n📷 пришлите скрин, где одновременно видны:\n🔤 поисковый запрос «<b>павербанк магнитный</b>»\n🖼 карточка нашего товара\n\n<i>прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>    2️⃣ шаг 2 из 7 · наш товар<br><br>🔎 открой фильтр «бренд», выбери puloka и найди наш товар «магнитный повербанк 10000 мач» по фотографии.<br>📷 пришли скриншот, где одновременно видны:<br>🔤 поисковый запрос «павербанк магнитный»<br>🖼 карточка нашего товара<br><br>прямую ссылку специально не даём, ведь товар нужно найти именно через поиск!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
     },
     {
       "id": "yandex-giveaway-card",
@@ -12899,8 +12291,8 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-product-card.mp4",
-          "poster": "assets/ym-giveaway-20260930-product-card-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-product-card.mp4",
+          "poster": "assets/giveaway-20261001-ym-product-card-poster.jpg",
           "text": "",
           "rows": []
         },
@@ -12938,8 +12330,8 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-product-card.mp4",
-          "poster": "assets/ym-giveaway-20260930-product-card-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-product-card.mp4",
+          "poster": "assets/giveaway-20261001-ym-product-card-poster.jpg",
           "text": "",
           "rows": []
         },
@@ -12968,13 +12360,14 @@ window.DIALOG_DATA = {
       "decisionHint": "",
       "warnings": [],
       "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии под материалы Яндекса от 30.09.2026, не отдельная редакция Юлии: примеры Puloka, новые видео и скриншоты. Кнопки сохранены из снимка. Прод не изменён.",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
       "originalNote": "",
       "mapAnchor": null,
       "imported": false,
       "scope": "dev",
-      "search": "шаг 3: просмотр карточки яндекс · материалы 30.09.2026 · qa.giveaway[19] · custom:giveaway_step:card   3️⃣ <b>шаг 3 из 7 · смотрим карточку</b>\n\n⏱ самый спокойный шаг: ничего присылать не нужно. откройте страницу товара «магнитный повербанк 10000 мач» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 пока ждёте:\n🖼 пролистайте фото и видео\n💬 прочитайте отзывы\n📋 посмотрите характеристики и описание\n\n👉 нажмите «➡ продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>отсчёт идёт сам, следить за ним не нужно.</i>   3️⃣ шаг 3 из 7 · смотрим карточку<br><br>⏱ самый спокойный шаг: ничего присылать не нужно! открой страницу товара «магнитный повербанк 10000 мач» и побудь на ней 3 минуты 30 секунд.<br>👀 пока ждёшь:<br>🖼 пролистай фото и видео<br>💬 прочитай отзывы<br>📋 посмотри характеристики и описание<br>👉 нажми «➡ продолжить», когда время выйдет. если нажать раньше, бот попросит ещё немного подождать. <br><br>отсчёт идет сам, следить за ним не нужно! ",
-      "previewHidden": false
+      "search": "шаг 3: просмотр карточки яндекс раздачи   3️⃣ <b>шаг 3 из 7 · смотрим карточку</b>\n\n⏱ самый спокойный шаг: ничего присылать не нужно. откройте страницу товара «магнитный повербанк 10000 мач» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 пока ждёте:\n🖼 пролистайте фото и видео\n💬 прочитайте отзывы\n📋 посмотрите характеристики и описание\n\n👉 нажмите «➡ продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>отсчёт идёт сам, следить за ним не нужно.</i>   3️⃣ шаг 3 из 7 · смотрим карточку<br><br>⏱ самый спокойный шаг: ничего присылать не нужно! открой страницу товара «магнитный повербанк 10000 мач» и побудь на ней 3 минуты 30 секунд.<br>👀 пока ждёшь:<br>🖼 пролистай фото и видео<br>💬 прочитай отзывы<br>📋 посмотри характеристики и описание<br>👉 нажми «➡ продолжить», когда время выйдет. если нажать раньше, бот попросит ещё немного подождать. <br><br>отсчёт идет сам, следить за ним не нужно!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
     },
     {
       "id": "yandex-giveaway-cart",
@@ -12996,14 +12389,14 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-cart-together.mp4",
-          "poster": "assets/ym-giveaway-20260930-cart-together-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-cart-together.mp4",
+          "poster": "assets/giveaway-20261001-ym-cart-together-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-cart-together.jpg",
+          "asset": "assets/giveaway-20261001-ym-cart-together.jpg",
           "text": "",
           "rows": []
         },
@@ -13030,14 +12423,14 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-cart-together.mp4",
-          "poster": "assets/ym-giveaway-20260930-cart-together-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-cart-together.mp4",
+          "poster": "assets/giveaway-20261001-ym-cart-together-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-cart-together.jpg",
+          "asset": "assets/giveaway-20261001-ym-cart-together.jpg",
           "text": "",
           "rows": []
         },
@@ -13055,17 +12448,18 @@ window.DIALOG_DATA = {
       "decisionHint": "",
       "warnings": [],
       "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии под материалы Яндекса от 30.09.2026, не отдельная редакция Юлии: примеры Puloka, новые видео и скриншоты. Кнопки сохранены из снимка. Прод не изменён.",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
       "originalNote": "",
       "mapAnchor": null,
       "imported": false,
       "scope": "dev",
-      "search": "шаг 4: наш товар с конкурентами яндекс · материалы 30.09.2026 · qa.giveaway[22] · custom:giveaway_step:cart_competitors    4️⃣ <b>шаг 4 из 7 · общая корзина</b>\n\n⏹ этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 добавьте наш товар «магнитный повербанк 10000 мач» в корзину.\n\n📷 пришлите один скрин, где одновременно видны:\n📦 наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили    4️⃣ шаг 4 из 7 · общая корзина<br><br>⏹ этот шаг останавливает таймер! как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 добавь наш товар «магнитный повербанк 10000 мач» в корзину.<br>📷 пришли один скрин, где одновременно видны:<br>📦 наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее ",
-      "previewHidden": false
+      "search": "шаг 4: наш товар с конкурентами яндекс раздачи    4️⃣ <b>шаг 4 из 7 · общая корзина</b>\n\n⏹ этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 добавьте наш товар «магнитный повербанк 10000 мач» в корзину.\n\n📷 пришлите один скрин, где одновременно видны:\n📦 наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили    4️⃣ шаг 4 из 7 · общая корзина<br><br>⏹ этот шаг останавливает таймер! как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 добавь наш товар «магнитный повербанк 10000 мач» в корзину.<br>📷 пришли один скрин, где одновременно видны:<br>📦 наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
     },
     {
       "id": "yandex-giveaway-clean",
-      "title": "Шаг 5: удалить конкурентов",
+      "title": "Шаг 5: убрать конкурентов",
       "number": null,
       "category": "giveaway_yandex",
       "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[23] · custom:giveaway_step:cart_clean",
@@ -13083,14 +12477,14 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-cart-clean.mp4",
-          "poster": "assets/ym-giveaway-20260930-cart-clean-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-cart-clean.mp4",
+          "poster": "assets/giveaway-20261001-ym-cart-clean-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-cart-clean.jpg",
+          "asset": "assets/giveaway-20261001-ym-cart-clean.jpg",
           "text": "",
           "rows": []
         },
@@ -13117,14 +12511,14 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-cart-clean.mp4",
-          "poster": "assets/ym-giveaway-20260930-cart-clean-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-cart-clean.mp4",
+          "poster": "assets/giveaway-20261001-ym-cart-clean-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-cart-clean.jpg",
+          "asset": "assets/giveaway-20261001-ym-cart-clean.jpg",
           "text": "",
           "rows": []
         },
@@ -13142,13 +12536,14 @@ window.DIALOG_DATA = {
       "decisionHint": "",
       "warnings": [],
       "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии под материалы Яндекса от 30.09.2026, не отдельная редакция Юлии: примеры Puloka, новые видео и скриншоты. Кнопки сохранены из снимка. Прод не изменён.",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
       "originalNote": "",
       "mapAnchor": null,
       "imported": false,
       "scope": "dev",
-      "search": "шаг 5: удалить конкурентов яндекс · материалы 30.09.2026 · qa.giveaway[23] · custom:giveaway_step:cart_clean    ✅ <b>общая корзина принята — место закреплено за вами.</b>\n\n♾ таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>шаг 5 из 7 · оставляем один товар</b>\n\n✂ удалите из корзины лишние товары — должен остаться только наш товар «магнитный повербанк 10000 мач».\n\n📷 пришлите новый скрин корзины, где это хорошо видно.    ✅ общая корзина принята, место закрепилось за тобой!<br>♾ таймер остановлен! на шаги 5–7 времени сколько нужно.<br><br>5️⃣ шаг 5 из 7 • оставляем один товар<br><br>✂ убери из корзины лишние позиции, там должен остаться только наш товар «магнитный повербанк 10000 мач».<br>📷 пришли новый скриншот корзины, где это хорошо видно. ",
-      "previewHidden": false
+      "search": "шаг 5: убрать конкурентов яндекс раздачи    ✅ <b>общая корзина принята — место закреплено за вами.</b>\n\n♾ таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>шаг 5 из 7 · оставляем один товар</b>\n\n✂ удалите из корзины лишние товары — должен остаться только наш товар «магнитный повербанк 10000 мач».\n\n📷 пришлите новый скрин корзины, где это хорошо видно.    ✅ общая корзина принята, место закрепилось за тобой!<br>♾ таймер остановлен! на шаги 5–7 времени сколько нужно.<br><br>5️⃣ шаг 5 из 7 • оставляем один товар<br><br>✂ убери из корзины лишние позиции, там должен остаться только наш товар «магнитный повербанк 10000 мач».<br>📷 пришли новый скриншот корзины, где это хорошо видно.",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
     },
     {
       "id": "yandex-giveaway-favorites",
@@ -13170,20 +12565,20 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-favorites.mp4",
-          "poster": "assets/ym-giveaway-20260930-favorites-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-favorites.mp4",
+          "poster": "assets/giveaway-20261001-ym-favorites-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-product-favorite.jpg",
+          "asset": "assets/giveaway-20261001-ym-product-favorite.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-brand-favorite.jpg",
+          "asset": "assets/giveaway-20261001-ym-brand-favorite.jpg",
           "text": "",
           "rows": []
         },
@@ -13210,20 +12605,20 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-favorites.mp4",
-          "poster": "assets/ym-giveaway-20260930-favorites-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-favorites.mp4",
+          "poster": "assets/giveaway-20261001-ym-favorites-poster.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-product-favorite.jpg",
+          "asset": "assets/giveaway-20261001-ym-product-favorite.jpg",
           "text": "",
           "rows": []
         },
         {
           "kind": "photo",
-          "asset": "assets/ym-giveaway-20260930-brand-favorite.jpg",
+          "asset": "assets/giveaway-20261001-ym-brand-favorite.jpg",
           "text": "",
           "rows": []
         },
@@ -13241,25 +12636,26 @@ window.DIALOG_DATA = {
       "decisionHint": "",
       "warnings": [],
       "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии под материалы Яндекса от 30.09.2026, не отдельная редакция Юлии: примеры Puloka, новые видео и скриншоты. Кнопки сохранены из снимка. Прод не изменён.",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
       "originalNote": "",
       "mapAnchor": null,
       "imported": false,
       "scope": "dev",
-      "search": "шаг 6: товар и бренд в избранном яндекс · материалы 30.09.2026 · qa.giveaway[24] · custom:giveaway_step:favorites     6️⃣ <b>шаг 6 из 7 · избранное</b>\n\n🎯 предпоследний шаг — дальше только оформление заказа.\n\n❤️ добавьте в избранное:\n\n1. 🏪 магазин puloka\n2. 📦 наш товар «магнитный повербанк 10000 мач»\n\n📷 пришлите два скрина: товар в избранном и магазин в избранном.     6️⃣ шаг 6 из 7 • избранное<br><br>🎯 предпоследний шаг, а дальше только оформление заказа!<br>❤️ добавь в избранное:<br>🏪 магазин puloka<br>📦 наш товар «магнитный повербанк 10000 мач»<br>📷 пришли два скриншота: товар в избранном и магазин в избранном. ",
-      "previewHidden": false
+      "search": "шаг 6: товар и бренд в избранном яндекс раздачи     6️⃣ <b>шаг 6 из 7 · избранное</b>\n\n🎯 предпоследний шаг — дальше только оформление заказа.\n\n❤️ добавьте в избранное:\n\n1. 🏪 магазин puloka\n2. 📦 наш товар «магнитный повербанк 10000 мач»\n\n📷 пришлите два скрина: товар в избранном и магазин в избранном.     6️⃣ шаг 6 из 7 • избранное<br><br>🎯 предпоследний шаг, а дальше только оформление заказа!<br>❤️ добавь в избранное:<br>🏪 магазин puloka<br>📦 наш товар «магнитный повербанк 10000 мач»<br>📷 пришли два скриншота: товар в избранном и магазин в избранном.",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
     },
     {
       "id": "yandex-giveaway-order",
-      "title": "Шаг 7: где найти номер заказа",
+      "title": "Шаг 7: номер заказа",
       "number": null,
       "category": "giveaway_yandex",
       "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[27] · custom:giveaway_step:order_no_ya",
       "current": [
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-order-number.mp4",
-          "poster": "assets/ym-giveaway-20260930-order-number-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-order-number.mp4",
+          "poster": "assets/giveaway-20261001-ym-order-number-poster.jpg",
           "text": "",
           "rows": []
         },
@@ -13275,8 +12671,8 @@ window.DIALOG_DATA = {
       "julia": [
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-order-number.mp4",
-          "poster": "assets/ym-giveaway-20260930-order-number-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-order-number.mp4",
+          "poster": "assets/giveaway-20261001-ym-order-number-poster.jpg",
           "text": "",
           "rows": []
         },
@@ -13294,17 +12690,106 @@ window.DIALOG_DATA = {
       "decisionHint": "",
       "warnings": [],
       "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии под материалы Яндекса от 30.09.2026, не отдельная редакция Юлии: примеры Puloka, новые видео и скриншоты. Кнопки сохранены из снимка. Прод не изменён.",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
       "originalNote": "",
       "mapAnchor": null,
       "imported": false,
       "scope": "dev",
-      "search": "шаг 7: где найти номер заказа яндекс · материалы 30.09.2026 · qa.giveaway[27] · custom:giveaway_step:order_no_ya  7️⃣ <b>шаг 7 из 7 · оформляем заказ</b>\n\n🎯 последний шаг — после него заявка уйдёт на проверку.\n\n🔢 пришлите номер заказа, оформленного на яндекс маркет — например <code>31415926</code>.\n\n🚫 номер отправления и трек-номер не подойдут.\n\n📎 дальше попросим один скрин оформленного заказа. ошиблись — номер можно исправить до отправки скрина.\n\n<i>найти его можно в приложении маркетплейса, в списке ваших заказов.</i>  7️⃣ шаг 7 из 7 • оформляем заказ<br><br>🎯 последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 пришли номер заказа, оформленного на яндекс маркет (например 31415926).<br>🚫 обрати внимание! номер отправления и трек номер не подойдут.<br>📎 дальше попросим один скриншот оформленного заказа. если опечатаешься, номер получится исправить до отправки скрина! найти его можно в приложении маркетплейса, прямо в списке твоих покупок. ",
-      "previewHidden": false
+      "search": "шаг 7: номер заказа яндекс раздачи  7️⃣ <b>шаг 7 из 7 · оформляем заказ</b>\n\n🎯 последний шаг — после него заявка уйдёт на проверку.\n\n🔢 пришлите номер заказа, оформленного на яндекс маркет — например <code>31415926</code>.\n\n🚫 номер отправления и трек-номер не подойдут.\n\n📎 дальше попросим один скрин оформленного заказа. ошиблись — номер можно исправить до отправки скрина.\n\n<i>найти его можно в приложении маркетплейса, в списке ваших заказов.</i>  7️⃣ шаг 7 из 7 • оформляем заказ<br><br>🎯 последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 пришли номер заказа, оформленного на яндекс маркет (например 31415926).<br>🚫 обрати внимание! номер отправления и трек номер не подойдут.<br>📎 дальше попросим один скриншот оформленного заказа. если опечатаешься, номер получится исправить до отправки скрина! найти его можно в приложении маркетплейса, прямо в списке твоих покупок.",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "yandex-giveaway-placed",
+      "title": "Шаг 7: скрин оформленного заказа",
+      "number": null,
+      "category": "giveaway_yandex",
+      "source": "qa.giveaway[28] · custom:giveaway_step:order",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-ym-order-placed.mp4",
+          "poster": "assets/giveaway-20261001-ym-order-placed-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-ym-order.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ <b>Номер заказа сохранили.</b>\n\n📎 Остался один кадр — и все семь шагов позади.\n\n📷 Пришлите скрин оформленного заказа, где видны:\n📦 Наш товар\n💵 Итоговая сумма\n📍 Адрес и название ПВЗ (или хотя бы название)",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-ym-order-placed.mp4",
+          "poster": "assets/giveaway-20261001-ym-order-placed-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-ym-order.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ Номер заказа сохранили!<br>📎 Остался один кадр, и все семь шагов позади.<br>📷 Пришли скриншот оформленного заказа, где видны:<br>📦 Наш товар<br>💵 Итоговая сумма<br>📍 Адрес и название ПВЗ (или хотя бы название)",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 7: скрин оформленного заказа яндекс раздачи    ✅ <b>номер заказа сохранили.</b>\n\n📎 остался один кадр — и все семь шагов позади.\n\n📷 пришлите скрин оформленного заказа, где видны:\n📦 наш товар\n💵 итоговая сумма\n📍 адрес и название пвз (или хотя бы название)    ✅ номер заказа сохранили!<br>📎 остался один кадр, и все семь шагов позади.<br>📷 пришли скриншот оформленного заказа, где видны:<br>📦 наш товар<br>💵 итоговая сумма<br>📍 адрес и название пвз (или хотя бы название)",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
     },
     {
       "id": "yandex-giveaway-review",
-      "title": "Отчёт: текст отзыва и оценка 5 звёзд",
+      "title": "Отчёт: где посмотреть отзыв и оценку",
       "number": null,
       "category": "giveaway_yandex",
       "source": "Яндекс · материалы 30.09.2026 · qa.giveaway[58] · custom:report_step:published",
@@ -13322,8 +12807,8 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-review.mp4",
-          "poster": "assets/ym-giveaway-20260930-review-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-review.mp4",
+          "poster": "assets/giveaway-20261001-ym-review-poster.jpg",
           "text": "",
           "rows": []
         },
@@ -13350,8 +12835,8 @@ window.DIALOG_DATA = {
         },
         {
           "kind": "video",
-          "asset": "assets/ym-giveaway-20260930-review.mp4",
-          "poster": "assets/ym-giveaway-20260930-review-poster.jpg",
+          "asset": "assets/giveaway-20261001-ym-review.mp4",
+          "poster": "assets/giveaway-20261001-ym-review-poster.jpg",
           "text": "",
           "rows": []
         },
@@ -13369,13 +12854,1558 @@ window.DIALOG_DATA = {
       "decisionHint": "",
       "warnings": [],
       "copyOrigin": "adaptation",
-      "draftAssembly": "Адаптация в стиле Юлии под материалы Яндекса от 30.09.2026, не отдельная редакция Юлии: примеры Puloka, новые видео и скриншоты. Кнопки сохранены из снимка. Прод не изменён.",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
       "originalNote": "",
       "mapAnchor": null,
       "imported": false,
       "scope": "dev",
-      "search": "отчёт: текст отзыва и оценка 5 звёзд яндекс · материалы 30.09.2026 · qa.giveaway[58] · custom:report_step:published   📷 <b>предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>   📷 предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 пришли кадр, где на одном экране одновременно видно:<br>📦 наш товар<br>⭐ оценку 5 звёзд<br>💬 текст отзыва<br>🎬 опубликованные фото или видео<br>👤 если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация! ",
-      "previewHidden": false
+      "search": "отчёт: где посмотреть отзыв и оценку яндекс раздачи   📷 <b>предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>   📷 предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 пришли кадр, где на одном экране одновременно видно:<br>📦 наш товар<br>⭐ оценку 5 звёзд<br>💬 текст отзыва<br>🎬 опубликованные фото или видео<br>👤 если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "ozon-giveaway-competitors",
+      "title": "Шаг 1: поиск и конкуренты",
+      "number": null,
+      "category": "giveaway_ozon",
+      "source": "qa.giveaway[17] · custom:giveaway_step:competitors",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/df6c0b2318-31_cart_others.webm",
+          "poster": "assets/22dded00c7-31_cart_others.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-search-competitors.mp4",
+          "poster": "assets/giveaway-20261001-oz-search-competitors-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-competitors.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ <b>Место ваше — держим его 120 минут.</b>\n\n🪜 За это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ Шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 За 30 минут до конца пришлём напоминание.\n⏹ Как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>Так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>Шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 Введите в поиске Wildberries запрос: «<b>защитное стекло iPhone</b>».\n2. 👀 Просмотрите карточки конкурентов из ТОП-10.\n3. 🧺 Положите в корзину <b>2–3</b> похожих товара.\n\n📷 Пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>Так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/df6c0b2318-31_cart_others.webm",
+          "poster": "assets/22dded00c7-31_cart_others.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-search-competitors.mp4",
+          "poster": "assets/giveaway-20261001-oz-search-competitors-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-competitors.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ Место забронировано за тобой! Держим его 120 минут.<br>🪜 За это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ Шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 За 30 минут до конца пришлём напоминание.<br>⏹ Как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>Так ты не потеряешь место, даже если проверка займёт время.<br><br>1️⃣ Шаг 1 из 7 · Конкуренты<br><br>1. 🔎 Открой поиск Ozon и введи запрос: «коврик для мышки компьютерный»<br>2. 👀 Просмотри карточки конкурентов из ТОП-10.<br>3. 🧺 Положи в корзину 2–3 похожих товара.<br>📷 Пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>Так маркетплейс видит живой интерес к категории!",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [
+        "Новая адаптация для согласования."
+      ],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 1: поиск и конкуренты ozon раздачи    ✅ <b>место ваше — держим его 120 минут.</b>\n\n🪜 за это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 за 30 минут до конца пришлём напоминание.\n⏹ как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 введите в поиске wildberries запрос: «<b>защитное стекло iphone</b>».\n2. 👀 просмотрите карточки конкурентов из топ-10.\n3. 🧺 положите в корзину <b>2–3</b> похожих товара.\n\n📷 пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>    ✅ место забронировано за тобой! держим его 120 минут.<br>🪜 за это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 за 30 минут до конца пришлём напоминание.<br>⏹ как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>так ты не потеряешь место, даже если проверка займёт время.<br><br>1️⃣ шаг 1 из 7 · конкуренты<br><br>1. 🔎 открой поиск ozon и введи запрос: «коврик для мышки компьютерный»<br>2. 👀 просмотри карточки конкурентов из топ-10.<br>3. 🧺 положи в корзину 2–3 похожих товара.<br>📷 пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>так маркетплейс видит живой интерес к категории!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "ozon-giveaway-search",
+      "title": "Шаг 2: фильтр бренда и наш товар",
+      "number": null,
+      "category": "giveaway_ozon",
+      "source": "qa.giveaway[18] · custom:giveaway_step:search",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/de5446759f-32_find_product.webm",
+          "poster": "assets/74f039bbb3-32_find_product.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-search-product.mp4",
+          "poster": "assets/giveaway-20261001-oz-search-product-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-product-search.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "2️⃣ <b>Шаг 2 из 7 · наш товар</b>\n\n🔎 В фильтре «Бренд» выберите <b>LifeStyle</b> и найдите наш товар «Защитное стекло» по фотографии.\n\n📷 Пришлите скрин, где одновременно видны:\n🔤 Поисковый запрос «<b>защитное стекло iPhone</b>»\n🖼 Карточка нашего товара\n\n<i>Прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/de5446759f-32_find_product.webm",
+          "poster": "assets/74f039bbb3-32_find_product.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-search-product.mp4",
+          "poster": "assets/giveaway-20261001-oz-search-product-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-product-search.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "2️⃣ Шаг 2 из 7 · Наш товар<br><br>🔎 Открой фильтр «Бренд», выбери ACHILLES NO WEAK ZONES и найди наш товар «Коврик для мышки» по фотографии.<br>📷 Пришли скриншот, где одновременно видны:<br>🔤 Поисковый запрос «коврик для мышки компьютерный»<br>🖼 Карточка нашего товара<br><br>Прямую ссылку специально не даём, ведь товар нужно найти именно через поиск!",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 2: фильтр бренда и наш товар ozon раздачи    2️⃣ <b>шаг 2 из 7 · наш товар</b>\n\n🔎 в фильтре «бренд» выберите <b>lifestyle</b> и найдите наш товар «защитное стекло» по фотографии.\n\n📷 пришлите скрин, где одновременно видны:\n🔤 поисковый запрос «<b>защитное стекло iphone</b>»\n🖼 карточка нашего товара\n\n<i>прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>    2️⃣ шаг 2 из 7 · наш товар<br><br>🔎 открой фильтр «бренд», выбери achilles no weak zones и найди наш товар «коврик для мышки» по фотографии.<br>📷 пришли скриншот, где одновременно видны:<br>🔤 поисковый запрос «коврик для мышки компьютерный»<br>🖼 карточка нашего товара<br><br>прямую ссылку специально не даём, ведь товар нужно найти именно через поиск!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "ozon-giveaway-card",
+      "title": "Шаг 3: просмотр карточки",
+      "number": null,
+      "category": "giveaway_ozon",
+      "source": "qa.giveaway[19] · custom:giveaway_step:card",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a144029a43-33_dwell.webm",
+          "poster": "assets/f7c15b2d0d-33_dwell.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-product-card.mp4",
+          "poster": "assets/giveaway-20261001-oz-product-card-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "3️⃣ <b>Шаг 3 из 7 · смотрим карточку</b>\n\n⏱ Самый спокойный шаг: ничего присылать не нужно. Откройте страницу товара «Защитное стекло» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 Пока ждёте:\n🖼 Пролистайте фото и видео\n💬 Прочитайте отзывы\n📋 Посмотрите характеристики и описание\n\n👉 Нажмите «➡ Продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>Отсчёт идёт сам, следить за ним не нужно.</i>",
+          "buttons": [
+            "➡ Продолжить"
+          ],
+          "keyboardType": "inline",
+          "rows": [
+            [
+              {
+                "text": "➡ Продолжить",
+                "value": "gwf:step3",
+                "url": null,
+                "contact": false
+              }
+            ]
+          ]
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a144029a43-33_dwell.webm",
+          "poster": "assets/f7c15b2d0d-33_dwell.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-product-card.mp4",
+          "poster": "assets/giveaway-20261001-oz-product-card-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "3️⃣ Шаг 3 из 7 · Смотрим карточку<br><br>⏱ Самый спокойный шаг: ничего присылать не нужно! Открой страницу товара «Коврик для мышки» и побудь на ней 3 минуты 30 секунд.<br>👀 Пока ждёшь:<br>🖼 Пролистай фото и видео<br>💬 Прочитай отзывы<br>📋 Посмотри характеристики и описание<br>👉 Нажми «➡ Продолжить», когда время выйдет. Если нажать раньше, бот попросит ещё немного подождать. <br><br>Отсчёт идет сам, следить за ним не нужно!",
+          "buttons": [
+            "➡ Продолжить"
+          ],
+          "keyboardType": "inline",
+          "rows": [
+            [
+              {
+                "text": "➡ Продолжить",
+                "value": "gwf:step3",
+                "url": null,
+                "contact": false
+              }
+            ]
+          ]
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 3: просмотр карточки ozon раздачи   3️⃣ <b>шаг 3 из 7 · смотрим карточку</b>\n\n⏱ самый спокойный шаг: ничего присылать не нужно. откройте страницу товара «защитное стекло» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 пока ждёте:\n🖼 пролистайте фото и видео\n💬 прочитайте отзывы\n📋 посмотрите характеристики и описание\n\n👉 нажмите «➡ продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>отсчёт идёт сам, следить за ним не нужно.</i>   3️⃣ шаг 3 из 7 · смотрим карточку<br><br>⏱ самый спокойный шаг: ничего присылать не нужно! открой страницу товара «коврик для мышки» и побудь на ней 3 минуты 30 секунд.<br>👀 пока ждёшь:<br>🖼 пролистай фото и видео<br>💬 прочитай отзывы<br>📋 посмотри характеристики и описание<br>👉 нажми «➡ продолжить», когда время выйдет. если нажать раньше, бот попросит ещё немного подождать. <br><br>отсчёт идет сам, следить за ним не нужно!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "ozon-giveaway-cart",
+      "title": "Шаг 4: наш товар с конкурентами",
+      "number": null,
+      "category": "giveaway_ozon",
+      "source": "qa.giveaway[22] · custom:giveaway_step:cart_competitors",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/c241390faf-34_cart_ours.webm",
+          "poster": "assets/09b6bfbea6-34_cart_ours.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-cart-together.mp4",
+          "poster": "assets/giveaway-20261001-oz-cart-together-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-cart-together.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "4️⃣ <b>Шаг 4 из 7 · общая корзина</b>\n\n⏹ Этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 Добавьте наш товар «Защитное стекло» в корзину.\n\n📷 Пришлите один скрин, где одновременно видны:\n📦 Наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/c241390faf-34_cart_ours.webm",
+          "poster": "assets/09b6bfbea6-34_cart_ours.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-cart-together.mp4",
+          "poster": "assets/giveaway-20261001-oz-cart-together-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-cart-together.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "4️⃣ Шаг 4 из 7 · Общая корзина<br><br>⏹ Этот шаг останавливает таймер! Как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 Добавь наш товар «Коврик для мышки» в корзину.<br>📷 Пришли один скрин, где одновременно видны:<br>📦 Наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 4: наш товар с конкурентами ozon раздачи    4️⃣ <b>шаг 4 из 7 · общая корзина</b>\n\n⏹ этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 добавьте наш товар «защитное стекло» в корзину.\n\n📷 пришлите один скрин, где одновременно видны:\n📦 наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили    4️⃣ шаг 4 из 7 · общая корзина<br><br>⏹ этот шаг останавливает таймер! как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 добавь наш товар «коврик для мышки» в корзину.<br>📷 пришли один скрин, где одновременно видны:<br>📦 наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "ozon-giveaway-clean",
+      "title": "Шаг 5: убрать конкурентов",
+      "number": null,
+      "category": "giveaway_ozon",
+      "source": "qa.giveaway[23] · custom:giveaway_step:cart_clean",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/f7379699b6-35_cart_clean.webm",
+          "poster": "assets/84c8f302cd-35_cart_clean.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-cart-clean.mp4",
+          "poster": "assets/giveaway-20261001-oz-cart-clean-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-cart-clean.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ <b>Общая корзина принята — место закреплено за вами.</b>\n\n♾ Таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>Шаг 5 из 7 · оставляем один товар</b>\n\n✂ Удалите из корзины лишние товары — должен остаться только наш товар «Защитное стекло».\n\n📷 Пришлите новый скрин корзины, где это хорошо видно.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/f7379699b6-35_cart_clean.webm",
+          "poster": "assets/84c8f302cd-35_cart_clean.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-cart-clean.mp4",
+          "poster": "assets/giveaway-20261001-oz-cart-clean-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-cart-clean.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ Общая корзина принята, место закрепилось за тобой!<br>♾ Таймер остановлен! На шаги 5–7 времени сколько нужно.<br><br>5️⃣ Шаг 5 из 7 • Оставляем один товар<br><br>✂ Убери из корзины лишние позиции, там должен остаться только наш товар «Коврик для мышки».<br>📷 Пришли новый скриншот корзины, где это хорошо видно.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 5: убрать конкурентов ozon раздачи    ✅ <b>общая корзина принята — место закреплено за вами.</b>\n\n♾ таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>шаг 5 из 7 · оставляем один товар</b>\n\n✂ удалите из корзины лишние товары — должен остаться только наш товар «защитное стекло».\n\n📷 пришлите новый скрин корзины, где это хорошо видно.    ✅ общая корзина принята, место закрепилось за тобой!<br>♾ таймер остановлен! на шаги 5–7 времени сколько нужно.<br><br>5️⃣ шаг 5 из 7 • оставляем один товар<br><br>✂ убери из корзины лишние позиции, там должен остаться только наш товар «коврик для мышки».<br>📷 пришли новый скриншот корзины, где это хорошо видно.",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "ozon-giveaway-favorites",
+      "title": "Шаг 6: товар и бренд в избранном",
+      "number": null,
+      "category": "giveaway_ozon",
+      "source": "qa.giveaway[24] · custom:giveaway_step:favorites",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a96e514268-36_favorites.webm",
+          "poster": "assets/02400d6c6b-36_favorites.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-favorites.mp4",
+          "poster": "assets/giveaway-20261001-oz-favorites-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-product-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-brand-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "6️⃣ <b>Шаг 6 из 7 · избранное</b>\n\n🎯 Предпоследний шаг — дальше только оформление заказа.\n\n❤️ Добавьте в избранное:\n\n1. 🏪 Магазин LifeStyle\n2. 📦 Наш товар «Защитное стекло»\n\n📷 Пришлите один скрин, где одновременно видны оба действия.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a96e514268-36_favorites.webm",
+          "poster": "assets/02400d6c6b-36_favorites.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-favorites.mp4",
+          "poster": "assets/giveaway-20261001-oz-favorites-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-product-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-brand-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "6️⃣ Шаг 6 из 7 • Избранное<br><br>🎯 Предпоследний шаг, а дальше только оформление заказа!<br>❤️ Добавь в избранное:<br>🏪 Магазин ACHILLES NO WEAK ZONES<br>📦 Наш товар «Коврик для мышки»<br>📷 Пришли два скриншота: товар в избранном и магазин или бренд в избранном.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [
+        "Новая адаптация для согласования."
+      ],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 6: товар и бренд в избранном ozon раздачи     6️⃣ <b>шаг 6 из 7 · избранное</b>\n\n🎯 предпоследний шаг — дальше только оформление заказа.\n\n❤️ добавьте в избранное:\n\n1. 🏪 магазин lifestyle\n2. 📦 наш товар «защитное стекло»\n\n📷 пришлите один скрин, где одновременно видны оба действия.     6️⃣ шаг 6 из 7 • избранное<br><br>🎯 предпоследний шаг, а дальше только оформление заказа!<br>❤️ добавь в избранное:<br>🏪 магазин achilles no weak zones<br>📦 наш товар «коврик для мышки»<br>📷 пришли два скриншота: товар в избранном и магазин или бренд в избранном.",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "9ca9f639aa16",
+      "title": "Шаг 7: номер заказа",
+      "number": null,
+      "category": "giveaway_ozon",
+      "source": "qa.giveaway[26] · custom:giveaway_step:order_no_ozon",
+      "current": [
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-order-number.mp4",
+          "poster": "assets/giveaway-20261001-oz-order-number-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "7️⃣ <b>Шаг 7 из 7 · оформляем заказ</b>\n\n🎯 Последний шаг — после него заявка уйдёт на проверку.\n\n🔢 Пришлите номер заказа, оформленного на Ozon — например <code>0157262141-0136</code>.\n\n🚫 Номер отправления и трек-номер не подойдут.\n\n📎 Дальше попросим один скрин оформленного заказа. Ошиблись — номер можно исправить до отправки скрина.\n\n<i>Найти его можно в приложении маркетплейса, в списке ваших заказов.</i>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-order-number.mp4",
+          "poster": "assets/giveaway-20261001-oz-order-number-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "7️⃣ Шаг 7 из 7 • Оформляем заказ<br><br>🎯 Последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 Пришли номер заказа, оформленного на Ozon (например 0157262141 0136).<br>🚫 Обрати внимание! Номер отправления и трек номер не подойдут.<br>📎 Дальше попросим один скриншот оформленного заказа. Если опечатаешься, номер получится исправить до отправки скрина! Найти его можно в приложении маркетплейса, прямо в списке твоих покупок.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[26] · custom:giveaway_step:order_no_ozon",
+      "imported": true,
+      "scope": "dev",
+      "search": "шаг 7: номер заказа ozon раздачи  7️⃣ <b>шаг 7 из 7 · оформляем заказ</b>\n\n🎯 последний шаг — после него заявка уйдёт на проверку.\n\n🔢 пришлите номер заказа, оформленного на ozon — например <code>0157262141-0136</code>.\n\n🚫 номер отправления и трек-номер не подойдут.\n\n📎 дальше попросим один скрин оформленного заказа. ошиблись — номер можно исправить до отправки скрина.\n\n<i>найти его можно в приложении маркетплейса, в списке ваших заказов.</i>  7️⃣ шаг 7 из 7 • оформляем заказ<br><br>🎯 последний шаг, после него заявка сразу уйдёт на проверку!<br>🔢 пришли номер заказа, оформленного на ozon (например 0157262141 0136).<br>🚫 обрати внимание! номер отправления и трек номер не подойдут.<br>📎 дальше попросим один скриншот оформленного заказа. если опечатаешься, номер получится исправить до отправки скрина! найти его можно в приложении маркетплейса, прямо в списке твоих покупок.",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "ozon-giveaway-placed",
+      "title": "Шаг 7: скрин оформленного заказа",
+      "number": null,
+      "category": "giveaway_ozon",
+      "source": "qa.giveaway[28] · custom:giveaway_step:order",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-order-placed.mp4",
+          "poster": "assets/giveaway-20261001-oz-order-placed-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-order.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ <b>Номер заказа сохранили.</b>\n\n📎 Остался один кадр — и все семь шагов позади.\n\n📷 Пришлите скрин оформленного заказа, где видны:\n📦 Наш товар\n💵 Итоговая сумма\n📍 Адрес и название ПВЗ (или хотя бы название)",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-order-placed.mp4",
+          "poster": "assets/giveaway-20261001-oz-order-placed-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-oz-order.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ Номер заказа сохранили!<br>📎 Остался один кадр, и все семь шагов позади.<br>📷 Пришли скриншот оформленного заказа, где видны:<br>📦 Наш товар<br>💵 Итоговая сумма<br>📍 Адрес и название ПВЗ (или хотя бы название)",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "шаг 7: скрин оформленного заказа ozon раздачи    ✅ <b>номер заказа сохранили.</b>\n\n📎 остался один кадр — и все семь шагов позади.\n\n📷 пришлите скрин оформленного заказа, где видны:\n📦 наш товар\n💵 итоговая сумма\n📍 адрес и название пвз (или хотя бы название)    ✅ номер заказа сохранили!<br>📎 остался один кадр, и все семь шагов позади.<br>📷 пришли скриншот оформленного заказа, где видны:<br>📦 наш товар<br>💵 итоговая сумма<br>📍 адрес и название пвз (или хотя бы название)",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "ozon-giveaway-review",
+      "title": "Отчёт: где посмотреть отзыв и оценку",
+      "number": null,
+      "category": "giveaway_ozon",
+      "source": "qa.giveaway[58] · custom:report_step:published",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-review.mp4",
+          "poster": "assets/giveaway-20261001-oz-review-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "📷 <b>Предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 Пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 Если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-oz-review.mp4",
+          "poster": "assets/giveaway-20261001-oz-review-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "📷 Предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 Пришли кадр, где на одном экране одновременно видно:<br>📦 Наш товар<br>⭐ Оценку 5 звёзд<br>💬 Текст отзыва<br>🎬 Опубликованные фото или видео<br>👤 Если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация!",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": null,
+      "imported": false,
+      "scope": "dev",
+      "search": "отчёт: где посмотреть отзыв и оценку ozon раздачи   📷 <b>предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>   📷 предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 пришли кадр, где на одном экране одновременно видно:<br>📦 наш товар<br>⭐ оценку 5 звёзд<br>💬 текст отзыва<br>🎬 опубликованные фото или видео<br>👤 если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "bbce88b1cba9",
+      "title": "Шаг 1: поиск и конкуренты",
+      "number": 133,
+      "category": "giveaway_wb",
+      "source": "qa.giveaway[17] · custom:giveaway_step:competitors",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/df6c0b2318-31_cart_others.webm",
+          "poster": "assets/22dded00c7-31_cart_others.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-search-competitors.mp4",
+          "poster": "assets/giveaway-20261001-wb-search-competitors-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-competitors.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ <b>Место ваше — держим его 120 минут.</b>\n\n🪜 За это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ Шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 За 30 минут до конца пришлём напоминание.\n⏹ Как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>Так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>Шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 Введите в поиске Wildberries запрос: «<b>защитное стекло iPhone</b>».\n2. 👀 Просмотрите карточки конкурентов из ТОП-10.\n3. 🧺 Положите в корзину <b>2–3</b> похожих товара.\n\n📷 Пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>Так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/df6c0b2318-31_cart_others.webm",
+          "poster": "assets/22dded00c7-31_cart_others.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-search-competitors.mp4",
+          "poster": "assets/giveaway-20261001-wb-search-competitors-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-competitors.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ Место забронировано за тобой! Держим его 120 минут.<br>🪜 За это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ Шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 За 30 минут до конца пришлём напоминание.<br>⏹ Как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>Так ты не потеряешь место, даже если проверка займёт время.<br><br>1️⃣ Шаг 1 из 7 · Конкуренты<br><br>1. 🔎 Открой поиск Wildberries и введи запрос: «беспроводная зарядка iphone»<br>2. 👀 Просмотри карточки конкурентов из ТОП-10.<br>3. 🧺 Положи в корзину 2–3 похожих товара.<br>📷 Пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>Так маркетплейс видит живой интерес к категории!",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [
+        "Новая адаптация для согласования."
+      ],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[17] · custom:giveaway_step:competitors",
+      "imported": true,
+      "scope": "dev",
+      "search": "шаг 1: поиск и конкуренты wildberries раздачи    ✅ <b>место ваше — держим его 120 минут.</b>\n\n🪜 за это время проходим <b>шаги 1–4</b>: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.\n\n♾ шаги 5–7 идут уже без таймера — место остаётся за вами.\n\n<blockquote>🔔 за 30 минут до конца пришлём напоминание.\n⏹ как примем скрин общей корзины, таймер остановится, место сохранится, а шаг 5 откроется сразу.</blockquote>\n\n<i>так вы не потеряете место, даже если проверка займёт время.</i>\n\n1️⃣ <b>шаг 1 из 7 · конкуренты</b>\n\n1. 🔎 введите в поиске wildberries запрос: «<b>защитное стекло iphone</b>».\n2. 👀 просмотрите карточки конкурентов из топ-10.\n3. 🧺 положите в корзину <b>2–3</b> похожих товара.\n\n📷 пришлите скрин корзины, где видны выбранные товары конкурентов.\n\n<i>так маркетплейс видит живой интерес к категории, а не переход по прямой ссылке.</i>    ✅ место забронировано за тобой! держим его 120 минут.<br>🪜 за это время проходим шаги 1–4: конкуренты, поиск нашего товара, просмотр карточки и общая корзина.<br>♾ шаги 5–7 идут уже без ограничения по времени, место точно останется за тобой!<br>🔔 за 30 минут до конца пришлём напоминание.<br>⏹ как только примем скриншот общей корзины, таймер остановится, а шаг 5 откроется сразу.<br><br>так ты не потеряешь место, даже если проверка займёт время.<br><br>1️⃣ шаг 1 из 7 · конкуренты<br><br>1. 🔎 открой поиск wildberries и введи запрос: «беспроводная зарядка iphone»<br>2. 👀 просмотри карточки конкурентов из топ-10.<br>3. 🧺 положи в корзину 2–3 похожих товара.<br>📷 пришли скриншот корзины, где видны выбранные товары конкурентов. <br><br>так маркетплейс видит живой интерес к категории!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "cefea126d78f",
+      "title": "Шаг 2: фильтр бренда и наш товар",
+      "number": 134,
+      "category": "giveaway_wb",
+      "source": "qa.giveaway[18] · custom:giveaway_step:search",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/de5446759f-32_find_product.webm",
+          "poster": "assets/74f039bbb3-32_find_product.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-search-product.mp4",
+          "poster": "assets/giveaway-20261001-wb-search-product-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-product-search.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "2️⃣ <b>Шаг 2 из 7 · наш товар</b>\n\n🔎 В фильтре «Бренд» выберите <b>LifeStyle</b> и найдите наш товар «Защитное стекло» по фотографии.\n\n📷 Пришлите скрин, где одновременно видны:\n🔤 Поисковый запрос «<b>защитное стекло iPhone</b>»\n🖼 Карточка нашего товара\n\n<i>Прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/de5446759f-32_find_product.webm",
+          "poster": "assets/74f039bbb3-32_find_product.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-search-product.mp4",
+          "poster": "assets/giveaway-20261001-wb-search-product-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-product-search.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "2️⃣ Шаг 2 из 7 · Наш товар<br><br>🔎 Открой фильтр «Бренд», выбери Elastic Store и найди наш товар «Беспроводная зарядная станция 3 в 1» по фотографии.<br>📷 Пришли скриншот, где одновременно видны:<br>🔤 Поисковый запрос «беспроводная зарядка iphone»<br>🖼 Карточка нашего товара<br><br>Прямую ссылку специально не даём, ведь товар нужно найти именно через поиск!",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[18] · custom:giveaway_step:search",
+      "imported": true,
+      "scope": "dev",
+      "search": "шаг 2: фильтр бренда и наш товар wildberries раздачи    2️⃣ <b>шаг 2 из 7 · наш товар</b>\n\n🔎 в фильтре «бренд» выберите <b>lifestyle</b> и найдите наш товар «защитное стекло» по фотографии.\n\n📷 пришлите скрин, где одновременно видны:\n🔤 поисковый запрос «<b>защитное стекло iphone</b>»\n🖼 карточка нашего товара\n\n<i>прямую ссылку специально не даём — товар нужно найти именно через поиск.</i>    2️⃣ шаг 2 из 7 · наш товар<br><br>🔎 открой фильтр «бренд», выбери elastic store и найди наш товар «беспроводная зарядная станция 3 в 1» по фотографии.<br>📷 пришли скриншот, где одновременно видны:<br>🔤 поисковый запрос «беспроводная зарядка iphone»<br>🖼 карточка нашего товара<br><br>прямую ссылку специально не даём, ведь товар нужно найти именно через поиск!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "4a34e84da45f",
+      "title": "Шаг 3: просмотр карточки",
+      "number": 135,
+      "category": "giveaway_wb",
+      "source": "qa.giveaway[19] · custom:giveaway_step:card",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a144029a43-33_dwell.webm",
+          "poster": "assets/f7c15b2d0d-33_dwell.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-product-card.mp4",
+          "poster": "assets/giveaway-20261001-wb-product-card-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "3️⃣ <b>Шаг 3 из 7 · смотрим карточку</b>\n\n⏱ Самый спокойный шаг: ничего присылать не нужно. Откройте страницу товара «Защитное стекло» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 Пока ждёте:\n🖼 Пролистайте фото и видео\n💬 Прочитайте отзывы\n📋 Посмотрите характеристики и описание\n\n👉 Нажмите «➡ Продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>Отсчёт идёт сам, следить за ним не нужно.</i>",
+          "buttons": [
+            "➡ Продолжить"
+          ],
+          "keyboardType": "inline",
+          "rows": [
+            [
+              {
+                "text": "➡ Продолжить",
+                "value": "gwf:step3",
+                "url": null,
+                "contact": false
+              }
+            ]
+          ]
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a144029a43-33_dwell.webm",
+          "poster": "assets/f7c15b2d0d-33_dwell.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-product-card.mp4",
+          "poster": "assets/giveaway-20261001-wb-product-card-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "3️⃣ Шаг 3 из 7 · Смотрим карточку<br><br>⏱ Самый спокойный шаг: ничего присылать не нужно! Открой страницу товара «Беспроводная зарядная станция 3 в 1» и побудь на ней 3 минуты 30 секунд.<br>👀 Пока ждёшь:<br>🖼 Пролистай фото и видео<br>💬 Прочитай отзывы<br>📋 Посмотри характеристики и описание<br>👉 Нажми «➡ Продолжить», когда время выйдет. Если нажать раньше, бот попросит ещё немного подождать. <br><br>Отсчёт идет сам, следить за ним не нужно!",
+          "buttons": [
+            "➡ Продолжить"
+          ],
+          "keyboardType": "inline",
+          "rows": [
+            [
+              {
+                "text": "➡ Продолжить",
+                "value": "gwf:step3",
+                "url": null,
+                "contact": false
+              }
+            ]
+          ]
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[19] · custom:giveaway_step:card",
+      "imported": true,
+      "scope": "dev",
+      "search": "шаг 3: просмотр карточки wildberries раздачи   3️⃣ <b>шаг 3 из 7 · смотрим карточку</b>\n\n⏱ самый спокойный шаг: ничего присылать не нужно. откройте страницу товара «защитное стекло» и побудьте на ней <b>3 минуты 30 секунд</b>.\n\n👀 пока ждёте:\n🖼 пролистайте фото и видео\n💬 прочитайте отзывы\n📋 посмотрите характеристики и описание\n\n👉 нажмите «➡ продолжить», когда время выйдет — раньше бот попросит подождать.\n\n<i>отсчёт идёт сам, следить за ним не нужно.</i>   3️⃣ шаг 3 из 7 · смотрим карточку<br><br>⏱ самый спокойный шаг: ничего присылать не нужно! открой страницу товара «беспроводная зарядная станция 3 в 1» и побудь на ней 3 минуты 30 секунд.<br>👀 пока ждёшь:<br>🖼 пролистай фото и видео<br>💬 прочитай отзывы<br>📋 посмотри характеристики и описание<br>👉 нажми «➡ продолжить», когда время выйдет. если нажать раньше, бот попросит ещё немного подождать. <br><br>отсчёт идет сам, следить за ним не нужно!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "f7a4d2728e9a",
+      "title": "Шаг 4: наш товар с конкурентами",
+      "number": 138,
+      "category": "giveaway_wb",
+      "source": "qa.giveaway[22] · custom:giveaway_step:cart_competitors",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/c241390faf-34_cart_ours.webm",
+          "poster": "assets/09b6bfbea6-34_cart_ours.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-cart-together.mp4",
+          "poster": "assets/giveaway-20261001-wb-cart-together-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-cart-together.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "4️⃣ <b>Шаг 4 из 7 · общая корзина</b>\n\n⏹ Этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 Добавьте наш товар «Защитное стекло» в корзину.\n\n📷 Пришлите один скрин, где одновременно видны:\n📦 Наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/c241390faf-34_cart_ours.webm",
+          "poster": "assets/09b6bfbea6-34_cart_ours.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-cart-together.mp4",
+          "poster": "assets/giveaway-20261001-wb-cart-together-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-cart-together.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "4️⃣ Шаг 4 из 7 · Общая корзина<br><br>⏹ Этот шаг останавливает таймер! Как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 Добавь наш товар «Беспроводная зарядная станция 3 в 1» в корзину.<br>📷 Пришли один скрин, где одновременно видны:<br>📦 Наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[22] · custom:giveaway_step:cart_competitors",
+      "imported": true,
+      "scope": "dev",
+      "search": "шаг 4: наш товар с конкурентами wildberries раздачи    4️⃣ <b>шаг 4 из 7 · общая корзина</b>\n\n⏹ этот шаг останавливает таймер: примем скрин — место закрепится за вами, а шаг 5 откроется сразу.\n\n🧺 добавьте наш товар «защитное стекло» в корзину.\n\n📷 пришлите один скрин, где одновременно видны:\n📦 наш товар\n🛍 <b>2–3</b> похожих товара других магазинов, которые вы уже добавили    4️⃣ шаг 4 из 7 · общая корзина<br><br>⏹ этот шаг останавливает таймер! как только примем скриншот, место окончательно закрепится за тобой, а шаг 5 откроется сразу.<br>🧺 добавь наш товар «беспроводная зарядная станция 3 в 1» в корзину.<br>📷 пришли один скрин, где одновременно видны:<br>📦 наш товар<br>🛍 2–3 похожих товара других магазинов, которые были добавлены ранее",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "6afb490e2fd4",
+      "title": "Шаг 5: убрать конкурентов",
+      "number": 139,
+      "category": "giveaway_wb",
+      "source": "qa.giveaway[23] · custom:giveaway_step:cart_clean",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/f7379699b6-35_cart_clean.webm",
+          "poster": "assets/84c8f302cd-35_cart_clean.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-cart-clean.mp4",
+          "poster": "assets/giveaway-20261001-wb-cart-clean-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-cart-clean.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ <b>Общая корзина принята — место закреплено за вами.</b>\n\n♾ Таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>Шаг 5 из 7 · оставляем один товар</b>\n\n✂ Удалите из корзины лишние товары — должен остаться только наш товар «Защитное стекло».\n\n📷 Пришлите новый скрин корзины, где это хорошо видно.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/f7379699b6-35_cart_clean.webm",
+          "poster": "assets/84c8f302cd-35_cart_clean.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-cart-clean.mp4",
+          "poster": "assets/giveaway-20261001-wb-cart-clean-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-cart-clean.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ Общая корзина принята, место закрепилось за тобой!<br>♾ Таймер остановлен! На шаги 5–7 времени сколько нужно.<br><br>5️⃣ Шаг 5 из 7 • Оставляем один товар<br><br>✂ Убери из корзины лишние позиции, там должен остаться только наш товар «Беспроводная зарядная станция 3 в 1».<br>📷 Пришли новый скриншот корзины, где это хорошо видно.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[23] · custom:giveaway_step:cart_clean",
+      "imported": true,
+      "scope": "dev",
+      "search": "шаг 5: убрать конкурентов wildberries раздачи    ✅ <b>общая корзина принята — место закреплено за вами.</b>\n\n♾ таймер остановлен: на шаги 5–7 времени сколько нужно.\n\n5️⃣ <b>шаг 5 из 7 · оставляем один товар</b>\n\n✂ удалите из корзины лишние товары — должен остаться только наш товар «защитное стекло».\n\n📷 пришлите новый скрин корзины, где это хорошо видно.    ✅ общая корзина принята, место закрепилось за тобой!<br>♾ таймер остановлен! на шаги 5–7 времени сколько нужно.<br><br>5️⃣ шаг 5 из 7 • оставляем один товар<br><br>✂ убери из корзины лишние позиции, там должен остаться только наш товар «беспроводная зарядная станция 3 в 1».<br>📷 пришли новый скриншот корзины, где это хорошо видно.",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "5779c52a0a2b",
+      "title": "Шаг 6: товар и бренд в избранном",
+      "number": 140,
+      "category": "giveaway_wb",
+      "source": "qa.giveaway[24] · custom:giveaway_step:favorites",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a96e514268-36_favorites.webm",
+          "poster": "assets/02400d6c6b-36_favorites.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-favorites.mp4",
+          "poster": "assets/giveaway-20261001-wb-favorites-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-product-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-brand-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "6️⃣ <b>Шаг 6 из 7 · избранное</b>\n\n🎯 Предпоследний шаг — дальше только оформление заказа.\n\n❤️ Добавьте в избранное:\n\n1. 🏪 Магазин LifeStyle\n2. 📦 Наш товар «Защитное стекло»\n\n📷 Пришлите один скрин, где одновременно видны оба действия.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/a96e514268-36_favorites.webm",
+          "poster": "assets/02400d6c6b-36_favorites.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-favorites.mp4",
+          "poster": "assets/giveaway-20261001-wb-favorites-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-product-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-brand-favorite.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "6️⃣ Шаг 6 из 7 • Избранное<br><br>🎯 Предпоследний шаг, а дальше только оформление заказа!<br>❤️ Добавь в избранное:<br>🏪 Магазин Elastic Store<br>📦 Наш товар «Беспроводная зарядная станция 3 в 1»<br>📷 Пришли два скриншота: товар в избранном и магазин или бренд в избранном.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [
+        "Новая адаптация для согласования."
+      ],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[24] · custom:giveaway_step:favorites",
+      "imported": true,
+      "scope": "dev",
+      "search": "шаг 6: товар и бренд в избранном wildberries раздачи     6️⃣ <b>шаг 6 из 7 · избранное</b>\n\n🎯 предпоследний шаг — дальше только оформление заказа.\n\n❤️ добавьте в избранное:\n\n1. 🏪 магазин lifestyle\n2. 📦 наш товар «защитное стекло»\n\n📷 пришлите один скрин, где одновременно видны оба действия.     6️⃣ шаг 6 из 7 • избранное<br><br>🎯 предпоследний шаг, а дальше только оформление заказа!<br>❤️ добавь в избранное:<br>🏪 магазин elastic store<br>📦 наш товар «беспроводная зарядная станция 3 в 1»<br>📷 пришли два скриншота: товар в избранном и магазин или бренд в избранном.",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "34ad51d8448b",
+      "title": "Шаг 7: сумма заказа",
+      "number": 141,
+      "category": "giveaway_wb",
+      "source": "qa.giveaway[25] · custom:giveaway_step:amount_wb",
+      "current": [
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-order-placed.mp4",
+          "poster": "assets/giveaway-20261001-wb-order-placed-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "7️⃣ <b>Шаг 7 из 7 · оформляем заказ</b>\n\n🎯 Последний шаг — после него заявка уйдёт на проверку.\n\n💵 Пришлите итоговую сумму заказа на Wildberries — точную, с копейками, например <code>512,37</code>.\n\n📎 Дальше попросим один скрин оформленного заказа. Ошиблись — сумму можно исправить до отправки скрина.\n\n<i>На Wildberries цена зависит от личной скидки, поэтому точная сумма подтверждает именно вашу покупку.</i>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-order-placed.mp4",
+          "poster": "assets/giveaway-20261001-wb-order-placed-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "7️⃣ Шаг 7 из 7 • Оформляем заказ<br><br>🎯 Последний шаг, после него заявка сразу уйдёт на проверку!<br>💵 Пришли итоговую сумму заказа на Wildberries: точную, с копейками (например 512,37).<br>📎 Дальше попросим один скриншот оформленного заказа. Если допустишь ошибку, сумму получится исправить до отправки скрина!<br><br>На Wildberries цена зависит от личной скидки, поэтому точная сумма подтверждает именно твою покупку.",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[25] · custom:giveaway_step:amount_wb",
+      "imported": true,
+      "scope": "dev",
+      "search": "шаг 7: сумма заказа wildberries раздачи  7️⃣ <b>шаг 7 из 7 · оформляем заказ</b>\n\n🎯 последний шаг — после него заявка уйдёт на проверку.\n\n💵 пришлите итоговую сумму заказа на wildberries — точную, с копейками, например <code>512,37</code>.\n\n📎 дальше попросим один скрин оформленного заказа. ошиблись — сумму можно исправить до отправки скрина.\n\n<i>на wildberries цена зависит от личной скидки, поэтому точная сумма подтверждает именно вашу покупку.</i>  7️⃣ шаг 7 из 7 • оформляем заказ<br><br>🎯 последний шаг, после него заявка сразу уйдёт на проверку!<br>💵 пришли итоговую сумму заказа на wildberries: точную, с копейками (например 512,37).<br>📎 дальше попросим один скриншот оформленного заказа. если допустишь ошибку, сумму получится исправить до отправки скрина!<br><br>на wildberries цена зависит от личной скидки, поэтому точная сумма подтверждает именно твою покупку.",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "4c20e727b8d7",
+      "title": "Шаг 7: скрин оформленного заказа",
+      "number": 144,
+      "category": "giveaway_wb",
+      "source": "qa.giveaway[28] · custom:giveaway_step:order",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-order-placed.mp4",
+          "poster": "assets/giveaway-20261001-wb-order-placed-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-order.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ <b>Номер заказа сохранили.</b>\n\n📎 Остался один кадр — и все семь шагов позади.\n\n📷 Пришлите скрин оформленного заказа, где видны:\n📦 Наш товар\n💵 Итоговая сумма\n📍 Адрес и название ПВЗ (или хотя бы название)",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-order-placed.mp4",
+          "poster": "assets/giveaway-20261001-wb-order-placed-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "kind": "photo",
+          "asset": "assets/giveaway-20261001-wb-order.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "✅ Сумму заказа сохранили!<br>📎 Остался один кадр, и все семь шагов позади.<br>📷 Пришли скриншот оформленного заказа, где видны:<br>📦 Наш товар<br>💵 Итоговая сумма<br>📍 Адрес и название ПВЗ (или хотя бы название)",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[28] · custom:giveaway_step:order",
+      "imported": true,
+      "scope": "dev",
+      "search": "шаг 7: скрин оформленного заказа wildberries раздачи    ✅ <b>номер заказа сохранили.</b>\n\n📎 остался один кадр — и все семь шагов позади.\n\n📷 пришлите скрин оформленного заказа, где видны:\n📦 наш товар\n💵 итоговая сумма\n📍 адрес и название пвз (или хотя бы название)    ✅ сумму заказа сохранили!<br>📎 остался один кадр, и все семь шагов позади.<br>📷 пришли скриншот оформленного заказа, где видны:<br>📦 наш товар<br>💵 итоговая сумма<br>📍 адрес и название пвз (или хотя бы название)",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
+    },
+    {
+      "id": "06947a70de4b",
+      "title": "Отчёт: где посмотреть отзыв и оценку",
+      "number": 174,
+      "category": "giveaway_wb",
+      "source": "qa.giveaway[58] · custom:report_step:published",
+      "current": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-review.mp4",
+          "poster": "assets/giveaway-20261001-wb-review-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "📷 <b>Предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 Пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 Если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "julia": [
+        {
+          "owner": "bot",
+          "method": "send_sticker",
+          "text": "",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": [],
+          "kind": "sticker",
+          "asset": "assets/2a55d34135-25_screenshot.webm",
+          "poster": "assets/20de84f61e-25_screenshot.webp"
+        },
+        {
+          "kind": "video",
+          "asset": "assets/giveaway-20261001-wb-review.mp4",
+          "poster": "assets/giveaway-20261001-wb-review-poster.jpg",
+          "text": "",
+          "rows": []
+        },
+        {
+          "owner": "message",
+          "method": "answer",
+          "text": "📷 Предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 Пришли кадр, где на одном экране одновременно видно:<br>📦 Наш товар<br>⭐ Оценку 5 звёзд<br>💬 Текст отзыва<br>🎬 Опубликованные фото или видео<br>👤 Если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация!",
+          "buttons": [],
+          "keyboardType": "reply",
+          "rows": []
+        }
+      ],
+      "proposalStatus": "new",
+      "juliaNote": "",
+      "decisionHint": "",
+      "warnings": [],
+      "copyOrigin": "adaptation",
+      "draftAssembly": "Материалы Юлии из экспорта 01.10.2026. Личные данные скрыты в файлах. В редакции для показа изменены только примеры площадки, товара и бренда; избранное показано двумя скринами. Бот не изменён.",
+      "originalNote": "",
+      "mapAnchor": "qa.giveaway[58] · custom:report_step:published",
+      "imported": true,
+      "scope": "dev",
+      "search": "отчёт: где посмотреть отзыв и оценку wildberries раздачи   📷 <b>предпоследний шаг — скрин опубликованного отзыва</b>\n\n🖼 пришлите кадр, где на одном экране видно:\n\n📦 наш товар\n⭐ оценку 5 звёзд\n💬 текст отзыва\n🎬 опубликованные фото или видео\n\n<blockquote>👤 если автоматическая проверка засомневается, скрин посмотрит оператор — это обычная ситуация.</blockquote>   📷 предпоследний шаг, скриншот опубликованного отзыва!<br>🖼 пришли кадр, где на одном экране одновременно видно:<br>📦 наш товар<br>⭐ оценку 5 звёзд<br>💬 текст отзыва<br>🎬 опубликованные фото или видео<br>👤 если автоматическая проверка засомневается, скриншот посмотрит оператор, это абсолютно обычная ситуация!",
+      "previewHidden": false,
+      "mediaBatch": "20261001"
     },
     {
       "id": "41b386825b9a",
@@ -15371,17 +16401,17 @@ window.DIALOG_DATA = {
   ],
   "reviewRevision": "f7c6570dae2f",
   "counts": {
-    "screens": 243,
-    "sections": 12,
+    "screens": 252,
+    "sections": 14,
     "qa": 229,
     "mapImported": 226,
-    "julia": 243,
+    "julia": 252,
     "questions": 22,
     "withoutDraft": 0,
     "warnings": 62,
-    "assets": 112,
-    "adaptations": 64
+    "assets": 155,
+    "adaptations": 81
   },
   "sourceRevision": "73dca9480831",
-  "revision": "7f300e00a630"
+  "revision": "e11c76229031"
 };
