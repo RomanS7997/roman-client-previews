@@ -4,9 +4,9 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <title>GiftsActivate · Просмотр диалогов</title>
-  <link rel="stylesheet" href="style.css?v=20261001-reset">
+  <link rel="stylesheet" href="style.css?v=20261001-review">
   <script defer src="assets/lucide.min.js"></script>
-  <script defer src="data.js?v=20261001-giveaway-media"></script><script defer src="emoji-data.js?v=20260930"></script><script defer src="app.js?v=20261001-reset"></script>
+  <script defer src="data.js?v=20261001-giveaway-media"></script><script defer src="review-update.js?v=20261001-review"></script><script defer src="emoji-data.js?v=20260930"></script><script defer src="app.js?v=20261001-review"></script>
 </head>
 <body>
   <header class="topbar">
@@ -30,7 +30,7 @@
         <div class="phone-status"><strong>9:41</strong><div><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
         <div class="telegram-header"><i data-lucide="chevron-left" class="back-icon"></i><img src="assets/avatar.jpg" alt="Аватар бота"><div><strong>Хранилище плюшек 🥨</strong><span>бот</span></div><i data-lucide="ellipsis-vertical"></i></div>
         <div class="chat-scroll" id="chat" tabindex="0" aria-label="Сообщения бота"></div>
-        <div class="composer"><i data-lucide="paperclip"></i><span>Сообщение</span><i data-lucide="smile"></i><i data-lucide="mic"></i></div>
+        <form class="composer" id="demo-composer"><i data-lucide="paperclip"></i><input id="demo-message" aria-label="Ответ на вопрос опроса" placeholder="Сообщение" autocomplete="off" disabled><button id="demo-send" type="submit" title="Отправить ответ" aria-label="Отправить ответ" hidden><i data-lucide="send"></i></button><button id="toggle-keyboard" type="button" title="Скрыть меню" aria-label="Скрыть меню" aria-expanded="true"><i data-lucide="keyboard"></i></button><i id="composer-mic" data-lucide="mic"></i></form>
         <div id="reply-keyboard" class="reply-keyboard"></div><div class="home-indicator"><span></span></div>
       </section>
       <div class="step-controls"><button id="previous" class="icon-button" title="Предыдущий экран" aria-label="Предыдущий экран"><i data-lucide="arrow-left"></i></button><div><span id="current-title"></span><small id="current-position"></small></div><button id="next" class="next-button">Дальше<i data-lucide="arrow-right"></i></button></div>

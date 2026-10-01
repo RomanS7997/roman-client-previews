@@ -22,3 +22,12 @@
  .review-reset-tools .icon-button{width:25px;height:25px;padding:4px}
  .review-reset-tools .icon-button svg{width:14px;height:14px}
  .review-reset-tools [hidden]{display:none}
+.composer input{flex:1;min-width:0;background:transparent;color:inherit;border:0;outline:0;font-size:13px;padding:8px 0;letter-spacing:0}
+.composer input::placeholder{color:#8496a4}.composer input:disabled{opacity:1}.composer button{width:30px;height:30px;padding:0;color:#68bde8;flex:none}.composer button[hidden]{display:none}
+.telegram-alert{background:#20303d;color:#eef5fb;border-radius:8px;padding:20px 18px 0;line-height:1.55;font-size:13px;margin:70px 12px 16px;box-shadow:0 0 0 500px #0005;position:relative;z-index:1}
+.telegram-alert .timestamp{display:none}.telegram-alert button{display:block;width:100%;padding:14px;color:#6ac1ff;border-top:1px solid #ffffff15;margin-top:18px;font-weight:600}
+.telegram-notice{margin:6px 10px 14px;padding:10px 12px;border-radius:6px;background:#30475b;color:#fff;font-size:12px;line-height:1.5;text-align:center}
+.light .telegram-alert{background:#fff;color:#243744}.light .telegram-notice{background:#e7eef5;color:#243744}
+.reply-keyboard[hidden]{display:none}
+#screen-help{position:fixed;z-index:200;background:#26343e;color:#fff;border:1px solid #425460;border-radius:6px;padding:12px 14px;font-size:12px;line-height:1.55;box-shadow:0 5px 20px #14253522;pointer-events:none;overflow-wrap:anywhere;letter-spacing:0}
+#screen-help[hidden]{display:none}

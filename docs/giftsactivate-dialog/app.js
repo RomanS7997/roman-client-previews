@@ -8,6 +8,19 @@
   let reviews = {}, reviewer = '', selected = nodes.find(n => n.category === 'entry').id, mode = 'screen', paused = false, edition = 'julia';
   let query = '', filter = 'all';
   const choices = {};
+  const help=document.createElement('div');help.id='screen-help';help.role='tooltip';help.hidden=true;document.body.append(help);
+  function showHelp(button){
+    help.textContent=button.getAttribute('aria-description');help.hidden=false;
+    const rect=button.getBoundingClientRect();const width=Math.min(330,innerWidth-24);
+    help.style.width=width+'px';help.style.left=Math.max(12,Math.min(rect.right+12,innerWidth-width-12))+'px';
+    help.style.top=Math.max(12,Math.min(rect.top,innerHeight-help.offsetHeight-12))+'px';
+    button.setAttribute('aria-describedby','screen-help');
+  }
+  const surveyQuestions=['5d6011fb1e4a','d2e861bda757','b1c0d9276596','6b2566f8795d','5c67fc68e8d6'];
+  const survey={step:0,answers:{},status:'invited'};
+  try {const saved=JSON.parse(localStorage.getItem(key+':survey-demo')||'null');if(saved&&Number.isInteger(saved.step)&&saved.step>=0&&saved.step<5&&saved.answers&&typeof saved.answers==='object')Object.assign(survey,saved);}catch(_){}
+  const nodeNumber=number=>nodes.find(n=>n.number===number);
+  const goNumber=number=>{const n=nodeNumber(number);if(n)select(n.id);};
   const emojiPalette = window.DIALOG_EMOJI || {};
   const emojiPattern = Object.keys(emojiPalette).length ? new RegExp(Object.keys(emojiPalette)
     .sort((a,b)=>b.length-a.length).map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|'),'gu') : null;
@@ -26,7 +39,7 @@
   function review(id = selected) { return reviews[id] || { status: 'pending', note: '' }; }
   function isViewed(id = selected) { const r = review(id); return typeof r.viewed === 'boolean' ? r.viewed : ['approved', 'changes'].includes(r.status); }
   function persist() {
-    try { localStorage.setItem(key, JSON.stringify({ reviews, reviewer, selected })); $('#save-state').textContent = 'Сохранено на этом устройстве'; }
+    try { localStorage.setItem(key, JSON.stringify({ reviews, reviewer, selected }));localStorage.setItem(key+':survey-demo',JSON.stringify(survey)); $('#save-state').textContent = 'Сохранено на этом устройстве'; }
     catch (_) { $('#save-state').textContent = 'Не сохранено · экспортируйте правки'; }
   }
   function filteredNodes() {
@@ -66,7 +79,10 @@
       items.forEach(n => {
       const button = document.createElement('button');
       button.className = `step-item ${selected === n.id ? 'active' : ''} ${isViewed(n.id) ? 'viewed' : ''}`;
-      button.title = isViewed(n.id) ? 'Просмотрено' : 'Не просмотрено';
+      button.title = n.previewHelp || n.title;
+      button.setAttribute('aria-description',button.title);
+      button.addEventListener('mouseenter',()=>showHelp(button));button.addEventListener('focus',()=>showHelp(button));
+      button.addEventListener('mouseleave',()=>{help.hidden=true;});button.addEventListener('blur',()=>{help.hidden=true;});
       button.setAttribute('aria-current', selected === n.id ? 'step' : 'false');
       button.dataset.step = n.id;
       const number = document.createElement('span'); number.className = 'step-number'; number.textContent = n.number || 'DEV';
@@ -131,6 +147,20 @@
   }
   function act(node, button) {
     choices[node.id] = button.text;
+    const value=button.value||'';
+    if(value==='cd:start') {survey.status='in_progress';select(surveyQuestions[survey.step]);return;}
+    if(value==='cd:later') {goNumber(88);return;}
+    if(value==='cd:never') {survey.status='opted_out';goNumber(89);return;}
+    if(value==='cd:next') {
+      if(!survey.answers[survey.step]){surveyNotice('Напиши ответ на текущий вопрос, и продолжим.');return;}
+      if(survey.step<4){survey.step++;select(surveyQuestions[survey.step]);}
+      else {survey.status='submitted';goNumber(99);}return;
+    }
+    if(value==='cd:status'||/Статус опроса/.test(button.text)) {
+      goNumber(({invited:105,in_progress:104,submitted:106,approved:107,rejected:108,opted_out:109})[survey.status]||104);return;
+    }
+    if(value==='preview:giveaway'){goNumber(119);return;}
+    if(value==='preview:applications'){goNumber(122);return;}
     const entry = title => nodes.find(n => n.category === 'entry' && n.title === title);
     let target;
     if(edition==='julia' && button.value==='prof:resume') {
@@ -141,6 +171,17 @@
     else if (node.title === 'Вопрос о возрасте') target = entry('Вопрос об устройстве');
     else if (node.title === 'Вопрос об устройстве') target = nodes.find(n => n.category === 'profile_reward');
     if (target) { select(target.id); return; }
+    const menuRoutes=[[/Главное меню|Назад в меню/,'c1630293a5d8'],[/Гарантия|Мои покупки|Покупки и билеты/,'a84013f362aa_16'],[/Магазины/,'28ac3d233fae'],[/Мои заявки/,'092fcf0795fc'],[/Мой к[еэ]шб[еэ]к/,'77c951f9eb67'],[/Раздачи|Каталог/,'243ea6ed33ff'],[/Как поклеить/,'556e46740f45'],[/Техподдерж|Назад в поддержку/,'a8767e810dc8'],[/Топ призов/,'6bb832a92ff7']];
+    const route=menuRoutes.find(([pattern])=>pattern.test(button.text));
+    if(route){select(route[1]);return;}
+    if(value==='gwf:step3'){goNumber(136);return;}
+    if(value==='gwf:resume'){select('f7a4d2728e9a');return;}
+    if(value==='gwf:giveup'){goNumber(155);return;}
+    if(value.startsWith('gw:item:')){goNumber(120);return;}
+    if(value.startsWith('gw:join:')){select('bbce88b1cba9');return;}
+    if(value.startsWith('gw:sold:')){goNumber(128);return;}
+    if(/Статус обращения/.test(button.text)){goNumber(79);return;}
+    if(/Написать оператору/.test(button.text)){goNumber(68);return;}
     const routes = [[/Гарантия|Мои покупки|Покупки и билеты/,'profile_reward'], [/Раздачи|заявки/,'giveaway'],[/поклеить|урок|плёнк|Стекло/,'howto'],[/поддерж|оператор/,'support'],[/приз|розыгрыш|билет/,'raffle']];
     const category = routes.find(([re]) => re.test(button.text))?.[1];
     boundary(button.text, nodes.filter(n => n.category === (category || node.category)));
@@ -165,6 +206,13 @@
       visible = [...current().previewContext.map(id=>nodes.find(n=>n.id===id)).filter(Boolean),current()];
     }
     $('#reply-keyboard').replaceChildren();
+    if(edition==='julia'&&current().previewMenu&&!current().previewAccess){
+      const kb=keyboard(current(),current().previewMenu);$('#reply-keyboard').replaceChildren(...kb.children);
+    }
+    const inQuestion=surveyQuestions.includes(selected)||[95,96,97,98].includes(current().number);
+    $('#demo-message').disabled=!inQuestion;$('#demo-send').hidden=!inQuestion;
+    $('#demo-message').placeholder=inQuestion?'Написать ответ…':'Сообщение';
+    $('#demo-message').value='';
     visible.forEach(node => {
       const block = document.createElement('section'); block.className = 'message-block'; block.dataset.message = node.id; block.setAttribute('aria-label', node.title);
       if (mode === 'dialog') { const label = document.createElement('div'); label.className = 'day'; label.textContent = node.title; block.append(label); }
@@ -182,7 +230,9 @@
           block.append(messageHost);
         }
         if (call.asset) {
-          if (['sticker','video','animation'].includes(call.kind)) {
+          if(call.previewStaticSticker) {
+            const img=new Image();img.src=call.asset;img.alt=node.title;img.className='sticker';block.append(img);
+          } else if (['sticker','video','animation'].includes(call.kind)) {
             const video = document.createElement('video'); const sticker = call.kind === 'sticker';
             video.className = sticker ? 'sticker' : 'message-video'; video.src = call.asset; video.poster = call.poster || '';
             video.loop = sticker; video.muted = sticker; video.autoplay = sticker && !paused; video.controls = !sticker;
@@ -205,8 +255,11 @@
           }
         }
         if (call.text) {
-          const bubble=document.createElement('div');bubble.className='bubble';bubble.append(safeMessage(call.text));
+          const bubble=document.createElement('div');bubble.className=edition==='julia'&&node.previewPresentation==='alert'?'telegram-alert':'bubble';bubble.append(safeMessage(call.text));
           const time=document.createElement('span');time.className='timestamp';time.textContent='9:41';bubble.append(time);messageHost.append(bubble);
+          if(edition==='julia'&&node.previewPresentation==='alert'){
+            const close=document.createElement('button');close.textContent='ОК';close.addEventListener('click',()=>goNumber(119));bubble.append(close);
+          }
         }
         if (call.rows?.length) {
           if (call.keyboardType === 'inline') block.append(keyboard(node,call.rows));
@@ -215,7 +268,9 @@
       });
       block.addEventListener('click', (event) => { if (mode === 'dialog' && !event.target.closest('button,a') && node.id !== selected) select(node.id, false); });
       chat.append(block);
+      if(edition==='julia'&&node.telegramNotice){const notice=document.createElement('div');notice.className='telegram-notice';notice.textContent=node.telegramNotice;block.prepend(notice);}
     });
+    if(inQuestion&&survey.answers[survey.step])surveyNotice('Ответ получен. Можно дополнить его или нажать «Продолжить».');
     chat.querySelectorAll('video.sticker').forEach(video => { if (!paused) video.play().catch(() => {}); });
     chat.querySelectorAll('video.emoji-video').forEach(video=>{
       if(emojiObserver) emojiObserver.observe(video);
@@ -228,7 +283,12 @@
   }
   function select(id, scroll = true, markViewed = true) {
     if(!nodes.some(n=>n.id===id)) return;
+    help.hidden=true;
     selected = id; const node = current();
+    if(surveyQuestions.includes(id)){survey.step=surveyQuestions.indexOf(id);survey.status='in_progress';}
+    if([100,101,107].includes(node.number))survey.status='approved';
+    if([102,108].includes(node.number))survey.status='rejected';
+    if([99,106].includes(node.number))survey.status='submitted';
     $('#current-title').textContent = node.title;
     $('#edition-state').textContent = edition === 'current' ? 'Снимок DEV' : node.copyOrigin==='adaptation' ? 'Адаптация в стиле Юлии' : 'Редакция Юлии';
     renderPhone();
@@ -238,6 +298,24 @@
     history.replaceState(null, '', '#' + id);
     persist();
   }
+  function surveyNotice(text){
+    $('#survey-notice')?.remove();const note=document.createElement('div');note.id='survey-notice';note.className='bubble';note.textContent=text;$('#chat').append(note);
+  }
+  $('#toggle-keyboard').addEventListener('click',()=>{
+    const kb=$('#reply-keyboard');kb.hidden=!kb.hidden;
+    $('#toggle-keyboard').setAttribute('aria-expanded',String(!kb.hidden));
+    $('#toggle-keyboard').title=kb.hidden?'Показать меню':'Скрыть меню';
+    $('#toggle-keyboard').setAttribute('aria-label',$('#toggle-keyboard').title);
+  });
+  $('#demo-composer').addEventListener('submit',event=>{
+    event.preventDefault();const input=$('#demo-message');const answer=input.value.trim();
+    if(input.disabled)return;
+    if(answer.length<8){surveyNotice('Расскажи чуть подробнее: хватит пары предложений.');return;}
+    survey.answers[survey.step]=[survey.answers[survey.step],answer].filter(Boolean).join('\n');input.value='';
+    persist();
+    surveyNotice('Ответ получили. Можно дополнить его или нажать «Продолжить».');
+    $('#chat').scrollTo({top:$('#chat').scrollHeight,behavior:'instant'});
+  });
   document.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => {
     mode = b.dataset.mode; document.querySelectorAll('[data-mode]').forEach(item => { item.classList.toggle('active', item === b); item.setAttribute('aria-pressed', String(item === b)); }); renderPhone();
   }));
@@ -305,6 +383,7 @@
   });
   document.querySelectorAll('.close-dialog').forEach(b => b.addEventListener('click', () => $('#boundary').close()));
   document.addEventListener('keydown', e => { if (e.target.matches('input,textarea,select') || $('#boundary').open || $('#photo-viewer').open) return;
+    if(e.key==='Escape')help.hidden=true;
     if (e.key === 'ArrowRight') $('#next').click(); if (e.key === 'ArrowLeft') $('#previous').click();
     if (e.key === 'Escape') document.body.classList.remove('focus-mode');
   });
