@@ -79,8 +79,7 @@
       items.forEach(n => {
       const button = document.createElement('button');
       button.className = `step-item ${selected === n.id ? 'active' : ''} ${isViewed(n.id) ? 'viewed' : ''}`;
-      button.title = n.previewHelp || n.title;
-      button.setAttribute('aria-description',button.title);
+      button.setAttribute('aria-description',n.previewHelp || n.title);
       button.addEventListener('mouseenter',()=>showHelp(button));button.addEventListener('focus',()=>showHelp(button));
       button.addEventListener('mouseleave',()=>{help.hidden=true;});button.addEventListener('blur',()=>{help.hidden=true;});
       button.setAttribute('aria-current', selected === n.id ? 'step' : 'false');
