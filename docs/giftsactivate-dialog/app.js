@@ -4,6 +4,7 @@
   const $ = (selector) => document.querySelector(selector);
   const nodes = data.nodes.filter(n => !n.previewHidden && !['legacy','warranty'].includes(n.category));
   const key = `giftsactivate-dialog:${data.reviewRevision || data.revision}`;
+  const resetBackupKey = `${key}:before-view-reset`;
   let reviews = {}, reviewer = '', selected = nodes.find(n => n.category === 'entry').id, mode = 'screen', paused = false, edition = 'julia';
   let query = '', filter = 'all';
   const choices = {};
@@ -245,6 +246,29 @@
   }));
   $('#search').addEventListener('input', () => {query=$('#search').value.toLowerCase().trim();renderNavigation();});
   $('#review-filter').addEventListener('change', () => {filter=$('#review-filter').value;renderNavigation();});
+  function resetViews() {
+    try {
+      localStorage.setItem(resetBackupKey, JSON.stringify(reviews));
+    } catch (_) { toast('Не удалось сохранить резервную копию. Просмотры не сброшены.'); return; }
+    nodes.forEach(n => { reviews[n.id] = {...review(n.id), viewed:false}; });
+    filter='all'; $('#review-filter').value='all';
+    persist(); renderNavigation(); $('#undo-reset-views').hidden=false;
+    toast('Просмотры сброшены. Комментарии сохранены.');
+  }
+  $('#reset-views').addEventListener('click', resetViews);
+  $('#undo-reset-views').addEventListener('click', () => {
+    try {
+      const backup=JSON.parse(localStorage.getItem(resetBackupKey) || 'null');
+      if (!backup) return;
+      nodes.forEach(n => {
+        const old=backup[n.id] || {};
+        const viewed=typeof old.viewed==='boolean' ? old.viewed : ['approved','changes'].includes(old.status);
+        reviews[n.id]={...review(n.id),viewed:isViewed(n.id)||viewed};
+      });
+      persist(); renderNavigation(); localStorage.removeItem(resetBackupKey);
+      $('#undo-reset-views').hidden=true; toast('Просмотры восстановлены');
+    } catch (_) { toast('Не удалось восстановить просмотры'); }
+  });
   $('#previous').addEventListener('click', () => step(-1));
   $('#next').addEventListener('click', () => step(1));
   $('#animation').addEventListener('click', () => {
@@ -289,5 +313,10 @@
   const requested = location.hash.slice(1);
   const hash = data.nodes.find(n => n.id === requested)?.previewAlias || requested;
   if (nodes.some(n => n.id === hash)) selected = hash;
-  select(selected, false);
+  try { $('#undo-reset-views').hidden=!localStorage.getItem(resetBackupKey); } catch (_) {}
+  const url=new URL(location.href);
+  if (url.searchParams.get('resetViews')==='1') {
+    resetViews(); url.searchParams.delete('resetViews'); history.replaceState(null,'',url);
+  }
+  select(selected, false, false);
 })();
