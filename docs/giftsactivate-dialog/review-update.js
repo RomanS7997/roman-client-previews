@@ -60,7 +60,6 @@
   update(byNumber(131),'Сейчас у тебя нет активной заявки на этот шаг.\n\nОткрой «Раздачи», чтобы выбрать товар или посмотреть свои заявки.',[[button('🎁 Раздачи','preview:giveaway')],[button('📊 Мои заявки','preview:applications')]]);
   update(byNumber(132),'Отчёт пока недоступен на текущем этапе заявки.\n\nОткрой «Мои заявки», чтобы посмотреть её статус. Если отчёт уже отправлен, повторно присылать его не нужно.',[[button('📊 Мои заявки','preview:applications')]]);
   byNumber(136).title='Шаг 3: нажали «Продолжить» до конца таймера';
-  byNumber(136).telegramNotice='До продолжения осталось 2 минуты 5 секунд.';
   byNumber(145).title='Wildberries: не распознана сумма покупки';byNumber(145).category='giveaway_wb';
   byNumber(146).category='giveaway_wb';
   byNumber(147).title='Ozon: не распознан номер заказа';byNumber(147).category='giveaway_ozon';
